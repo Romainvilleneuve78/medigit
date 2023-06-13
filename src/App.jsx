@@ -5,10 +5,12 @@ import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
+
 import Page1 from './Pages/Accueil/Accueil';
 import Page2 from './Pages/Ordonnances/Ordonnances';
 import Page3 from './Pages/Rappels/Rappels';
 import Page4 from './Pages/Profil/Profil';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,12 +37,15 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+
 <Router>
 <nav>
   <Link to="/page1">Page 1</Link>
   <Link to="/page2">Page 2</Link>
   <Link to="/page3">Page 3</Link>
   <Link to="/page4">Page 4</Link>
+
 </nav>
 <Routes> {/* Remplacez le composant Route par Routes */}
   <Route path="/page1" element={<Page1 />} /> {/* Utilisez l'attribut element pour définir le composant */}
