@@ -58,6 +58,7 @@ function App() {
               <li><Link to="/page2">Mes Ordonnances</Link></li>
               <li><Link to="/page3">Mon Profil</Link></li>
               <li><Link to="/page4">Mes Rappels</Link></li>
+              <li><Link to="/addOrdo">Ajouter une ordonnance</Link></li>
             </ul>
         </div>    
       </nav>
@@ -67,6 +68,7 @@ function App() {
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
         <Route path="/page4" element={<Page4 />} />
+        <Route path="/addOrdo" element={<AddOrdo />} />
         {/* <Route path="/SignUp_Page" element={<SignUp_Page />} />
         <Route path="/SignIn_Page" element={<SignIn_Page />} /> */}
       </Routes>
