@@ -13,7 +13,7 @@
     
         return (
         <div className="container">
-            <h1>Ajouter une ordonnance</h1>
+            <h1 className="Title">Ajouter une ordonnance</h1>
             
             <div className="contform">
                 <FormOrdo />

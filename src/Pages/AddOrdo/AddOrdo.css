@@ -1,7 +1,7 @@
 /* AddOrdo.css */
-* {
+/* * {
     width: 100%;
-}
+} */
 
 .contbutt{
     /* display: flex; */
@@ -19,7 +19,7 @@
     /* background-color: #c05252; */
 }
 
-h1 {
+.Title {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 60px;
