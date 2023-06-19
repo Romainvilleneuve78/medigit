@@ -1,0 +1,99 @@
+.titre {
+    color: #2ACEF2;
+    text-align: center;
+    font-size: 300%;
+    margin-top: 3%;
+}
+
+.container {
+    margin-top: 3%;
+    display: flex;
+    /* Utilisation de flexbox pour diviser en deux parties */
+}
+
+.container2 {
+    display: flex;
+    /* Utilisation de flexbox pour diviser en deux parties */
+}
+
+.left {
+    margin: 2%;
+    flex: 0.65;
+    /* Partie de gauche occupant 50% de l'espace */
+    padding: 2%;
+    /* Espacement intérieur pour la partie de gauche */
+    display: flex;
+    background-color: #2ACEF2;
+    border-radius: 5%;
+}
+
+.left img {
+    width: 60%;
+    margin: auto;
+}
+
+.right {
+    flex: 1.35;
+    /* Partie de droite occupant 50% de l'espace */
+
+    padding: 2%;
+    /* Espacement intérieur pour la partie de droite */
+}
+
+.leftbis {
+    flex: 0.675;
+    /* Partie de gauche occupant 50% de l'espace */
+
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* Espacement intérieur pour la partie de gauche */
+
+}
+
+.rightbis {
+    flex: 0.675;
+    /* Partie de droite occupant 50% de l'espace */
+
+    padding: 2%;
+    /* Espacement intérieur pour la partie de droite */
+}
+
+.rightrouage {
+
+    text-align: right;
+    flex: 0.675;
+    /* Partie de droite occupant 50% de l'espace */
+
+    padding-right: 10%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    /* Espacement intérieur pour la partie de droite */
+}
+
+.name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 200%;
+    margin-bottom: 1%;
+}
+
+.travail {
+    font-weight: 400;
+    font-size: 150%;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10%;
+}
+
+.info {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+img .modif {
+    text-align: right;
+}
+
+.contact {
+    font-size: 130%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
