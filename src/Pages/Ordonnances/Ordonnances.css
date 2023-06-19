@@ -1,0 +1,91 @@
+ *{
+    width: 100%;
+ }
+ 
+ h1 {
+    color: rgb(56, 196, 252);
+    font: size 400%;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 300%;
+    margin-left: 35vw;
+  }
+
+  .trier {
+    width: 5vw; /* Largeur du bouton */
+    height: 3vw; /* Hauteur du bouton */
+    margin-left: 85%;
+    border-radius: 100%;
+    background-color: rgb(56, 196, 252);
+  }
+
+  .filtrer {
+    width: 5vw; /* Largeur du bouton */
+    height: 3vw; /* Hauteur du bouton */
+    border-radius: 100%;    
+    background-color: rgb(56, 196, 252);
+    
+  }
+
+  .container {
+    display: flex;
+    align-items: center; /* Aligner les éléments verticalement au centre */
+  }
+  
+ 
+
+  
+  .coeur {
+    width: 4vw; /* Largeur du bouton */
+    height: 3v; /* Hauteur du bouton */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25%;
+    margin-right: 3vw;
+  }
+
+  .coeur img {
+    width:2vw;
+    height: 2vw;
+    
+    
+  }
+
+  .my-paragraph1 {
+    text-indent: 35%;
+  }
+
+  .my-paragraph2 {
+    text-indent: 35%;
+  }
+
+
+  .points img{
+    width:2vw;
+    height: 2vw;
+  }
+
+  .points {
+    width:4vw ; /* Largeur du bouton */
+    height:3vw ; /* Hauteur du bouton */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25%;
+    float:right;
+    margin-right: 3vw;
+  }
+
+.pdp img {
+    width:14vw;
+    height: 14vw;
+}
+
+.pdp {
+    width: 16vw; /* Largeur du bouton */
+    height: 16vw; /* Hauteur du bouton */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25%;
+    float:left;
+    margin-left: 5vw;
+    margin-top: 0%;
+}
