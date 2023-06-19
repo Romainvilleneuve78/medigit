@@ -1,14 +1,14 @@
- *{
+ /* *{
     width: 100%;
- }
+ } */
  
- h1 {
+ .titleOrdo {
     color: rgb(56, 196, 252);
     font: size 400%;
     text-align: center;
   }
 
-  h2 {
+ .titleOrdo2 {
     font-size: 300%;
     margin-left: 35vw;
   }
@@ -29,9 +29,9 @@
     
   }
 
-  .container {
+  .containerOrdo {
     display: flex;
-    align-items: center; /* Aligner les éléments verticalement au centre */
+    align-items: center;
   }
   
  

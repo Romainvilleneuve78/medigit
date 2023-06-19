@@ -5,7 +5,7 @@ import React from 'react';
 function Page2() {
   return (
     <div>
-      <h1>MY PRESCRIPTIONS</h1>
+      <h1 className="titleOrdo">MY PRESCRIPTIONS</h1>
 
       <button class = "trier">Trier</button>     <button class = "filtrer">Filtrer</button> <br/>
 
@@ -16,8 +16,8 @@ function Page2() {
       
 
       
-      <div class="container">
-      <h2>Gynecology Consultation</h2>         
+      <div class="containerOrdo">
+      <h2 className='titleOrdo2'>Gynecology Consultation</h2>         
       <button class= "coeur"> <img src="../../images/coeur.png" alt="icone du bouton"></img></button>
       </div>
 
