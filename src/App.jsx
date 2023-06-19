@@ -42,7 +42,7 @@ function App() {
               <li><Link to="/page1">Home</Link></li>
               <li><Link to="/page2">Mes Ordonnances</Link></li>
               <li><Link to="/page3">Mes Rappels</Link></li>
-              <li><Link to="/page4">Mon Profils</Link></li>
+              <li><Link to="/page4">Mon Profil</Link></li>
               <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
             </ul>
         </div>    
