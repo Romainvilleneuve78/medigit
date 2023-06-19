@@ -5,13 +5,13 @@
     margin-top: 3%;
 }
 
-.container {
+.contProfil {
     margin-top: 3%;
     display: flex;
     /* Utilisation de flexbox pour diviser en deux parties */
 }
 
-.container2 {
+.contProfil2 {
     display: flex;
     /* Utilisation de flexbox pour diviser en deux parties */
 }
@@ -41,7 +41,7 @@
 }
 
 .leftbis {
-    flex: 0.675;
+    /* flex: 0.675; */
     /* Partie de gauche occupant 50% de l'espace */
 
     padding-right: 2%;
@@ -78,7 +78,7 @@
 }
 
 .travail {
-    font-weight: 400;
+    /* font-weight: 400; */
     font-size: 150%;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 10%;

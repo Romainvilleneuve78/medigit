@@ -8,12 +8,12 @@ function Page4() {
     return (
         <div>
             <h1 class="titre">MON PROFIL </h1>
-            <div class="container">
+            <div class="contProfil">
                 <div class="left">
                     < img src="../../images/ledoc.jpeg" ></img>
                 </div>
                 <div class="right">
-                    <div class="container2">
+                    <div class="contProfil2">
                         <div class="leftbis">
                             <h2 class="name">DR.NOZMAN</h2>
                             <h3 class="travail">Chirurgien</h3>
