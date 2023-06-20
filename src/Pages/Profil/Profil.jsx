@@ -24,15 +24,15 @@ function Page4() {
                             < img src="../../images/equipement.png" width={40} ></img>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="contProfil2">
                         <div class="leftbis">
                             <h4 class="contact">Contact</h4>
                             <p class="info">Phone : +33 1 45 65 78 29</p>
                             <p class="info">Standard : +33 6 24 12 36 87</p>
                             <p class="info">Email : Nozmam.doc@docdoc.com</p>
                         </div>
-                        <div class="rightbis">
-                            <h4 class="contact">Signature électrique</h4>
+                        <div class="rightrouage">
+                            <h4 class="contact">Signature électronique :</h4>
                         </div>
                     </div>
                 </div>
