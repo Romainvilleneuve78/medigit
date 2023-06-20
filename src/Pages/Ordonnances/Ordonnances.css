@@ -1,16 +1,16 @@
- 
+/*  
  h1 {
     color: #2ACEF2;
     font-size: 400%;
     text-align: center;
-  }
+  } */
 
  .titleOrdo2 {
     font-size: 300%;
   }
 
 
-  .bouton {
+  .boutonOrdo {
    display: flex;
    justify-content: flex-end;
   }
@@ -73,12 +73,12 @@
 
   .pdp {
       width: 14%;
-      height: 240px;
+      /* height: 240px; */
       padding: 2%;
       background-color: #2ACEF2;
       border-radius: 25%;
-      margin-right: 150px;
-      margin-top: 33px;
+      /* margin-right: 150px; */
+      /* margin-top: 33px; */
       display : flex;
       flex-direction: column;
       align-items: center;

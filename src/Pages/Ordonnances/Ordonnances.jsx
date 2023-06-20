@@ -6,18 +6,17 @@ import Component1 from '../../components/test';
 function Page2() {
   return (
     <div>
-      <h1>MY PRESCRIPTIONS</h1>
-      <div  class =  "bouton">
+      <div  class =  "boutonOrdo">
          <button class = "trier">
             Trier
             <img src="../../images/barres.png" alt="icone des points"></img>
-            </button>    
+          </button>    
          <button class = "filtrer">
           Filtrer
           <img src="../../images/barres.png" alt="icone des points"></img></button> <br/>
       </div>
       <br/>
-      <br/>
+      {/* <br/> */}
       <br/>
 
       < Component1/>
