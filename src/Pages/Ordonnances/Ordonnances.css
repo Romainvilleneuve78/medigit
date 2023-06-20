@@ -1,22 +1,22 @@
  
- h1 {
+.ordonnances h1 {
     color: #2ACEF2;
     font-size: 400%;
     text-align: center;
   }
 
-  h2 {
+.ordonnances h2 {
     font-size: 300%;
   }
 
 
-  .bouton {
+.ordonnances .bouton {
    display: flex;
    justify-content: flex-end;
   }
 
 
-  .trier {
+  .ordonnances .trier {
     width: 6vw; /* Largeur du bouton */
     height: 2vw; /* Hauteur du bouton */
     margin-right: 1%;
@@ -29,7 +29,7 @@
 
 
 
-  .filtrer {
+  .ordonnances .filtrer {
     height: 2vw;
     width: 6vw; /* Largeur du bouton */
     border-radius: 20px;    
@@ -40,47 +40,47 @@
     align-items: center;
   }
 
-  .trier img {
+  .ordonnances .trier img {
     width:1vw;
     height:1vw;
     margin-left:0.7vw ;
   }
 
-  .filtrer img {
+  .ordonnances .filtrer img {
     width:1vw;
     height:1vw;
     margin-left:0.5vw ;
   }
 
-  .my-paragraph1 {
+  .ordonnances .my-paragraph1 {
     font-size: 130%;
   }
 
-  .my-paragraph2 {
+  .ordonnances .my-paragraph2 {
     font-size: 130%;
   }
 
-  .container {
+  .ordonnances .container {
     display: flex;
     align-items: center; /* Aligner les éléments verticalement au centre */
     margin: 1vw;
     margin-left : 10vw;
   }
   
-  .pdp img {
+  .ordonnances .pdp img {
   
     width:7vw;
     height: 7vw;
 }
 
-  .pdp {
+  .ordonnances .pdp {
       width: 14%;
       height: 240px;
       padding: 2%;
       background-color: #2ACEF2;
       border-radius: 25%;
-      margin-right: 150px;
-      margin-top: 33px;
+      margin-right: 6vw;
+      margin-top: 1vw;
       display : flex;
       flex-direction: column;
       align-items: center;
@@ -88,36 +88,36 @@
       text-align: center;
   }
 
-  .pdp .title{
-    margin-top: 8px;
+  .ordonnances .pdp .title{
+    margin-top: 1vw;
     color : white;
     font-size: 130%;
   }
 
-  .info {
+  .ordonnances .info {
     display: flex;
     margin-left: 5%;
     padding-bottom: 2vw;
-    border-bottom: solid black 1px;
+    border-bottom: solid black 1px  ;
     width: 60%;
   }
 
-  .Name {
+  .ordonnances .Name {
     width: 80%
   } 
-  .option {
+  .ordonnances .option {
     width: 20%;
   }
 
   
-  .coeur {
+  .ordonnances .container .option .coeur {
     width: 4vw; /* Largeur du bouton */
     height: 3vw; /* Hauteur du bouton */
     background-color: rgb(255, 255, 255);
     border-radius: 25%;
   }
 
-  .coeur img {
+  .ordonnances .container .option .coeur img {
     width:2vw;
     height: 2vw; 
   }
@@ -125,12 +125,12 @@
   
 
 
-  .points img{
+  .ordonnances .container .option .points img{
     width:2vw;
     height: 2vw;
   }
 
-  .points {
+  .ordonnances .container .option .points {
     width:4vw ; /* Largeur du bouton */
     height:3vw ; /* Hauteur du bouton */
     background-color: rgb(255, 255, 255);
