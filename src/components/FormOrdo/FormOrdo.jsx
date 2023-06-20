@@ -1,54 +1,60 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './FormOrdo.css';
 
-class FormOrdo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      medic: '',
-      dose: '',
-      descr: ''
-    };
+// class FormOrdo extends Component {
+function FormOrdo ({ onFormSubmit }) {
+
+  const [medic, setMedic] = useState('');
+  const [dose, setDose] = useState('');
+  const [descr, setDescr] = useState('');
+
+  const handleChange = (event) => {
+    // setState({ [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    if (name === 'medic') {
+      setMedic(value);
+    } else if (name === 'dose') {
+      setDose(value);
+    } else if (name === 'descr') {
+      setDescr(value);
+    }
   }
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // Effectuer les actions nécessaires avec les données du formulaire
-    console.log('Médicament:', this.state.medic);
-    console.log('Dose:', this.state.dose);
-    console.log('Description:', this.state.descr);
+    // Appeler la fonction de soumission du formulaire passée en tant que prop
+    onFormSubmit({ medic, dose, descr });
     // Réinitialiser le formulaire
-    this.setState({ medic: '', dose: '', descr: '' });
-  }
+    setMedic('');
+    setDose('');
+    setDescr('');
+  };
 
-  render() {
-    return (
-      <div className="container">
-        <form onSubmit={this.handleSubmit} class="cont">
-            <label className='in'>
-                <text style={{paddingBottom:'100px'}}>Médicament:</text>
-                <input type="text" name="medic" value={this.state.medic} onChange={this.handleChange} className='input'/>
-            </label>
-            <br />
-            <label className='in'>
-                Dose:
-                <input type="text" name="dose" value={this.state.dose} onChange={this.handleChange} className='input'/>
-            </label>
-            <br />
-            <label className='indes'>
-                <text>Description:</text>
-                <textarea type="text" name="descr" value={this.state.descr} onChange={this.handleChange} className='input' row="3"/>
-            </label>
-            <br />
-            
-        </form>
-      </div>
-    );
-  }
+
+  return (
+    <div className="container">
+      <form onSubmit={handleSubmit} className="cont">
+          <label className='in'>
+              {/* <text style={{paddingBottom:'100px'}}>Médicament:</text> */}
+              Médicament:
+              <input type="text" name="medic" value={medic} onChange={handleChange} className='input'/>
+          </label>
+          <br />
+          <label className='in'>
+              Dose:
+              <input type="text" name="dose" value={dose} onChange={handleChange} className='input'/>
+          </label>
+          <br />
+          <label className='indes'>
+              Description:
+              <textarea type="text" name="descr" value={descr} onChange={handleChange} className='input' row="3"/>
+          </label>
+          <br />
+
+      </form>
+    </div>
+  );
 }
+
 
 export default FormOrdo;

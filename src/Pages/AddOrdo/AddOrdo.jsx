@@ -17,29 +17,18 @@
         };
 
         const genererPDF = () => {
-            // const ReactPDF = require('@react-pdf/renderer');
-            const fs = require('fs');
-            const path = require('path');
-        
-            const MyDocument = () => (
-              <ReactPDF.Document>
-                <ReactPDF.Page>
-                    <View style={styles.section}>
-                        <Text>Section #1</Text>
-                    </View>
-                    <View style={styles.section}>
-                        <Text>Section #2</Text>
-                    </View>
-                </ReactPDF.Page>
-              </ReactPDF.Document>
-            );
-
-            const pdfPath = path.join(__dirname, 'example.pdf');
-            ReactPDF.render(<MyDocument />, pdfPath, () => {
-              // Manipulation supplémentaire après la génération du PDF (facultatif)
-              console.log('PDF généré avec succès !');
-            });
+            // Génération du PDF
         };
+
+        // const récupérerDonnées = (index, data) => {
+        //     const updatedFormulaires = [...formulaires];
+        //     updatedFormulaires[index] = data;
+        //     setFormulaires(updatedFormulaires);
+        //   };
+
+        const récupérerDonnées = (data) => {
+            setFormulaires([...formulaires, data]);
+        };          
 
     
         return (
@@ -47,16 +36,26 @@
             <h1 className="Title">Ajouter une ordonnance</h1>
             
             <div className="contform">
-                <FormOrdo />
+                <FormOrdo onFormSubmit={récupérerDonnées} />
+                {/* <FormOrdo/> */}
                 {formulaires.map((formulaire) => formulaire)}
             </div>
 
             <div className="contbutt">
-                <button onClick={ajouterFormulaire} class="butadd" style={{width: '250px'}}>
+                <button onClick={ajouterFormulaire} className="butadd" style={{width: '250px'}}>
                     Ajouter un médicament
                 </button>
 
-                <button type="submit" onClick={genererPDF} class="butenv" style={{width: '200px'}}>Créer l'ordonnance</button>
+                <button type="submit" onClick={genererPDF} className="butenv" style={{width: '200px'}}>
+                    Créer l'ordonnance
+                </button>
+
+                <button
+                    onClick={() => console.log('Données des formulaires:', formulaires)}
+                    className="butenv"
+                    style={{ width: '200px' }}>
+                    Afficher les données
+                </button>
             </div>
         </div>
 
