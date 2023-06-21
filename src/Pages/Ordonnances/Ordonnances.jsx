@@ -1,12 +1,36 @@
 // src/pages/Page2.jsx
+import './Ordonnances.css';
 import React from 'react';
+import Component1 from '../../components/test';
 
 function Page2() {
   return (
     <div>
-      <h1>Page 2</h1>
-      <p>Ceci est le contenu de la page 2.</p>
+      <div  class =  "boutonOrdo">
+         <button class = "trier">
+            Trier
+            <img src="../../images/barres.png" alt="icone des points"></img>
+          </button>    
+         <button class = "filtrer">
+          Filtrer
+          <img src="../../images/barres.png" alt="icone des points"></img></button> <br/>
+      </div>
+      <br/>
+      {/* <br/> */}
+      <br/>
+
+      < Component1/>
+      <Component1/>
+      <Component1/>
+      <Component1/>
+      <Component1/>
+          
+
+
+      
+      
     </div>
+
   );
 }
 
