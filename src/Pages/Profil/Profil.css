@@ -7,7 +7,6 @@
 }
 
 .contProfil {
-    margin-top: 1%;
     display: flex;
     /* Utilisation de flexbox pour diviser en deux parties */
 }
@@ -18,24 +17,24 @@
 }
 
 .left {
-    margin: 2%;
-    flex: 0.75;
+    margin: 1%;
+    flex: 0.65;
     /* Partie de gauche occupant 50% de l'espace */
-    padding: 0.5%;
+
     /* Espacement intérieur pour la partie de gauche */
     display: flex;
-    background-color: rgb(184, 191, 191);
     border-radius: 5%;
 }
 
 .left img {
-    width: 60%;
+    width: 55%;
     margin: auto;
+    border-radius: 5%;
 }
 
 .right {
-    margin: 2%;
-    flex: 1.25;
+    margin: 1%;
+    flex: 1.35;
     /* Partie de droite occupant 50% de l'espace */
 
     padding: 2%;
@@ -55,7 +54,7 @@
 
 .rightrouage {
 
-    text-align: right;
+    justify-content: right;
     flex: 0.675;
     /* Partie de droite occupant 50% de l'espace */
 
@@ -66,10 +65,11 @@
 }
 
 .name {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: serif, bold;
     font-size: 2.5vw;
     color: #2ACEF2;
     margin-bottom: 8%;
+
 }
 
 .travail {
