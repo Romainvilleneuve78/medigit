@@ -1,11 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import SignIn_Page from './Pages/SignIn_Page'
-import SignUp_Page from './Pages/SignUp_Page'
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
@@ -18,32 +10,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Router>
-      <header>
-        <nav class="navbar">
-            <a href=""><h1>MeDigit.</h1></a>
-            <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
-            <a href="">
-              <div class="nav-links ">
-                  <ul>
-                      <li>User123</li>
-                      <li><img class="user" src="images/user.png" alt="Logo"></img></li>
-                  </ul>
-              </div>
-            </a>
-        </nav>
-      </header>
-
-      <nav class="menu">
-        <div class="links ">
-            <ul>
-              <li><Link to="/page1">Home</Link></li>
-              <li><Link to="/page2">Mes Ordonnances</Link></li>
-              <li><Link to="/page3">Mon Profil</Link></li>
-              <li><Link to="/page4">Mes Rappels</Link></li>
-            </ul>
-        </div>    
+    <Router>
+      <nav>
+        <Link to="/page1">Screen 1</Link>
+        <Link to="/page2">Page 2</Link>
       </nav>
     
       <Routes> {/* Remplacez le composant Route par Routes */}
