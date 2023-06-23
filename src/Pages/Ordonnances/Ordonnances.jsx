@@ -5,8 +5,9 @@ import Component1 from '../../components/test';
 
 function Page2() {
   return (
-    <div>
-      <div  class =  "boutonOrdo">
+    <div class='ordonnances'>
+      <h1>MY PRESCRIPTIONS</h1>
+      <div  class =  "bouton">
          <button class = "trier">
             Trier
             <img src="../../images/barres.png" alt="icone des points"></img>
