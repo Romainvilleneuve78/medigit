@@ -1,12 +1,13 @@
  
 .ordonnances h1 {
     color: #2ACEF2;
-    font-size: 400%;
+    font-size: 350%;
     text-align: center;
-  } */
+  } 
 
-.ordonnances .containerordo.infoordo.Nameordo h2 {
+ .gyneco {
     font-size: 300%;
+    color : black;
   }
 
 
@@ -58,28 +59,32 @@
 
   .ordonnances .my-paragraph2 {
     font-size: 130%;
+    margin-top: 6vw;
   }
 
-  .ordonnances .containerordo {
+  .ordonnances .container_ordo {
     display: flex;
     align-items: center; /* Aligner les éléments verticalement au centre */
   }
   
-  .ordonnances .pdpordo img {
+  .ordonnances .pdp_ordo img {
   
     width:7vw;
     height: 7vw;
 }
 
-  .ordonnances .pdpordo {
+  .ordonnances .pdp_ordo {
       width: 14%;
       height: 10%;
       padding: 2%;
       background-color: #2ACEF2;
       border-radius: 25%;
-      margin-right: 10vw;
+      margin-right: 4vw;
       margin-left: 5vw;
       margin-bottom: 4vw;
+      /* margin-top: vw ; */
+      position: relative;
+      bottom: -1vw;
       display : flex;
       flex-direction: column;
       align-items: center;
@@ -87,13 +92,13 @@
       text-align: center;
   }
 
-  .ordonnances .pdpordo .titleordo{
+  .ordonnances .pdp_ordo .title_ordo{
     margin-top: 1vw;
     color : white;
     font-size: 130%;
   }
 
-  .ordonnances .infoordo {
+  .ordonnances .info_ordo {
     display: flex;
     margin-left: 5%;
     padding-bottom: 2vw;
@@ -101,39 +106,45 @@
     width: 60%;
   }
 
-  .ordonnances .Nameordo {
+  .ordonnances .Name_ordo {
     width: 80%
   } 
-  .ordonnances .optionordo {
+  .ordonnances .option_ordo {
     width: 20%;
+    display :flex;
   }
 
   
-  .ordonnances .containerordo .optionordo .coeur {
+  .ordonnances .container_ordo .option_ordo .coeur {
     width: 4vw; /* Largeur du bouton */
     height: 3vw; /* Hauteur du bouton */
     background-color: rgb(255, 255, 255);
     border-radius: 25%;
+    position: relative;
+    /* top:-1vw;; */
   }
 
-  .ordonnances .containerordo .optionordo .coeur img {
+  .ordonnances .container_ordo .option_ordo .coeur img {
     width:2vw;
     height: 2vw; 
+  
   }
 
   
 
 
-  .ordonnances .containerordo .optionordo .points img{
+  .ordonnances .container_ordo .option_ordo .points img{
     width:2vw;
     height: 2vw;
   }
 
-  .ordonnances .containerordo .optionordo .points {
+  .ordonnances .container_ordo .option_ordo .points {
     width:4vw ; /* Largeur du bouton */
     height:3vw ; /* Hauteur du bouton */
     background-color: rgb(255, 255, 255);
     border-radius: 25%;
+    position: relative;
+    /* top : -1vw; */
   }
 
 

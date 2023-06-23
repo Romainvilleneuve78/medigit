@@ -7,9 +7,7 @@
 
     // import ReactPDF from '@react-pdf/renderer'
 // src/pages/Page2.jsx
-import React, { useState } from 'react';
-import './AddOrdo.css'
-import FormOrdo from '../../components/FormOrdo/FormOrdo';
+
 // import MyDocument from '../../components/PDF/MyDocument';
 /*import { Document, Page, Text, View } from '@react-pdf/renderer';
 
