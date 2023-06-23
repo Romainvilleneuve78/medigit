@@ -4,6 +4,9 @@ import './Accueil.css'
 import SignIn from '../../components/SignIn';
 import SignUp from '../../components/SignUp';
 import SignIn_Page from '../SignIn_Page'
+import Client_Page from '../Client_Page';
+
+
 
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
@@ -33,17 +36,28 @@ function Page1() {
           <div class='slide1'></div>
         </div>
       </div>
-      <h1>Accueil</h1>
-      <p>Mode d'emploi de l'utilisation du site web et comment obtenir une ordonnance</p>
+      <div className='decription'>
+      <h1 >Découvrer comment récupérer votre ordonnace </h1>
+      <ul>
+        <li> Élément 1</li>
 
+        <li>Élément 2</li>
+        <li>Élément 3</li>
+        <li>Élément 3</li>
+      </ul>
+      </div>
 <nav>
+ 
 
-  <Link to="/SignIn_Page">Sign In</Link>
-  <Link to="/SignUp_Page">Sign Up</Link>
+
+  <Link to="/SignIn_Page" className="button-signup">Sign In</Link>
+  <Link to="/SignUp_Page" className="button-signup">Sign Up</Link>
 </nav>
 <Routes> {/* Remplacez le composant Route par Routes */}
   <Route path="/SignIn_Page" element={<SignIn_Page />} />
   <Route path="/SignUp_Page" element={<SignUp_Page />} />
+  <Route path="/Client_Page" element={<Client_Page/>} />
+  
   
 </Routes>
     </>
