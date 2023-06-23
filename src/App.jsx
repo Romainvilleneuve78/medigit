@@ -23,8 +23,8 @@ function App() {
       <Router>
       <header>
         <nav className="navbar">
-            <a href=""><h1>MeDigit.</h1></a>
-            <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
+            <a href=""><h1 type = "header" >MeDigit.</h1></a>
+            <h2>Récuperez vos ordonnances n'importe où et n'importe quand</h2>
             <a href="">
               <div className="nav-links ">
                   <ul>

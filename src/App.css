@@ -9,8 +9,8 @@
 }
 
 /* ---------------------------------------------------------- Titres ----------------------------------------------------*/
-h1{color: #FFFFFF; font-weight: 600; font-size: 3vw;}
-h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
+.navbar h1 {color: #FFFFFF; font-weight: 600; font-size: 3vw;}
+.navbar h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
 
 /* ---------------------------------------------------------- header ----------------------------------------------------*/
 header {

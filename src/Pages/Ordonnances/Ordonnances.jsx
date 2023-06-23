@@ -17,7 +17,7 @@ function Page2() {
           <img src="../../images/barres.png" alt="icone des points"></img></button> <br/>
       </div>
       <br/>
-      {/* <br/> */}
+      <br/>
       <br/>
 
       < Component1/>

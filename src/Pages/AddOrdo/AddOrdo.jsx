@@ -3,9 +3,9 @@
     import './AddOrdo.css'
     import FormOrdo from '../../components/FormOrdo/FormOrdo';
     // import MyDocument from '../../components/PDF/MyDocument';
-    import { Document, Page, Text, View } from '@react-pdf/renderer';
+    // import { Document, Page, Text, View } from '@react-pdf/renderer';
 
-    import ReactPDF from '@react-pdf/renderer'
+    // import ReactPDF from '@react-pdf/renderer'
 
     // ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 
