@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
     res.redirect('/index.html');
 });
 
+
+
 /*
 // pour le userController
 router.post('/register', createUser)

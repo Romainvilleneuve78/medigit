@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'bdd-MEDIGIT'
+  database: 'solution_factory'
 });
 
 // Modèle User
