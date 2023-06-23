@@ -7,7 +7,9 @@ function SignUp_Page() {
       <h1>Sign Up</h1>
       <p>Enregistrez-vous</p>
       <SignUp />
+
     </div>
+
   );
 }
 
