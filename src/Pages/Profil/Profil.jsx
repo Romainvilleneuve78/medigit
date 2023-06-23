@@ -17,8 +17,8 @@ function Page4() {
                             <h2 class="name">DR.NOZMAN</h2>
                             <h3 class="travail">Chirurgien</h3>
                             <h4 class="contact">Clinique de la Garonne</h4>
-                            <p class="info">• Adresse : 7 boulevard des caniveaux, 75014 Paris</p>
-                            <p class="info">• Horaire : Mardi au samedi, 9h/18h</p>
+                            <p class="infoProf">• Adresse : 7 boulevard des caniveaux, 75014 Paris</p>
+                            <p class="infoProf">• Horaire : Mardi au samedi, 9h/18h</p>
                         </div>
                         <div class="rightrouage">
                             <button>< img src="../../images/equipement.png" width={40} ></img></button>
@@ -27,9 +27,9 @@ function Page4() {
                     <div class="contProfil2">
                         <div class="leftbis">
                             <h4 class="contact">Contact</h4>
-                            <p class="info">Phone : +33 1 45 65 78 29</p>
-                            <p class="info">Standard : +33 6 24 12 36 87</p>
-                            <p class="info">Email : Nozmam.doc@docdoc.com</p>
+                            <p class="infoProf">Phone : +33 1 45 65 78 29</p>
+                            <p class="infoProf">Standard : +33 6 24 12 36 87</p>
+                            <p class="infoProf">Email : Nozmam.doc@docdoc.com</p>
                         </div>
                         <div class="rightrouage">
                             <h4 class="contact">Signature électronique :</h4>
