@@ -1,5 +1,6 @@
 // SignIn.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -43,11 +44,11 @@ const SignIn = () => {
                 </div>
                 <div class="center-button"><button type="submit">Sign In</button></div>
                 <div class="pass">
-                    <label>Forgot your Password ?</label>
+                    <Link to="/mdp_oublier" className ="label_plus">Forgot your Password ?</Link>
                 </div>
 
                 <div class="pass">
-                    <label>Not a member?</label>
+                    <Link to="/SignUp_Page">Not a member</Link>
                 </div>
             </form>
         </div>

@@ -6,6 +6,7 @@ import SignIn_Page from './Pages/SignIn_Page'
 import SignUp_Page from './Pages/SignUp_Page'
 import Client_Page from './Pages/Client_Page'
 import Medecin_Page from './Pages/Medecin_Page'
+import Mdp_Oublier from './Pages/mdp_oublier'
 
 
 
@@ -62,6 +63,7 @@ function App() {
         <Route path="/SignIn_Page" element={<SignIn_Page />} />
         <Route path="/client" element={<Client_Page />} />
         <Route path="/medecins" element={<Medecin_Page />} />
+        <Route path="/mdp_oublier" element={<Mdp_Oublier />} />
         
       </Routes>
       </Router>

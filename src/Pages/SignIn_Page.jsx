@@ -1,6 +1,7 @@
 // src/pages/Page2.jsx
 import React from 'react';
 import SignIn from '../components/SignIn';
+import { Link } from 'react-router-dom';
 import "./Sign.css"
 
 function SignIn_Page() {
@@ -10,7 +11,7 @@ function SignIn_Page() {
       <h1 class="title">Sign In</h1>
 
       <SignIn />
-
+      
     </div>
   );
 }

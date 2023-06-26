@@ -104,7 +104,7 @@
     -webkit-text-security: circle;
 }
 
-.login-form .group .label {
+.login-form .group .label  {
     color: #aaa;
     font-size: 12px;
 }
@@ -132,24 +132,24 @@
     transition: all .2s ease-in-out 0s;
 }
 
-.login-form .group label .icon:before {
+.login-form .group label  .icon:before {
     left: 3px;
     width: 5px;
     bottom: 6px;
     transform: scale(0) rotate(0);
 }
 
-.login-form .group label .icon:after {
+.login-form .group label  .icon:after {
     top: 6px;
     right: 0;
     transform: scale(0) rotate(0);
 }
 
-.login-form .group .check:checked+label {
+.login-form .group .check:checked+label  {
     color: #fff;
 }
 
-.login-form .group .check:checked+label .icon {
+.login-form .group .check:checked+label .icon  {
     background: #1161ee;
 }
 
@@ -178,3 +178,4 @@
 .foot-lnk {
     text-align: center;
 }
+/*mettre le css pour la classname label_plus*/
