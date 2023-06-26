@@ -1,12 +1,16 @@
 // src/pages/Page2.jsx
 import React from 'react';
 import SignIn from '../components/SignIn';
+import "./Sign.css"
+
 function SignIn_Page() {
   return (
     <div>
-      <h1>Sign In</h1>
-      <p>Connection</p>
+
+      <h1 class="title">Sign In</h1>
+
       <SignIn />
+
     </div>
   );
 }

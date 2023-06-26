@@ -11,6 +11,7 @@ function SignUp_Page() {
       <Link to="/client">Client</Link>
       <Link to="/medecins">Médecins</Link>
     </div>
+
   );
 }
 
