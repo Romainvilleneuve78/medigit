@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import SignIn_Page from './Pages/SignIn_Page'
 import SignUp_Page from './Pages/SignUp_Page'
+import Client_Page from './Pages/Client_Page'
+import Medecin_Page from './Pages/Medecin_Page'
+
 
 
 import React from 'react';
@@ -14,6 +17,7 @@ import Page2 from './Pages/Ordonnances/Ordonnances';
 import Page3 from './Pages/Rappels/Rappels';
 import Page4 from './Pages/Profil/Profil';
 import AddOrdo from './Pages/AddOrdo/AddOrdo';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -56,6 +60,9 @@ function App() {
         <Route path="/AddOrdo" element={<AddOrdo />} />
         <Route path="/SignUp_Page" element={<SignUp_Page />} />
         <Route path="/SignIn_Page" element={<SignIn_Page />} />
+        <Route path="/client" element={<Client_Page />} />
+        <Route path="/medecins" element={<Medecin_Page />} />
+        
       </Routes>
       </Router>
     </>
