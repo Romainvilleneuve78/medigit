@@ -24,22 +24,10 @@ const SignIn = () => {
         <div class="log">
             <form action="" method="post">
                 <div class="txt_field">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        value={email}
-                    //   onChange={handleEmailChange}
-                    />
+                    <input type="email" id="email" placeholder="Entrez votre email :"></input>
                 </div>
                 <div class="txt_field">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                    // onChange={handlePasswordChange}
-                    />
+                    <input type="password" id="password" placeholder="Entrez votre mot de passe :"></input>
                 </div>
                 <div class="center-button"><button type="submit">Sign In</button></div>
                 <div class="pass">
