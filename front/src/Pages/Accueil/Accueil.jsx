@@ -19,7 +19,7 @@ function Page1() {
           </div>
 
           <div class= 'explication'>
-            <h1>MeDigit en quelques étapes </h1>
+            
             <div class = 'steps'>
               <div class='step'>1</div>
               <div class='description'>Créez votre compte MeDigit.</div>
@@ -41,22 +41,17 @@ function Page1() {
       </div>
       
       <div class='myspace'>
-        <div class='division'>
-          <div class='link'>
-            
-          </div>
-
-          <div class= 'picture'>
-            
-          </div>
+        <div class='links'>
+          <h1>Votre espace Personnel</h1>
+          <nav>
+            <div class='btn'><Link to="/SignIn_Page"><div class='a'>Vous connecter</div></Link></div>
+            <div class='btn'><Link to="/SignUp_Page"><div class='a'>Creer un compte</div></Link></div>
+          </nav>
         </div>
       </div>
       
 
-    <nav>
-      <Link to="/SignIn_Page">Sign In</Link>
-      <Link to="/SignUp_Page">Sign Up</Link>
-    </nav>
+    
     <Routes> {/* Remplacez le composant Route par Routes */}
       <Route path="/SignIn_Page" element={<SignIn_Page />} />
       <Route path="/SignUp_Page" element={<SignUp_Page />} />

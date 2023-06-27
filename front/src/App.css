@@ -9,8 +9,8 @@
 }
 
 /* ---------------------------------------------------------- Titres ----------------------------------------------------*/
-h1{color: #FFFFFF; font-weight: 600; font-size: 3vw;}
-h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
+header h1, footer h1{color: #FFFFFF; font-weight: 600; font-size: 3vw;}
+header h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
 
 /* ---------------------------------------------------------- header ----------------------------------------------------*/
 header {
@@ -68,3 +68,12 @@ header {
   transition: font-weight 1s;
   font-size: 1vw;
 }
+
+footer{
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  background-color: #27448E;
+}
+
+footer .txt{color: white; margin-left: 75%; font-weight: 700; font-size: 1vw;}
