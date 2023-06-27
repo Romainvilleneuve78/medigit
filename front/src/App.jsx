@@ -49,7 +49,7 @@ function App() {
               <li><Link to="/page4">Mon Profil</Link></li>
               <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
             </ul>
-        </div>    
+        </div>  
       </nav>
     
       <Routes> {/* Remplacez le composant Route par Routes */}
@@ -66,6 +66,11 @@ function App() {
         
       </Routes>
       </Router>
+
+      <footer>
+          <h1>MeDigit.</h1>
+          <div class='txt'>Master Camp 2023</div>
+      </footer>
     </>
   )
 }

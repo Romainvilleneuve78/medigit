@@ -1,91 +1,78 @@
- /* *{
-    width: 100%;
- } */
- 
- .titleOrdo {
-    color: rgb(56, 196, 252);
-    font: size 400%;
-    text-align: center;
-  }
+.ordonnances{margin: 5%;}
+.ordonnances .title{display: flex; align-items: center; margin-bottom: 8%;}
 
- .titleOrdo2 {
-    font-size: 300%;
-    margin-left: 35vw;
-  }
+.ordonnances h1 {
+  color: #2ACEF2;
+  font-size: 3vw;
+  margin-left: 5%;
+  margin-right: 35%;
+} 
 
-  .trier {
-    width: 5vw; /* Largeur du bouton */
-    height: 3vw; /* Hauteur du bouton */
-    margin-left: 85%;
-    border-radius: 100%;
-    background-color: rgb(56, 196, 252);
-  }
-
-  .filtrer {
-    width: 5vw; /* Largeur du bouton */
-    height: 3vw; /* Hauteur du bouton */
-    border-radius: 100%;    
-    background-color: rgb(56, 196, 252);
-    
-  }
-
-  .containerOrdo {
-    display: flex;
-    align-items: center;
-  }
-  
- 
-
-  
-  .coeur {
-    width: 4vw; /* Largeur du bouton */
-    height: 3v; /* Hauteur du bouton */
-    background-color: rgb(255, 255, 255);
-    border-radius: 25%;
-    margin-right: 3vw;
-  }
-
-  .coeur img {
-    width:2vw;
-    height: 2vw;
-    
-    
-  }
-
-  .my-paragraph1 {
-    text-indent: 35%;
-  }
-
-  .my-paragraph2 {
-    text-indent: 35%;
-  }
-
-
-  .points img{
-    width:2vw;
-    height: 2vw;
-  }
-
-  .points {
-    width:4vw ; /* Largeur du bouton */
-    height:3vw ; /* Hauteur du bouton */
-    background-color: rgb(255, 255, 255);
-    border-radius: 25%;
-    float:right;
-    margin-right: 3vw;
-  }
-
-.pdp img {
-    width:14vw;
-    height: 14vw;
+.ordonnances button{display: flex; width: 7vw; height: 2vw; background-color:#2ACEF2; border-radius: 20px; color : white; font-size: 1vw}
+.ordonnances .trier {margin-right: 1%;}
+.ordonnances .filtrer, .ordonnances .trier{display : flex; align-items: center;} 
+.ordonnances .trier img, .ordonnances .filtrer img {
+  width:1vw;
+  height:1vw;
+  margin-left:0.7vw ;
 }
 
-.pdp {
-    width: 16vw; /* Largeur du bouton */
-    height: 16vw; /* Hauteur du bouton */
-    background-color: rgb(255, 255, 255);
+
+.ordonnances .container_ordo {
+  display: flex;
+  align-items: center; /* Aligner les éléments verticalement au centre */
+  height: max-content;
+}
+
+.Name_ordo {width: 80%;}
+.Name_ordo  h2{font-size: 2vw; color : black;}
+.ordonnances .my-paragraph1 {font-size: 1vw;}
+.ordonnances .my-paragraph2 {font-size: 1vw; margin-top: 6%;}
+.ordonnances .pdp_ordo img {width:7vw; height: 7vw;}
+
+.ordonnances .pdp_ordo {
+    width: 14%;
+    height: 10%;
+    padding: 2%;
+    background-color: #2ACEF2;
     border-radius: 25%;
-    float:left;
+    margin-right: 4vw;
     margin-left: 5vw;
-    margin-top: 0%;
+    margin-bottom: 4vw;
+    position: relative;
+    bottom: -1vw;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+.ordonnances .pdp_ordo .title_ordo{
+  margin-top: 1vw;
+  color : white;
+  font-size: 1vw;
+}
+
+.ordonnances .info_ordo {
+  display: flex;
+  margin-left: 5%;
+  padding-bottom: 2vw;
+  border-bottom: solid black 1px  ;
+  width: 60%;
+}
+
+
+.ordonnances .option_ordo {width: 20%; display :flex;}
+.ordonnances .container_ordo .option_ordo .coeur, .ordonnances .container_ordo .option_ordo .points {
+  width: 4vw; /* Largeur du bouton */
+  height: 3vw; /* Hauteur du bouton */
+  background-color: rgb(255, 255, 255);
+  border-radius: 25%;
+  position: relative;
+}
+.ordonnances .container_ordo .option_ordo .coeur img , .ordonnances .container_ordo .option_ordo .points img{
+  width:2vw;
+  height: 2vw; 
+}
+
