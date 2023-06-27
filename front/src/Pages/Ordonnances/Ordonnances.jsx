@@ -6,7 +6,7 @@ function Page2() {
   return (
     <div class='ordonnances'>
       <div class='title'>
-        <h1>MY PRESCRIPTIONS</h1>
+        <h1>MES PRESCRIPTIONS</h1>
         <button class = "trier">Trier<img src="../../images/barres.png" alt="icone des points"></img></button>
         <button class = "filtrer">Filtrer<img src="../../images/barres.png" alt="icone des points"></img></button> 
       </div>
