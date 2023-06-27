@@ -37,29 +37,29 @@ function Page1() {
         </div>
       </div>
       <div className='decription'>
-      <h1 >Découvrer comment récupérer votre ordonnace </h1>
-      <ul>
-        <li> Élément 1</li>
+        <h1 >Découvrer comment récupérer votre ordonnace </h1>
+        <ul>
+          <li> Élément 1</li>
 
-        <li>Élément 2</li>
-        <li>Élément 3</li>
-        <li>Élément 3</li>
-      </ul>
+          <li>Élément 2</li>
+          <li>Élément 3</li>
+          <li>Élément 3</li>
+        </ul>
       </div>
-<nav>
- 
+      <nav>
 
 
-  <Link to="/SignIn_Page" className="button-signup">Sign In</Link>
-  <Link to="/SignUp_Page" className="button-signup">Sign Up</Link>
-</nav>
-<Routes> {/* Remplacez le composant Route par Routes */}
-  <Route path="/SignIn_Page" element={<SignIn_Page />} />
-  <Route path="/SignUp_Page" element={<SignUp_Page />} />
-  <Route path="/Client_Page" element={<Client_Page/>} />
-  
-  
-</Routes>
+
+        <Link to="/SignIn_Page" className="button-signup">Sign In</Link>
+        <Link to="/SignUp_Page" className="button-signup">Sign Up</Link>
+      </nav>
+      <Routes> {/* Remplacez le composant Route par Routes */}
+        <Route path="/SignIn_Page" element={<SignIn_Page />} />
+        <Route path="/SignUp_Page" element={<SignUp_Page />} />
+        <Route path="/Client_Page" element={<Client_Page />} />
+
+
+      </Routes>
     </>
   );
 }
