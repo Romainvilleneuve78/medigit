@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import SignUp_Page from '../SignUp_Page';
 
 
-function Page1() {
+function Home() {
 
   return (
     <>
@@ -49,15 +49,8 @@ function Page1() {
           </nav>
         </div>
       </div>
-      
-
-    
-    <Routes> {/* Remplacez le composant Route par Routes */}
-      <Route path="/SignIn_Page" element={<SignIn_Page />} />
-      <Route path="/SignUp_Page" element={<SignUp_Page />} />
-    </Routes>
     </>
   );
 }
 
-export default Page1;
+export default Home;

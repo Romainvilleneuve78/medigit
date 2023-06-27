@@ -13,7 +13,7 @@ function Page2() {
 
       
 
-      < Component1/>
+      <Component1/>
       <Component1/>
       <Component1/>
       <Component1/>

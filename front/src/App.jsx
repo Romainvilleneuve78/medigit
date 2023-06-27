@@ -9,11 +9,13 @@ import SignUp_Page from './Pages/SignUp_Page'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
-import Page1 from './Pages/Accueil/Accueil';
+import Home from './Pages/Accueil/Accueil';
 import Page2 from './Pages/Ordonnances/Ordonnances';
 import Page3 from './Pages/Rappels/Rappels';
-import Page4 from './Pages/Profil/Profil';
+import Profil from './Pages/Profil/Profil';
 import AddOrdo from './Pages/AddOrdo/AddOrdo';
+import Profil_pro from './Pages/Profil/Profil_pro';
+import Ordopdf from './Pages/Ordonnances/Ordopdf';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,23 +41,25 @@ function App() {
       <nav className="menu">
         <div className="links ">
             <ul>
-              <li><Link to="/page1">Home</Link></li>
+              <li><Link to="/Home">Home</Link></li>
               <li><Link to="/page2">Mes Ordonnances</Link></li>
               <li><Link to="/page3">Mes Rappels</Link></li>
-              <li><Link to="/page4">Mon Profil</Link></li>
+              <li><Link to="/Profil">Mon Profil</Link></li>
               <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
             </ul>
         </div>  
       </nav>
     
       <Routes> {/* Remplacez le composant Route par Routes */}
-        <Route path="/page1" element={<Page1 />} /> {/* Utilisez l'attribut element pour définir le composant */}
+        <Route path="/Home" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
-        <Route path="/page4" element={<Page4 />} />
+        <Route path="/Profil" element={<Profil />} />
         <Route path="/AddOrdo" element={<AddOrdo />} />
         <Route path="/SignUp_Page" element={<SignUp_Page />} />
         <Route path="/SignIn_Page" element={<SignIn_Page />} />
+        <Route path="/Profil_pro" element={<Profil_pro />} />
+        <Route path="/Ordopdf" element={<Ordopdf />} />
       </Routes>
       </Router>
 
