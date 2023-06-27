@@ -1,0 +1,73 @@
+/* ---------------------------------------------------------- help section ----------------------------------------------------*/
+.help{margin: 5%;}
+.help .division{margin-top: 4%; display: flex; background-color: #F5F5F5;}
+
+.help .picture{margin-left:3%; width: 40%;}
+.help .picture img{width: 100%}
+
+.help .explication{width: 60%; margin-left: 5%; padding-top: 4%; background-color: #2A86F2; border-radius: 10px;}
+
+.help .steps{
+    display: flex;
+    width: 100%;
+    padding: 4%;
+    margin-left: 5%;
+}
+
+.help .step {
+    background-color: #2ACEF2;
+    text-align: center;
+    height: 5vh;
+    width: 3vw;
+    border-radius: 50%;
+  
+    font-size: 1.5vw;
+    font-weight: 700;
+    color: white;
+    margin-right: 5%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+
+.help .description{
+    font-size: 1.3vw;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.myspace{height: 80vh; padding: 3%; background-image: url("../../../images/accueil.png"); background-repeat: no-repeat; background-size: cover; }
+.myspace .links{width: 40%; margin: 5%; margin-left:40%; padding: 5%; padding-top: 3%; background-color: #2ACEF2; border-radius: 10px;}
+.myspace .link{width: 10vw; background-color: white; padding: 2%; margin-top: 10%;}
+.myspace h1{margin-left: 10%;}
+
+.btn{
+    margin: 8%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.btn a{
+    width: 20vw;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding:12px 0;
+    color:#4a4949;
+    border-radius: 5px;
+    position: relative;
+    z-index:1;
+    transition: color 0.3s;
+
+}
+
+.btn a:hover{color:#8bcff1;}
+
+
+
+
