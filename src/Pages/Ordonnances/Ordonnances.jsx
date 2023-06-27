@@ -1,7 +1,9 @@
 // src/pages/Page2.jsx
 import './Ordonnances.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
+/*
 function Page2() {
   return (
     <div>
@@ -34,5 +36,34 @@ function Page2() {
 
   );
 }
+
+export default Page2;*/
+
+
+const Page2 = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/prescription/list')
+      .then(response => {
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+  return (
+    <table>
+      {data.map(prescription => (
+        <tr key={prescription.idPrescription}>
+          <td><h2>{prescription.Name}</h2>
+          <p>Jusqu'au: {prescription.Date_validity}</p>
+          {/* Afficher d'autres informations utilisateur*/}</td>
+        </tr>
+      ))}
+    </table>
+  );
+};
 
 export default Page2;

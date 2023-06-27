@@ -47,5 +47,23 @@ class Prescription {
     });
 }
 
+function getPrescriptionsByUser(idUser) {
+  const query = `
+    SELECT * FROM user
+    JOIN client ON user.idUser = client.user_id
+    JOIN prescription ON client.idClient = prescription.Client
+    WHERE user_id = ?`;
+  const values = [idUser];
 
-module.exports = {list_prescription};
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
+module.exports = { list_prescription, getPrescriptionsByUser };

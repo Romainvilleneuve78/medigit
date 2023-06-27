@@ -62,28 +62,34 @@ import axios from 'axios';
 export default Page4;*/
 
 const Page4 = () => {
-  const [data, setData] = useState([]);
+  const [prescriptions, setPrescriptions] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/prescription/list')
-      .then(response => {
-        setData(response.data);
+    // Récupérer l'ID de l'utilisateur à partir du sessionStorage
+    const sessionData = JSON.parse(sessionStorage.getItem('user'));
+    const idUser = sessionData.idUser;
+
+    // Effectuer une requête GET à votre API
+    fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+      .then(response => response.json())
+      .then(data => {
+        // Mettre à jour l'état avec les résultats des prescriptions
+        setPrescriptions(data);
       })
       .catch(error => {
-        console.error(error);
+        console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
       });
   }, []);
 
   return (
-    <table>
-      {data.map(prescription => (
-        <tr key={prescription.idPrescription}>
-          <td><h2>{prescription.Name}</h2>
-          <p>Jusqu'au: {prescription.Date_validity}</p>
-          {/* Afficher d'autres informations utilisateur */}</td>
-        </tr>
-      ))}
-    </table>
+    <div>
+      <h2>Liste des prescriptions</h2>
+      <ul>
+        {prescriptions.map(prescription => (
+          <li key={prescription.id}>{prescription.Name}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
