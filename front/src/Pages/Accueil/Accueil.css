@@ -1,6 +1,15 @@
+.accueil{
+    margin: 3%;
+    margin-left: 5%;
+    margin-bottom: 0%;
+    font-size: 3vw;
+    font-weight: 750;
+    color: #2A86F2;
+}
+
 /* ---------------------------------------------------------- help section ----------------------------------------------------*/
-.help{margin: 5%;}
-.help .division{margin-top: 4%; display: flex; background-color: #F5F5F5;}
+.help{margin: 5%; margin-top: 1%;}
+.help .division{ display: flex; background-color: #F5F5F5;}
 
 .help .picture{margin-left:3%; width: 40%;}
 .help .picture img{width: 100%}

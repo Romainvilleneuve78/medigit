@@ -12,6 +12,7 @@ function Home() {
 
   return (
     <>
+      <h1 class='accueil'>BIENVENUE SUR MEDIGIT...</h1>
       <div class='help'>
         <div class='division'>
           <div class='picture'>
