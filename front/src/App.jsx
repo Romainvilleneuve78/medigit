@@ -26,57 +26,48 @@ function App() {
       <Router>
         <header>
           <nav className="navbar">
-            <header>
-              <nav className="navbar">
-                <a href=""><h1>MeDigit.</h1></a>
-                <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
-                <a href="">
-                  <div className="nav-links ">
-                    <ul>
-                      <li>User123</li>
-                      <li><img className="user" src="images/user.png" alt="Logo"></img></li>
-                    </ul>
-                    <div className="nav-links ">
-                      <ul>
-                        <li>User123</li>
-                        <li><img className="user" src="images/user.png" alt="Logo"></img></li>
-                      </ul>
-                    </div>
-                </a>
-              </nav>
-            </header>
+            <a href=""><h1>MeDigit.</h1></a>
+            <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
+            <a href="">
+              <div className="nav-links ">
+                <ul>
+                  <li>User123</li>
+                  <li><img className="user" src="images/user.png" alt="Logo"></img></li>
+                </ul>
+              </div>
+            </a>
+          </nav>
+        </header>
 
-            <nav className="menu">
-              <div className="links ">
-                <nav className="menu">
-                  <div className="links ">
-                    <ul>
-                      <li><Link to="/page1">Home</Link></li>
-                      <li><Link to="/page2">Mes Ordonnances</Link></li>
-                      <li><Link to="/page3">Mes Rappels</Link></li>
-                      <li><Link to="/page4">Mon Profil</Link></li>
-                      <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
-                    </ul>
-                  </div>
-                </nav>
+        <nav className="menu">
+          <div className="links ">
+            <ul>
+              <li><Link to="/page1">Home</Link></li>
+              <li><Link to="/page2">Mes Ordonnances</Link></li>
+              <li><Link to="/page3">Mes Rappels</Link></li>
+              <li><Link to="/page4">Mon Profil</Link></li>
+              <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
+            </ul>
+          </div>
+        </nav>
 
-                <Routes> {/* Remplacez le composant Route par Routes */}
-                  <Route path="/page1" element={<Page1 />} /> {/* Utilisez l'attribut element pour définir le composant */}
-                  <Route path="/page2" element={<Page2 />} />
-                  <Route path="/page3" element={<Page3 />} />
-                  <Route path="/page4" element={<Page4 />} />
-                  <Route path="/AddOrdo" element={<AddOrdo />} />
-                  <Route path="/SignUp_Page" element={<SignUp_Page />} />
-                  <Route path="/SignIn_Page" element={<SignIn_Page />} />
-                </Routes>
-              </Router>
+        <Routes> {/* Remplacez le composant Route par Routes */}
+          <Route path="/page1" element={<Page1 />} /> {/* Utilisez l'attribut element pour définir le composant */}
+          <Route path="/page2" element={<Page2 />} />
+          <Route path="/page3" element={<Page3 />} />
+          <Route path="/page4" element={<Page4 />} />
+          <Route path="/AddOrdo" element={<AddOrdo />} />
+          <Route path="/SignUp_Page" element={<SignUp_Page />} />
+          <Route path="/SignIn_Page" element={<SignIn_Page />} />
+        </Routes>
+      </Router>
 
-              <footer>
-                <h1>MeDigit.</h1>
-                <div class='txt'>Master Camp 2023</div>
-              </footer>
-            </>
-            )
+      <footer>
+        <h1>MeDigit.</h1>
+        <div class='txt'>Master Camp 2023</div>
+      </footer>
+    </>
+  )
 }
 
-            export default App
+export default App
