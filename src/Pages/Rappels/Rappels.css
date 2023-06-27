@@ -1,0 +1,10 @@
+.titleRappels {
+    color: rgb(56, 196, 252);
+    font: size 400%;
+    text-align: center;
+  }
+
+table{
+    margin:0 auto;
+    border-collapse: collapse;
+}

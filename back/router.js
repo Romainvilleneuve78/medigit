@@ -1,30 +1,83 @@
-import { Router } from 'express'
-const router = Router()
+const express = require("express");
+const router = express.Router();
+var user_model = require('./UserModel');
+var prescription_model = require('./PrescriptionModel');
 
-//récupération des controllers
-import { createUser, loginUser, logoutUser, getUser } from './controllers/UserController.js'
 
-import { createCredit, answerCredit } from './controllers/transController.js'
+module.exports = router;
 
-import loginBank from './controllers/bankController.js'
-
-//redirect
-router.get('/', (req, res) => {
-    res.redirect('/index.html');
+router.get("/", (req, res) => {
+    res.json("API MAX V 0.1");
 });
 
-/*
-// pour le userController
-router.post('/register', createUser)
-router.post('/login_client', loginUser)
-router.post('/logout', logoutUser)
-router.post('/getprofile', getUser) // à implémenter pour faire une page profil, mais voir pour utiliser Vue js
 
-// pour le bankController
-router.post('/login_banque', loginBank)
 
-// pour le transController
-router.post('/credit', createCredit)
-router.post('/answer_credit', answerCredit)
-*/
-export default router
+router.get("/user/list", (req, res) => {
+    user_model.list_utilisateurs().then(result => {
+        console.log("Result received:", result);
+        res.send(result);
+    }).catch(err => {
+        res.send("{error}");
+    });
+});
+
+router.post("/login", (req, res) => {
+    const { email, password } = req.body;
+  
+    user_model.login(email, password)
+      .then(user => {
+        res.json(user); // Renvoyer l'utilisateur connecté en tant que réponse JSON
+      })
+      .catch(error => {
+        res.status(401).json({ error: error.message }); // Renvoyer une erreur 401 si l'utilisateur n'est pas trouvé ou les identifiants sont incorrects
+      });
+  });
+
+  router.post('/users/add', (req, res) => {
+    const userData = req.body; // Les données de l'utilisateur sont envoyées dans le corps de la requête
+  
+    // Créer une instance de User avec les données de l'utilisateur
+    const user = new user_model.User(
+      userData.FirstName,
+      userData.LastName,
+      userData.Sex,
+      userData.Birthdate,
+      userData.Phone,
+      userData.Fix,
+      userData.Email,
+      userData.Kind,
+      userData.Password
+    );
+  
+    // Appelez la méthode addUser avec l'instance de User
+    user_model.addUser(user)
+      .then(insertId => {
+        res.status(201).json({ message: 'Utilisateur créé avec succès', insertId });
+      })
+      .catch(error => {
+        res.status(500).json({ error: 'Erreur lors de la création de l\'utilisateur', details: error.message });
+      });
+  });
+
+router.get("/prescription/list", (req, res) => {
+    prescription_model.list_prescription().then(result => {
+        console.log("Result received:", result);
+        res.send(result);
+    }).catch(err => {
+        res.send("{error}");
+    });
+});
+
+
+
+
+
+
+
+router.use((req, res) => {
+    res.status(404);
+    res.json({
+        error: "API introuvable !"
+    });
+});
+
