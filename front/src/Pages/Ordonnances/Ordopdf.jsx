@@ -1,6 +1,7 @@
 // src/pages/Page1.jsx
 import React from 'react';
 import './Ordopdf.css';
+import DownloadPDF from '../../components/PDF/MyDocument';
 
 
 function Ordopdf() {
@@ -32,6 +33,7 @@ function Ordopdf() {
 
             <div class = "bouton_ordo" >
                     <button class = "bouton_pdf">Télecharger l'ordonnance</button>
+                    <DownloadPDF />
                     <button class = "bouton_qr">Afficher le QR Code</button>
             </div>
         </>
