@@ -6,6 +6,7 @@ import SignIn_Page from './Pages/SignIn_Page'
 import SignUp_Page from './Pages/SignUp_Page'
 
 
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
@@ -30,7 +31,7 @@ function App() {
             <a href="">
               <div className="nav-links ">
                   <ul>
-                      <li>User123</li>
+                      <li>Se connecter</li>
                       <li><img className="user" src="images/user.png" alt="Logo"></img></li>
                   </ul>
               </div>
@@ -38,17 +39,7 @@ function App() {
         </nav>
       </header>
 
-      <nav className="menu">
-        <div className="links ">
-            <ul>
-              <li><Link to="/Home">Home</Link></li>
-              <li><Link to="/page2">Mes Ordonnances</Link></li>
-              <li><Link to="/page3">Mes Rappels</Link></li>
-              <li><Link to="/Profil">Mon Profil</Link></li>
-              <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
-            </ul>
-        </div>  
-      </nav>
+      
     
       <Routes> {/* Remplacez le composant Route par Routes */}
         <Route path="/Home" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}

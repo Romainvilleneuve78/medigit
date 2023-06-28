@@ -45,7 +45,7 @@
         return (
             <>
                 <div class="add_ordo">
-                    <h1>Ajouter une ordonnance</h1>
+                    
 
                     <div class='formulaire'>
 
