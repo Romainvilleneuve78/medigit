@@ -21,6 +21,9 @@ const Quantity = '500g'
 const Description = '2 comprimés par jour'
 
 const styles = StyleSheet.create({
+  App: {
+  },
+  
   page: {
     padding: '1.5cm',
   },
@@ -110,7 +113,6 @@ const styles = StyleSheet.create({
     // backgroundColor: 'lightyellow',
     textAlign: 'right',
   },
-
 
   container: {
     height: '100%',
