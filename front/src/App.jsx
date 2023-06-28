@@ -26,9 +26,9 @@ function App() {
       <Router>
       <header>
         <nav className="navbar">
-            <a href=""><h1>MeDigit.</h1></a>
+            <a href="/Home"><h1>MeDigit.</h1></a>
             <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
-            <a href="">
+            <a href="/SignIn_Page">
               <div className="nav-links ">
                   <ul>
                       <li>Se connecter</li>
