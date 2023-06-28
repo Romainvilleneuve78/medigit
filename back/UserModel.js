@@ -1,3 +1,5 @@
+
+const mysql = require('mysql2');
 const express = require('express');
 const mysql = require('mysql');
 
@@ -6,7 +8,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: 'root',
-    database: 'solution_factory'
+    database: 'solution_factory',
 });
 
 // Modèle User
