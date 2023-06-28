@@ -9,8 +9,8 @@
 }
 
 /* ---------------------------------------------------------- Titres ----------------------------------------------------*/
-h1{color: #FFFFFF; font-weight: 600; font-size: 3vw;}
-h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
+header h1, footer h1{color: #FFFFFF; font-weight: 600; font-size: 2.5vw;}
+header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center;}
 
 /* ---------------------------------------------------------- header ----------------------------------------------------*/
 header {
@@ -31,7 +31,7 @@ header {
   background: #2ACEF2;
 }
 
-.navbar a{width: 8%;}
+.navbar a{width: 10%;}
 .navbar .user {width: 2.5vw;}
 .navbar a:hover {font-weight: 600;}
 .navbar .nav-links ul{display: flex; align-items: center;}
@@ -68,3 +68,49 @@ header {
   transition: font-weight 1s;
   font-size: 1vw;
 }
+
+.menu a:hover {
+  color: #535bf2;
+}
+
+/* ---------------------------------------------------------- menu Home ----------------------------------------------------*/
+.menu_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 4vw;
+  margin-left: 2%;
+  border-bottom: 1px solid #152D4B;
+}
+
+.menu_home .links ul{display: flex; align-items: center;}
+
+.menu_home .links ul li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  width: 15vw;
+  height: 4vw;
+  color: #152D4B;
+
+  font-weight: 700;
+  transition: font-weight 1s;
+  font-size: 1vw;
+}
+
+.menu_home a:hover {
+  color: #4a7ee7;
+}
+
+/* ---------------------------------------------------------- footer ----------------------------------------------------*/
+
+footer{
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  background-color: #27448E;
+}
+
+footer .txt{color: white; margin-left: 75%; font-weight: 700; font-size: 1vw;}
