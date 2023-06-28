@@ -15,11 +15,39 @@ function Ordopdf() {
 
                 <div class='info_ordo'>
                         <div class="Name_ordo">
-                            <h2>Gynecology Consultation</h2>
-                            <p className="my-paragraph1">Valid until 10.02.24</p>
-                            <p className="my-paragraph2">Ici seront noté les informations concernant le médicament que le patient doit prendre </p>
-                            <p className="my-paragraph3"> Ici seront noté les fréquence à laquelle le patient devra prendre son médicament et de quelle façon il devra le prendre</p> 
+                            <h2>Consultation médecin généraliste</h2>
+
+                            <div class = "id_ordo">
+                                <p className ="my-paragraph4">Inflammation du genou gauche -</p>
+                                <p className ="my-paragraph5">123983819</p>
+                            </div>
+
+                            <p className="my-paragraph1">Paris, le 2021-09-01</p>
+                            <p className="my-paragraph2">Valide jusqu'au 2021-09-30</p>
+                            <h3>M. Albert Smith</h3>
+                            <p className="my-paragraph3"> 1234567890123</p> 
+
+                          
+                            <div class = "medoc">
+                                <p className = "my-paragraph6">Doliprane -</p>
+                                <p className = "my-paragraph7">500g</p>
+                            </div>
+
+                            <div class = "frequence_prise">
+                                <p className = "my-paragraph8">2 comprimés par jour</p>
+                            </div>
+
+                            <div class = "medoc">
+                                <p className = "my-paragraph6">Anti-inflammatoire -</p>
+                                <p className = "my-paragraph7">300g</p>
+                            </div>
+
+                            <div class = "frequence_prise">
+                                <p className = "my-paragraph8">3 doses par jour</p>
+                            </div>
+                        
                         </div>
+                    
 
                         
 
@@ -29,12 +57,17 @@ function Ordopdf() {
                         </div>
                 </div>
 
-            </div>
+            </div>  
 
             <div class = "bouton_ordo" >
-                    <button class = "bouton_pdf">Télecharger l'ordonnance</button>
-                    <DownloadPDF />
-                    <button class = "bouton_qr">Afficher le QR Code</button>
+                  
+                
+            <button class="downloadpdf">
+                <  DownloadPDF />
+            </button>
+                
+                   
+                <button class = "bouton_qr">Afficher le QR Code</button>
             </div>
         </>
     );

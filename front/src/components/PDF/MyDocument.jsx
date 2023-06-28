@@ -204,8 +204,9 @@ function DownloadPDF() {
       <PDFDownloadLink
         document={<Ordonnance />}
         fileName="somename.pdf"
+        className="download-link"
         >
-        {({loading}) => (loading ? 'Loading document...' : 'Download now!')}
+        {({loading}) => (loading ? 'Loading document...' : 'Télecharger en PDF')}
         </PDFDownloadLink>
     </div>
   )
