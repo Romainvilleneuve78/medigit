@@ -17,6 +17,7 @@ import Profil from './Pages/Profil/Profil';
 import AddOrdo from './Pages/AddOrdo/AddOrdo';
 import Profil_pro from './Pages/Profil/Profil_pro';
 import Ordopdf from './Pages/Ordonnances/Ordopdf';
+import Modifier_Profil from './Pages/Profil/Modifier_Profil'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -51,6 +52,7 @@ function App() {
         <Route path="/SignIn_Page" element={<SignIn_Page />} />
         <Route path="/Profil_pro" element={<Profil_pro />} />
         <Route path="/Ordopdf" element={<Ordopdf />} />
+        <Route path="/Modifier_Profil" element={<Modifier_Profil />} />
       </Routes>
       </Router>
 

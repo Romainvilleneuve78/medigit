@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'password',
-    database: 'bdd-MEDIGIT'
+    password: 'root',
+    database: 'solution_factory'
 });
 
 // Modèle User
@@ -158,7 +158,7 @@ const user = new User("John", "Doe", "M", "1990-01-01", "123456789", "987654321"
 
 connection.connect((err) => {
   if (err) {
-    console.error('Erreur de connexion à la base de données:', err);
+    console.error('Erreur de connexion à la base de données :', err);
     return;
   }
   console.log('Connexion à la base de données réussie !');

@@ -1,10 +1,7 @@
-// src/pages/Page1.jsx
-import React from 'react';
-import './Profil.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
-
-function Profil() {
+const Profil_med = () => {
     return (
         <>
             <div class='profil'>
@@ -49,6 +46,7 @@ function Profil() {
             </div>
         </>
     );
-}
+  };
+export default Profil_med; 
 
-export default Profil;
+
