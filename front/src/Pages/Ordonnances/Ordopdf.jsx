@@ -60,9 +60,7 @@ function Ordopdf() {
             </div>  
 
             <div class = "bouton_ordo" >
-                    <button class = "bouton_pdf">Télecharger l'ordonnance</button>
-                    <DownloadPDF className='bouton_pdf'/>
-                    <button class = "bouton_qr">Afficher le QR Code</button>
+                  
                   
                 
             <button class="downloadpdf">
