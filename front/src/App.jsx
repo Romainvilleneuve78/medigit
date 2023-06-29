@@ -11,8 +11,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Page1 from './Pages/Accueil/Accueil';
 import Page2 from './Pages/Ordonnances/Ordonnances';
-import Page3 from './Pages/Rappels/Rappels';
-import Page4 from './Pages/Profil/Profil';
+import Page4 from './Pages/Rappels/Rappels';
+import Page3 from './Pages/Profil/Profil';
 import AddOrdo from './Pages/AddOrdo/AddOrdo';
 
 function App() {
@@ -41,8 +41,8 @@ function App() {
             <ul>
               <li><Link to="/page1">Home</Link></li>
               <li><Link to="/page2">Mes Ordonnances</Link></li>
-              <li><Link to="/page3">Mes Rappels</Link></li>
-              <li><Link to="/page4">Mon Profil</Link></li>
+              <li><Link to="/page3">Mon Profil</Link></li>
+              <li><Link to="/page4">Mes Rappels</Link></li>
               <li><Link to="/AddOrdo">Faire Ordonnance</Link></li>
             </ul>
         </div>    
