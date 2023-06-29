@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import SignIn_Page from './Pages/SignIn_Page'
 import SignUp_Page from './Pages/SignUp_Page'
+import updateClient from './Pages/updateClient'
+import updateProfessional from './Pages/updateProfessional'
 
 
 import React from 'react';
@@ -56,6 +58,8 @@ function App() {
         <Route path="/AddOrdo" element={<AddOrdo />} />
         <Route path="/SignUp_Page" element={<SignUp_Page />} />
         <Route path="/SignIn_Page" element={<SignIn_Page />} />
+        <Route path="/updateClient" element={<updateClient />} />
+        <Route path="/updateProfessional" element={<updateProfessional />} />
       </Routes>
       </Router>
     </>
