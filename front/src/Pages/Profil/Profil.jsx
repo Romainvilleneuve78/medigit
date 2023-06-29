@@ -1,13 +1,27 @@
 // src/pages/Page1.jsx
 import React from 'react';
 import './Profil.css';
+import MenuPage from '../../components/menu';
 
 
 function Profil() {
     return (
         <>
+            <div class='header_profil_extend'>
+                <div class='fond'>
+                    <div class='txt'>
+                        <MenuPage/>
+                        <div class='title'>
+                            <h1>Mon espace</h1>
+                            <h2>(particulier)</h2>
+                        </div>
+                        <button>Modifier mon profil</button>
+                    </div>
+                    <img src='../../images/mon-espace.png'></img>
+                </div>
+            </div>
+
             <div class='profil'>
-                <h1>Mon Profil</h1>
                 <div class="Profil-pro">
                     <div class="picture">
                         < img src="../../images/pdp.png" ></img>
@@ -41,9 +55,6 @@ function Profil() {
                         </div>
 
                     </div>
-
-                    <button>Modifier mon profil</button>
-
                 </div>
             </div>
         </>

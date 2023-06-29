@@ -1,13 +1,26 @@
 // src/pages/Page1.jsx
 import React from 'react';
 import './Profil_pro.css';
+import MenuPage from '../../components/menu';
 
 
 function Profil_pro() {
     return (
         <>
+            <div class='header_profilpro_extend'>
+                <div class='fond'>
+                    <div class='txt'>
+                        <MenuPage/>
+                        <div class='title'>
+                            <h1>Contact professionel</h1>
+                        </div>
+                        <button><a href='https://www.doctolib.fr'>Prendre un rendez vous</a></button>
+                    </div>
+                    <img src='../../images/mon-espace.png'></img>
+                </div>
+            </div>
+
             <div class='profil'>
-                <h1>Contact professionel</h1>
                 <div class="Profil-pro">
                     <div class="picture">
                         < img src="../../images/pdp.png" ></img>
@@ -36,8 +49,6 @@ function Profil_pro() {
                         </div>
 
                     </div>
-
-                    <button><a href='https://www.doctolib.fr'>Prendre un rendez vous</a></button>
 
                 </div>
             </div>
