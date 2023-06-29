@@ -6,7 +6,7 @@ function createUser(req, res) {
     newUser = User(nom, prenom, email, password, birthdate, city)
     newUser.createUser((error) => {
     if (error) {
-      res.status(500).json({ error: 'Erreur lors de la création de l'utilisateur.' });
+      res.status(500).json({ error: 'Erreur lors de la création de lutilisateur.' });
     } else {
       res.status(200).json({ message: 'Utilisateur créé avec succès.', user: newUser });
     }
