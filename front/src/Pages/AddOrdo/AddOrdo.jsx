@@ -43,24 +43,30 @@
 
     
         return (
-        <div className="container">
-            <h1 className="Title">Ajouter une ordonnance</h1>
-            
-            <div className="contform">
-                <FormOrdo />
-                {formulaires.map((formulaire) => formulaire)}
-            </div>
+            <>
+                <div class="add_ordo">
+                    
 
-            <div className="contbutt">
-                <button onClick={ajouterFormulaire} class="butadd" style={{width: '250px'}}>
-                    Ajouter un médicament
-                </button>
+                    <div class='formulaire'>
 
-                <button type="submit" onClick={genererPDF} class="butenv" style={{width: '200px'}}>Créer l'ordonnance</button>
-            </div>
-        </div>
+                        <form class='id_secu' action="/action_page.php">
+                            <label for="id_secu">Patient Numero securité sociale :</label>
+                            <input type="text" id="id_secu" name="id_secu"></input>
+                            <button type="submit">Valider</button>
+                        </form>
+                        
+                        <div className="prescription">
+                            <FormOrdo/>
+                            {formulaires.map((formulaire) => formulaire)}
+                        </div>
 
-    );
+                        <button onClick={ajouterFormulaire}>Ajouter un médicament</button>
+                        <button type="submit" onClick={genererPDF}>Créer l'ordonnance</button>
+
+                    </div>
+                </div>
+            </>
+        );
     }
 
     export default AddOrdo;

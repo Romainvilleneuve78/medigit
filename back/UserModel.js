@@ -51,17 +51,13 @@ function list_utilisateurs() {
 }
 
 function addUser(user) {
-  return new Promise((resolve, reject) => {
-    user.createUser()
-      .then(insertId => {
-        console.log('Utilisateur créé avec ID :', insertId);
-        resolve(insertId); // Résoudre la promesse avec l'ID de l'utilisateur
-      })
-      .catch(error => {
-        console.error('Erreur lors de la création de l\'utilisateur :', error);
-        reject(error); // Rejeter la promesse avec l'erreur
-      });
-  });
+  return user.createUser()
+    .then(insertId => {
+      console.log('Utilisateur créé avec ID :', insertId);
+    })
+    .catch(error => {
+      console.error('Erreur lors de la création de l\'utilisateur :', error);
+    });
 }
 
 function deleteUser(idUser) {
@@ -158,7 +154,7 @@ function login(email, password) {
 
 
 // Exemple d'utilisation
-//const user = new User("John", "Doe", "M", "1990-01-01", "123456789", "987654321", "john.doe@example.com", "1", "password");
+const user = new User("John", "Doe", "M", "1990-01-01", "123456789", "987654321", "john.doe@example.com", "1", "password");
 
 connection.connect((err) => {
   if (err) {
@@ -207,9 +203,5 @@ connection.connect((err) => {
 }
 */
 
-module.exports = {
-  User,
-  list_utilisateurs,
-  login,
-  addUser
-};
+module.exports = {list_utilisateurs};
+

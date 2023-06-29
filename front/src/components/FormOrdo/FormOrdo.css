@@ -1,53 +1,14 @@
-/* .container{
-    background-color: rgb(199, 175, 222);
-} */
-.container{
-    /* text-align: center; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    /* padding: 2%; */
-
-    
-}
-
-.cont{
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    background-color: rgb(250, 250, 250);
-    margin-top: 15px;
-    padding: 0.8%;
-    height: auto;
-
-    /* display: flex; */
-    width: 90%;
+.container {
+    background-color: #F8F8F8;
+    margin-bottom: 4%;
+    padding: 2%;
     border-radius: 15px;
-    /* align-items: left; */
-    text-align: left;
 }
 
-.in{
-    /* flex-direction: row; */
-    font-weight: bold;
-    /* padding: 10px; */
-    /* margin-bottom: 300px; */
-    /* width: 50%; */
-    /* position: relative; */
-}
-.indes{
-    flex-direction: column;
-    font-weight: bold;
-    /* width: 50%; */
-    /* position: relative;  */
-}
+.container .info1{margin-bottom: 0.5%;}
 
-.input{
-    width: 30%;
-    position: absolute;
-    left: 13%;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
+.container label{margin-right: 2%;}
+.container input{background-color: transparent; border: none; border-bottom: solid black 1px; width: 80%;}
+.container .info1 label{font-size: 1.2vw; font-weight: 700;}
+.container .info2 label, .container .info3 label{font-size: 1vw;}
+.container textarea{width: 99%; background-color: transparent; border-radius: 5px; padding: 0.5%; margin-top: 0.5%;}
