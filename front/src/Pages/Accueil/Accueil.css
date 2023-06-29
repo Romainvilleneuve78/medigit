@@ -8,7 +8,13 @@
 .header_extend img{width: 25%;}
 
 /* ---------------------------------------------------------- help section ----------------------------------------------------*/
-.help{margin: 5%; margin-bottom: 7%;}
+.help{
+    /* margin: 5%;  */
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    margin-bottom: 7%;
+}
 .help h1{margin-bottom: 2%; color: #4a7ee7}
 .help .division{ display: flex; background-color: #F5F5F5;}
 

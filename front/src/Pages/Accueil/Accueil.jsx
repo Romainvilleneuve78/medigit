@@ -3,6 +3,23 @@ import React from 'react';
 import './Accueil.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 import MenuPageHome from '../../components/menuHome';
+import { Element } from 'react-scroll';
+
+// function Home() {
+//   return (
+//     <>
+//       <div className="header_extend">
+//         {/* ...contenu du reste de la page */}
+//       </div>
+
+//       <Element name="expl" className="help">
+//         {/* ...contenu de la section "Comment ça marche ?" */}
+//       </Element>
+
+//       {/* ...le reste de votre code */}
+//     </>
+//   );
+// }
 
 
 function Home() {
@@ -25,7 +42,7 @@ function Home() {
       </div>
       
     
-      <div class='help'>
+      <div id='expl' class='help'>
         <h1>Comment ca marche ?</h1>
         <div class='division'>
           <div class='picture'>
@@ -54,7 +71,7 @@ function Home() {
         </div>
       </div>
       
-      <div class='myspace'>
+      <div id='sign' class='myspace'>
         <div class='links'>
           <h1>Votre espace Personnel</h1>
           
