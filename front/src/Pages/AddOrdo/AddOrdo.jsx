@@ -43,6 +43,7 @@
 
     
         return (
+<<<<<<< HEAD
             <>
                 <div class="add_ordo">
                     
@@ -67,6 +68,26 @@
                 </div>
             </>
         );
+=======
+        <div className="container">
+            <h1 className="Title">Ajouter une ordonnance</h1>
+            
+            <div className="contform">
+                <FormOrdo />
+                {formulaires.map((formulaire) => formulaire)}
+            </div>
+
+            <div className="contbutt">
+                <button onClick={ajouterFormulaire} class="butadd" style={{width: '250px'}}>
+                    Ajouter un médicament
+                </button>
+
+                <button type="submit" onClick={genererPDF} class="butenv" style={{width: '200px'}}>Créer l'ordonnance</button>
+            </div>
+        </div>
+
+    );
+>>>>>>> main
     }
 
     export default AddOrdo;

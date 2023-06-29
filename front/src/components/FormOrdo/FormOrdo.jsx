@@ -28,6 +28,7 @@ class FormOrdo extends Component {
   render() {
     return (
       <div className="container">
+<<<<<<< HEAD
 
         <form onSubmit={this.handleSubmit} class="info">
           <div class='info1'>
@@ -47,6 +48,26 @@ class FormOrdo extends Component {
           </div>
         </form>
 
+=======
+        <form onSubmit={this.handleSubmit} class="cont">
+            <label className='in'>
+                <text style={{paddingBottom:'100px'}}>Médicament:</text>
+                <input type="text" name="medic" value={this.state.medic} onChange={this.handleChange} className='input'/>
+            </label>
+            <br />
+            <label className='in'>
+                Dose:
+                <input type="text" name="dose" value={this.state.dose} onChange={this.handleChange} className='input'/>
+            </label>
+            <br />
+            <label className='indes'>
+                <text>Description:</text>
+                <textarea type="text" name="descr" value={this.state.descr} onChange={this.handleChange} className='input' row="3"/>
+            </label>
+            <br />
+            
+        </form>
+>>>>>>> main
       </div>
     );
   }
