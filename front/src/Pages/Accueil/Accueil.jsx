@@ -1,34 +1,20 @@
-// src/pages/Page1.jsx
-import React from 'react';
-import './Accueil.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
+import React, { useState } from 'react';
+import './Accueil.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MenuPageHome from '../../components/menuHome';
 import { Element } from 'react-scroll';
 
-// function Home() {
-//   return (
-//     <>
-//       <div className="header_extend">
-//         {/* ...contenu du reste de la page */}
-//       </div>
-
-//       <Element name="expl" className="help">
-//         {/* ...contenu de la section "Comment ça marche ?" */}
-//       </Element>
-
-//       {/* ...le reste de votre code */}
-//     </>
-//   );
-// }
-
-
 function Home() {
+  const [showOptions, setShowOptions] = useState(false);
+
+  const handleCreateAccountClick = () => {
+    setShowOptions(!showOptions);
+  };
 
   return (
     <>
       <div class='header_extend'>
         <div class='fond'>
-
           <div class='txt'>
             <div class='title'>
               <h1>MeDigit</h1>
@@ -38,34 +24,31 @@ function Home() {
           </div>
           <img src='../../images/medecin.png'></img>
         </div>
-        
       </div>
-      
     
       <div id='expl' class='help'>
-        <h1>Comment ca marche ?</h1>
+        <h1>Comment ça marche ?</h1>
         <div class='division'>
           <div class='picture'>
-            < img src="../../images/Ordonnance-electronique.png"></img>
+            <img src="../../images/Ordonnance-electronique.png"></img>
           </div>
 
-          <div class= 'explication'>
-            
-            <div class = 'steps'>
+          <div class='explication'>
+            <div class='steps'>
               <div class='step'>1</div>
               <div class='description'>Créez votre compte MeDigit.</div>
             </div>
-            <div class = 'steps'>
+            <div class='steps'>
               <div class='step'>2</div>
-              <div class='description'>Enregistrez vos informations personnels.</div>
+              <div class='description'>Enregistrez vos informations personnelles.</div>
             </div>
-            <div class = 'steps'>
+            <div class='steps'>
               <div class='step'>3</div>
-              <div class='description'>Accedez directement à vos ordonnances personnelles.</div>
+              <div class='description'>Accédez directement à vos ordonnances personnelles.</div>
             </div>
-            <div class = 'steps'>
+            <div class='steps'>
               <div class='step'>4</div>
-              <div class='description'>Personnalisés vos rappels pour une vie plus tranquille.</div>
+              <div class='description'>Personnalisez vos rappels pour une vie plus tranquille.</div>
             </div>
           </div>
         </div>
@@ -74,10 +57,21 @@ function Home() {
       <div id='sign' class='myspace'>
         <div class='links'>
           <h1>Votre espace Personnel</h1>
-          
           <nav>
-            <div class='btn'><Link to="/SignIn_Page"><div class='a'>Vous connecter</div></Link></div>
-            <div class='btn'><Link to="/SignUp_Page"><div class='a'>Creer un compte</div></Link></div>
+            <div class='btn'>
+              <Link to="/SignIn_Page">
+                <div class='a'>Vous connecter</div>
+              </Link>
+            </div>
+            <div class='btn'>
+              <div class='a' onClick={handleCreateAccountClick}>Créer un compte</div>
+              {showOptions && (
+                <div class='options'>
+                  <Link to="/SignUp_Page"><div class='option'>Client</div></Link>
+                  <Link to="/SignUp_Page"><div class='option'>Médecin</div></Link>
+                </div>
+              )}
+            </div>
           </nav>
         </div>
       </div>
