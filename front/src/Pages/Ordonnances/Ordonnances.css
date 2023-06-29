@@ -25,7 +25,7 @@
 }
 
 .Name_ordo {width: 80%;}
-.Name_ordo  h2{font-size: 2vw; color : black;}
+.Name_ordo  h2{font-size: 2vw; color : rgb(0, 0, 0);}
 .ordonnances .my-paragraph1 {font-size: 1vw;}
 .ordonnances .my-paragraph2 {font-size: 1vw; margin-top: 6%;}
 .ordonnances .pdp_ordo img {width:7vw; height: 7vw;}
