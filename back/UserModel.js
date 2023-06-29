@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'Base2002SQL',
-    database: 'solution_factory'
+    password: 'password',
+    database: 'medigit'
 });
 
 // Modèle User
