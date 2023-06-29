@@ -51,7 +51,7 @@ function AddOrdo() {
 
                     <form class='id_secu' action="/action_page.php">
                         <label for="id_secu">Patient Numero securité sociale :</label>
-                        <input type="text" id="id_secu" name="id_secu"></input>
+                        <input type="text" id="id_secu" name="id_secu" className='id_secu'></input>
                         <button type="submit">Valider</button>
                     </form>
 

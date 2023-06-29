@@ -21,7 +21,9 @@ function Component1() {
 
                         <div class='option_ordo'>
                             <button class= "coeur"> <img src="../../images/coeur.png" alt="icone du bouton"></img></button>
-                            <button class= "points"> <img src="../../images/petitspoints.png" alt="icone des points"></img></button>
+                            {/* <button class= "points"> <img src="../../images/petitspoints.png" alt="icone des points"></img></button> */}
+                            <button class= "poubelle"> <img src="../../images/poubelle-de-recyclage.png" alt="icone de poubelle"></img></button>
+                            
                         </div>
                 </div>
             </div>
