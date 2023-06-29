@@ -1,85 +1,32 @@
-.header_extend{background-color: #2ACEF2; padding: 1.5%; padding-left: 8%; padding-bottom: 0%;}
-.header_extend .fond{display: flex; align-items: center;}
-.header_extend .txt{width: 67%;}
-.header_extend .title{display: flex; align-items: baseline; margin-bottom: 3%; margin-top: -10%;}
-.header_extend h1, .header_extend h2{margin-top: 2%; margin-right: 1%; font-weight: 750;}
-.header_extend h1{color: #4a7ee7; font-size: 3vw;}
-.header_extend h2{color: white; font-size: 2.5vw;}
-.header_extend img{width: 25%;}
-
-/* ---------------------------------------------------------- help section ----------------------------------------------------*/
-.help{margin: 5%; margin-bottom: 7%;}
-.help h1{margin-bottom: 2%; color: #4a7ee7}
-.help .division{ display: flex; background-color: #F5F5F5;}
-
-.help .picture{margin-left:3%; width: 40%;}
-.help .picture img{width: 100%}
-
-.help .explication{width: 60%; margin-left: 5%; padding-top: 4%; background-color: #4a7ee7; border-radius: 10px;}
-
-.help .steps{
-    display: flex;
-    width: 100%;
-    padding: 4%;
-    margin-left: 5%;
-}
-
-.help .step {
-    background-color: #2ACEF2;
-    text-align: center;
-    height: 5vh;
-    width: 3vw;
-    border-radius: 50%;
+/* ---------------------------------------------------------- Carousel ----------------------------------------------------*/
   
-    font-size: 1.5vw;
-    font-weight: 700;
-    color: white;
-    margin-right: 5%;
-  
+.Carousel{
+    margin-top: 4vw;
+
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-  
-
-.help .description{
-    font-size: 1.3vw;
-    font-weight: 700;
-    color: white;
-    display: flex;
     align-items: center;
+    width: 100%;
+
+    background-color: aquamarine;
 }
 
-/* ---------------------------------------------------------- my section ----------------------------------------------------*/
-
-.myspace{height: 80vh; padding: 3%; background-image: url("../../../images/accueil.png"); background-repeat: no-repeat; background-size: cover; }
-.myspace .links{width: 40%; margin: 7%; margin-left:40%; padding: 5%; padding-top: 3%; background-color: #2ACEF2; border-radius: 10px;}
-.myspace .link{width: 10vw; background-color: white; padding: 2%; margin-top: 10%;}
-.myspace h1{text-align: center; width: 100%;}
-
-.btn{
-    margin: 8%;
-    margin-bottom: 5%;
-    text-align: center;
+.Carousel .item{
+    width: 80%;
+    height: 20vw;
 }
 
-.btn a{
-    width: 20vw;
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 10px;
-    padding:12px 0;
-    color:#4a4949;
-    border-radius: 5px;
-    position: relative;
-    z-index:1;
-    transition: color 0.3s;
-
+.Carousel .item .slide1{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("../../../images/banniere1.jpeg");
 }
 
-.btn a:hover{color:#8bcff1;}
-
-
-
+.Carousel .item .slide2{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("../../../images/banniere2.jpeg");
+}
 
