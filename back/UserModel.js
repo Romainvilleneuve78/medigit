@@ -3,10 +3,10 @@ const mysql = require('mysql');
 
 // Configuration de la connexion à MySQL
 const connection = mysql.createConnection({
-    host: '127.0.0.1',
+    host: '10.3.218.137',
     user: 'root',
     password: 'password',
-    database: 'bdd-MEDIGIT'
+    database: 'medigit'
 });
 
 // Modèle User
