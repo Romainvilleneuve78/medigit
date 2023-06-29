@@ -6,25 +6,25 @@ const Medecin = () => {
         <div class="log">
             <form action="" method="post">
                 {/*prenom */}
-                <div class="txt_field"><label>Entrez votre prénom :</label><input type="texte" id="firstname" /></div>
+                <div class="txt_field"><input type="texte" placeholder='Entrez votre prénom :' id="firstname" /></div>
                 {/*nom */}
-                <div class="txt_field"><label>Entrez votre nom de famille :</label><input type="text" id="secondname" /></div>
+                <div class="txt_field"><input type="text" placeholder='Entrez votre nom de famille :' id="secondname" /></div>
                 {/*sexe */}
-                <div class="txt_field"><label>Entrez votre sexe :</label><input type="text" id="sexe" /></div>
+                <div class="txt_field"><input type="text" placeholder='Entrez votre sexe :' id="sexe" /></div>
                 {/*date naissance */}
                 <div class="txt_field"><label>Entrez votre date de naissance  :</label><input type="date" id="birthdate" /></div>
                 {/*num */}
-                <div class="txt_field"><label>Entrez votre numéro perso :</label><input type="tel" id="phone" /></div>
+                <div class="txt_field"><input type="tel" placeholder='Entrez votre numéro perso :' id="phone" /></div>
                 {/*fix */}
-                <div class="txt_field"><label>Entrez votre numéro fix :</label><input type="tel" id="fix" /></div>
+                <div class="txt_field"><input type="tel" placeholder='Entrez votre numéro fix :' id="fix" /></div>
                 {/*email */}
-                <div class="txt_field"><label>Entrez votre adresse mail :</label><input type="email" id="email" /></div>
+                <div class="txt_field"><input type="email" placeholder='Entrez votre mail :' id="email" /></div>
                 {/*profession */}
-                <div class="txt_field"><label>Entrez votre profession :</label><input type="text" id="profdoctor" /></div>
+                <div class="txt_field"><input type="text" placeholder='Entrez votre profession :' id="profdoctor" /></div>
                 {/*lieuTravail */}
-                <div class="txt_field"><label>Entrez votre adresse de travail:</label><input type="text" id="lieutaff" /></div>
+                <div class="txt_field"><input type="text" placeholder='Entrez votre adresse de travail :' id="lieutaff" /></div>
                 {/*horaire */}
-                <div class="txt_field"><label>Entrez votre horaires de travail:</label><input type="text" id="hortaff" /></div>
+                <div class="txt_field"><input type="text" placeholder='Entrez vos horaires de travail :' id="hortaff" /></div>
 
                 <div class="center-button"><button class='buttonsign' type="submit">Sign Up</button></div>
             </form>

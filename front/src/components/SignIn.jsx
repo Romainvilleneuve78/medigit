@@ -1,9 +1,11 @@
 // SignIn.js
-import React, { useState } from 'react';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
 
   //   const handleEmailChange = (event) => {
   //     setEmail(event.target.value);
@@ -34,7 +36,10 @@ const SignIn = () => {
         </div> */}
 
         <div class="pass">
-          <label>Not a member?</label>
+        
+        <Link to="/">
+          <label>Je suis un professionel</label>
+        </Link>
         </div>
       </form>
     </div>
