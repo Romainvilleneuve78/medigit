@@ -29,9 +29,9 @@ const SignIn = () => {
           <input type="password" id="password" placeholder="Entrez votre mot de passe :"></input>
         </div>
         <div class="center-button"><button type="submit">Sign In</button></div>
-        <div class="pass">
+        {/* <div class="pass">
           <label>Forgot your Password ?</label>
-        </div>
+        </div> */}
 
         <div class="pass">
           <label>Not a member?</label>
