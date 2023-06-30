@@ -1,10 +1,13 @@
 const express = require("express");
 const router = express.Router();
+router.use(express.json());
 var user_model = require('./UserModel');
 var prescription_model = require('./PrescriptionModel');
+var client_model = require('./ClientModel');
+var professional_model = require('./ProfessionalModel');
 
 
-module.exports = router;
+
 
 router.get("/", (req, res) => {
     res.json("API MAX V 0.1");
@@ -59,6 +62,54 @@ router.post("/login", (req, res) => {
       });
   });
 
+
+  router.post('/professional/update', (req, res) => {
+    const professionalData = req.body;
+  
+    const professional = new professional_model.Professional(
+      professionalData.user_id,
+      professionalData.Specialisation,
+      professionalData.Activity_adress,
+      professionalData.City,
+      professionalData.Description
+    );
+  
+    professional.updateProfessional()
+      .then(affectedRows => {
+        if (affectedRows > 0) {
+          res.status(200).json({ message: 'Professional mis à jour avec succès' });
+        } else {
+          res.status(404).json({ error: 'Professional non trouvé' });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({ error: 'Erreur lors de la mise à jour du Professional', details: error.message });
+      });
+  });
+  
+  router.post('/client/update', (req, res) => {
+    const clientData = req.body;
+  
+    const client = new client_model.Client(
+      clientData.user_id,
+      clientData.n_secu,
+      clientData.Adress,
+      clientData.City
+    );
+  
+    client.updateClient() // Utilisez client.updateClient() au lieu de client_model.updateClient(client)
+      .then(affectedRows => {
+        if (affectedRows > 0) {
+          res.status(200).json({ message: 'Client mis à jour avec succès' });
+        } else {
+          res.status(404).json({ error: 'Client non trouvé' });
+        }
+      })
+      .catch(error => {
+        res.status(500).json({ error: 'Erreur lors de la mise à jour du client', details: error.message });
+      });
+});
+
 router.get("/prescription/list", (req, res) => {
     prescription_model.list_prescription().then(result => {
         console.log("Result received:", result);
@@ -94,3 +145,4 @@ router.use((req, res) => {
     });
 });
 
+module.exports = router;
