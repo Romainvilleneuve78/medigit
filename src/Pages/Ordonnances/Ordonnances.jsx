@@ -97,7 +97,7 @@ function Ordonnance() {
                     <img src="../../images/pdp.png" alt="icone des points"></img>
                   </Link>
                   {/* </a> */}
-                <span class= "title_ordo">DR Nozman</span></button>
+                <span class= "title_ordo">{prescription.Professional}</span></button>
 
                 <div class='info_ordo'>
                         <div class="Name_ordo">

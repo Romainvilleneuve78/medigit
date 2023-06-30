@@ -1,6 +1,7 @@
 import React from 'react';
 import './Profil.css';
 import MenuPage from '../../components/menu';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
 
 function Profil() {
@@ -14,7 +15,8 @@ function Profil() {
                             <h1>Mon espace</h1>
                             <h2>(particulier)</h2>
                         </div>
-                        <button>Modifier mon profil</button>
+                        {/* <button>Modifier mon profil</button> */}
+                        <Link to="/ModifProf"><div className='butmodif'>Modifier mon profil</div></Link>
                     </div>
                     <img src='../../images/mon-espace.png'></img>
                 </div>

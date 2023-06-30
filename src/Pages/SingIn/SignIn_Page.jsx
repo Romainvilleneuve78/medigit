@@ -41,7 +41,7 @@ function SignIn_Page() {
 
   return (
     <div className="log">
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className='form'>
         {/* <label> */}
           {/* Email: */}
           <input

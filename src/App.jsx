@@ -12,6 +12,7 @@ import Profil_pro from './Pages/Profil/Profil_pro';
 import Ordopdf from './Pages/Ordonnances/Ordopdf';
 import SignIn_Page from './Pages/SingIn/SignIn_Page'
 import SignUp_Page from './Pages/SignUp/SignUp_Page'
+import ModifProf from './Pages/ModifProf/ModifProf';
 import updateClient from './Pages/updateClient'
 import updateProfessional from './Pages/updateProfessional'
 
@@ -31,7 +32,7 @@ function App() {
         <header>
           <nav className="navbar">
               <a href="/Accueil"><h1>MeDigit.</h1></a>
-              <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
+              <h2>Récupérez vos ordonnances n'importe où et n'importe quand</h2>
               <a href="/SignIn_Page">
                 <div className="nav-links ">
                     <ul>
@@ -53,6 +54,7 @@ function App() {
           <Route path="/SignIn_Page" element={<SignIn_Page />} />
           <Route path="/Profil_pro" element={<Profil_pro />} />
           <Route path="/Ordopdf" element={<Ordopdf />} />
+          <Route path="/ModifProf" element={<ModifProf />} />
         </Routes>
 
       </Router>

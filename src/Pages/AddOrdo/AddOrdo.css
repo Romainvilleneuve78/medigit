@@ -1,49 +1,19 @@
-/* AddOrdo.css */
-/* * {
-    width: 100%;
-} */
+.add_ordo{margin: 5%; margin-bottom: 10%;}
+.add_ordo h1{color: #2ACEF2; font-size: 3vw; margin-left: 5%; margin-right: 35%;} 
+.add_ordo .formulaire{ border-radius: 25px; margin: 5%; margin-top: 3%;}
 
-.contbutt{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* height: 100vh; */
-    text-align: center;
+.add_ordo .id_secu{color: rgb(0, 0, 0); margin-bottom: 3%;}
+.add_ordo .id_secu label{margin-right: 2%; font-weight: 700; font-size: 1.4vw;}
+.add_ordo .id_secu input{
+    font-weight: 800; 
+    font-size: 1.2vw; 
+    border: none; 
+    border-bottom: 0.15vw solid rgb(0, 0, 0) ; 
+    width: 16%; 
+    margin-right: 2%; 
+    background-color: transparent; 
+    color: rgb(0, 0, 0);
 }
 
-.contform{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* background-color: #c05252; */
-}
-
-.Title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 60px;
-    color: #2ACEF2;
-}
-
-.butadd {
-    border-radius: 13px;
-}
-
-.butenv {
-    margin: 100px;
-    padding: 8px 16px;
-    background-color: #2ACEF2;
-    color: #fff;
-    border-radius: 13px;
-    /* align-self: center; */
-    /* align-content: center; */
-    cursor: pointer;
-    /* left: 500px; */
-}
-
-.butenv:hover {
-    background-color: rgb(105, 221, 247);
-    border: none;
-  }
-
+.add_ordo button{padding: 1%; background-color: #2ACEF2; color: #000000; border-radius: 13px; font-size: 1vw; margin-right: 1%;}
+.add_ordo button:hover {background-color: rgb(105, 221, 247);}
