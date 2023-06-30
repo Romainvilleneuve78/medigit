@@ -23,9 +23,9 @@ function App() {
       <Router>
       <header>
         <nav className="navbar">
-            <a href=""><h1>MeDigit.</h1></a>
+            <a href="/Home"><h1>MeDigit.</h1></a>
             <h2>Recuperez vos ordonnaces n'importe où et nimporte quand</h2>
-            <a href="">
+            <a href="/SignIn_Page">
               <div className="nav-links ">
                   <ul>
                       <li>User123</li>
@@ -49,7 +49,8 @@ function App() {
       </nav>
     
       <Routes> {/* Remplacez le composant Route par Routes */}
-        <Route path="/page1" element={<Page1 />} /> {/* Utilisez l'attribut element pour définir le composant */}
+        <Route path="/" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}
+        <Route path="/Home" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
         <Route path="/page4" element={<Page4 />} />
