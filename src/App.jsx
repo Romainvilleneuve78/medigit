@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import SignIn_Page from './Pages/SignIn_Page'
 import SignUp_Page from './Pages/SignUp_Page'
