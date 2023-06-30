@@ -2,45 +2,44 @@
 import './Ordonnances.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-/*
-function Page2() {
-  return (
-    <div>
-      <h1 className="titleOrdo">MY PRESCRIPTIONS</h1>
-
-      <button class = "trier">Trier</button>     <button class = "filtrer">Filtrer</button> <br/>
-
-      <br/>
-      <br/>
-      <br/>
-
-      
-
-      
-      <div class="containerOrdo">
-      <h2 className='titleOrdo2'>Gynecology Consultation</h2>         
-      <button class= "coeur"> <img src="../../images/coeur.png" alt="icone du bouton"></img></button>
-      </div>
+import Ordo from '../../components/ordo';
+import MenuPage from '../../components/menu';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
 
-      <p className="my-paragraph1">Valid until 10.02.24</p> <br/> 
- 
-      <p className="my-paragraph2">To be taken three times a day for two weeks and then once a month for two month</p>
-      
-      <button class= "points"> <img src="../../images/petitspoints.png" alt="icone des points"></img></button>
+// const Ordonnance = () => {
+//   const [data, setData] = useState([]);
 
-      <button class= "pdp"> <img src="../../images/pdp.jpg" alt="icone des points"></img></button>
+//   useEffect(() => {
+//     // axios.get('http://localhost:3000/prescription/list')
+//     axios.get('http://localhost:3000/prescription/list')
+//       .then(response => {
+//         setData(response.data);
+//       })
+//       .catch(error => {
+//         console.error(error);
+//       });
+//   }, []);
 
-    </div>
+//   return (
+//     <table>
+//       {data.map(prescription => (
+//         <tr key={prescription.idPrescription}>
+//           <td><h2>{prescription.Name}</h2>
+//           <p>Jusqu'au: {prescription.Date_validity}</p>
+//           {/* Afficher d'autres informations utilisateur*/}</td>
+//         </tr>
+//       ))}
+//     </table>
+//   );
+// };
 
-  );
-}
-
-export default Page2;*/
+// export default Ordonnance;
 
 
-const Page2 = () => {
+
+
+function Ordonnance() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -55,16 +54,85 @@ const Page2 = () => {
   }, []);
 
   return (
-    <table>
-      {data.map(prescription => (
-        <tr key={prescription.idPrescription}>
-          <td><h2>{prescription.Name}</h2>
-          <p>Jusqu'au: {prescription.Date_validity}</p>
-          {/* Afficher d'autres informations utilisateur*/}</td>
-        </tr>
-      ))}
-    </table>
-  );
-};
+    <>
+      <div class='header_ordo_extend'>
+          <div class='fond'>
+            <div class='txt'>
+              <MenuPage/>
+              <h1>Mes ordonnances</h1>
+              <div className='btn_class'>
+                <button class = "trier">Trier<img src="../../images/barres.png" alt="icone des points"></img></button>
+                <button class = "filtrer">Filtrer<img src="../../images/barres.png" alt="icone des points"></img></button>
+              </div>
+            </div>
+            <img src='../../images/medecin3.png'></img>
+          </div>
 
-export default Page2;
+        </div>
+
+      <div class='ordonnances'>
+
+      {/* <table>
+        {data.map(prescription => (
+          <tr key={prescription.idPrescription}>
+            <td>
+              <h2>{prescription.Name}</h2>
+              <p>Jusqu'au: {prescription.Date_validity}</p>
+            </td>
+          </tr>
+        ))}
+      </table>       */}
+      
+      <table style={{width:'100%'}}>
+        {data.map(prescription => (
+          <tr key={prescription.idPrescription}>
+            <td>
+              {/* <h2>{prescription.Name}</h2>
+              <p>Jusqu'au: {prescription.Date_validity}</p> */}
+              <div class='container_ordo'> 
+
+                <button class= "pdp_ordo"> 
+                <Link to="/Profil_pro">
+                  {/* <a href="/Profil_pro"> */}
+                    <img src="../../images/pdp.png" alt="icone des points"></img>
+                  </Link>
+                  {/* </a> */}
+                <span class= "title_ordo">DR Nozman</span></button>
+
+                <div class='info_ordo'>
+                        <div class="Name_ordo">
+                            {/* <h2><Link to="/Ordopdf">Gynecology Consultation</Link></h2> */}
+                            <h2><Link to="/Ordopdf">{prescription.Name}</Link></h2>
+                            <p className="my-paragraph1">Valide jusqu'au {prescription.Date_validity}</p>
+                            <p className="my-paragraph2">Médicament prescrit: {prescription.Medicine}</p>
+                        </div>
+
+                        <div class='option_ordo'>
+                            <button class= "coeur"> <img src="../../images/coeur.png" alt="icone du bouton"></img></button>
+                            {/* <button class= "points"> <img src="../../images/petitspoints.png" alt="icone des points"></img></button> */}
+                            <button class= "poubelle"> <img src="../../images/poubelle-de-recyclage.png" alt="icone de poubelle"></img></button>
+
+                        </div>
+                </div>
+            </div>
+            </td>
+          </tr>
+        ))}
+      </table>
+{/* 
+        <Ordo/>
+        <Ordo/>
+        <Ordo/>
+        <Ordo/>
+        <Ordo/> */}
+
+
+
+
+
+      </div>
+    </>
+  );
+}
+
+export default Ordonnance;

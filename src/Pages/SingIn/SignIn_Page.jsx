@@ -1,6 +1,7 @@
 // src/pages/Page2.jsx
 import React, { useState } from 'react';
-import SignIn from '../components/SignIn';
+// import SignIn from '../../components/SignIn';
+import './SignIn.css'
 import axios from 'axios';
 
 
@@ -39,27 +40,33 @@ function SignIn_Page() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <br />
-      <button type="submit">Login</button>
-    </form>
+    <div className="log">
+      <form onSubmit={handleLogin}>
+        {/* <label> */}
+          {/* Email: */}
+          <input
+            type="email"
+            value={email}
+            placeholder='Entrez votre email'
+            onChange={(e) => setEmail(e.target.value)}
+            className='txt_field'
+          />
+        {/* </label> */}
+        <br />
+        {/* <label>
+          Password: */}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className='txt_field'
+            placeholder='Entrez votre mot de passe'
+          />
+        {/* </label> */}
+        <br />
+        <button type="submit" className='center-button'>Login</button>
+      </form>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 // src/pages/Page2.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import SignUp from '../components/SignUp';
+import SignUp from '../../components/SignUp';
 
 
 /*

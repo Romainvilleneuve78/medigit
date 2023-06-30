@@ -1,72 +1,126 @@
-  /* ---------------------------------------------------------- Informations gÃ©nÃ©rales ----------------------------------------------------*/
-  *, a{
-    padding : 0;
-    margin : 0;
-    font-style: normal;
-    text-decoration: none;
-    list-style: none; 
-    
-  }
-  
-  /* ---------------------------------------------------------- Titres ----------------------------------------------------*/
-  h1{color: #FFFFFF; font-weight: 600; font-size: 3vw;}
-  h2{color: #FFFFFF; font-weight: 500; font-size: 1.3vw; text-align: center;}
-  
-  /* ---------------------------------------------------------- header ----------------------------------------------------*/
-  header {
-    width: 100%;
-    background-color: aquamarine;
-  }
-  
-  .navbar{
-    display: flex;
-    justify-content: space-between;
-    /* justify-content: center; */
-    align-items: center;
-  
-    height: 8vh;
-    padding: 2%;
-    /* padding-left: 3%; */
-  
-    background: #2ACEF2;
-  }
-  
-  .navbar a{width: 8%;}
-  .navbar .user {width: 2.5vw;}
-  .navbar a:hover {font-weight: 600;}
-  .navbar .nav-links ul{display: flex; align-items: center;}
-  
-  .navbar .nav-links ul li{
-    margin-left: 0.5vw;
-    font-weight: 400;
-    transition: font-weight 1s;
-    font-size: 0.9vw;
-    color: #FFFFFF;
-  }
-  
-  /* ---------------------------------------------------------- menu ----------------------------------------------------*/
-  .menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 4vw;
-  
-    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-  }
-  .menu .links ul{display: flex; align-items: center;}
-  .menu .links ul li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    width: 15vw;
-    height: 4vw;
-    color: #000;
-  
-    font-weight: 700;
-    transition: font-weight 1s;
-    font-size: 1vw;
-  }
-  
-  
+/* ---------------------------------------------------------- Informations gÃ©nÃ©rales ----------------------------------------------------*/
+*, a{
+  padding : 0;
+  margin : 0;
+  font-style: normal;
+  text-decoration: none;
+  list-style: none; 
+}
+
+/* ---------------------------------------------------------- Titres ----------------------------------------------------*/
+header h1, footer h1{color: #FFFFFF; font-weight: 600; font-size: 2.5vw;}
+header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center;}
+
+/* ---------------------------------------------------------- header ----------------------------------------------------*/
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  align-items: center;
+
+  height: 8vh;
+  padding: 2%;
+  /* padding-left: 3%; */
+
+  background: #2ACEF2;
+}
+
+.navbar a{width: 10%;}
+.navbar .user {width: 2.5vw;}
+.navbar a:hover {font-weight: 600;}
+.navbar .nav-links ul{display: flex; align-items: center;}
+
+.navbar .nav-links ul li{
+  margin-left: 0.5vw;
+  font-weight: 400;
+  transition: font-weight 1s;
+  font-size: 0.9vw;
+  color: #FFFFFF;
+}
+
+/* ---------------------------------------------------------- menu ----------------------------------------------------*/
+.menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 4vw;
+  background-color: #2ACEF2;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.6); */
+  border-bottom: 0.17vw solid #181d79;
+
+  margin-bottom: 3%;
+}
+.menu .links ul{display: flex; align-items: center;}
+.menu .links ul li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  width: 15vw;
+  height: 4vw;
+  color: #000;
+
+  font-weight: 700;
+  transition: font-weight 1s;
+  font-size: 1vw;
+}
+
+.menu a:hover {
+  color: #535bf2;
+}
+
+/* ---------------------------------------------------------- menu Home ----------------------------------------------------*/
+.menu_home{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 67%;
+  height: 3.8vw;
+  border-bottom: 0.17vw solid #181d79;
+}
+
+.menu_home .links ul{display: flex; 
+  align-items: left; 
+  align-items: left; 
+  justify-content: space-between;
+}
+
+.menu_home .linkHome{color: #181d79; align-self: left; 
+  margin-right: 5.2vw;
+}
+
+.menu_home .linkHomefin{color: #181d79; align-self: left; 
+  /* margin-right: 5.2vw; */
+}
+
+.menu_home .links ul li{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width : 10vw;
+  width: auto;
+  height: 4vw;
+  /* color: #ffffff; */
+  font-weight: 700;
+  transition: font-weight 1s;
+  font-size: 1vw;
+  /* margin: 0 2.6vw;  */
+  /* margin-right: 5.2vw;  */
+}
+
+.menu_home a:hover {
+  color: #4a7ee7;
+}
+
+/* ---------------------------------------------------------- footer ----------------------------------------------------*/
+
+footer{
+  display: flex;
+  align-items: center;
+  padding: 3%;
+  background-color: #27448E;
+}
+
+footer .txt{color: white; margin-left: 75%; font-weight: 700; font-size: 1vw;}
