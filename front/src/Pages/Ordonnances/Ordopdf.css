@@ -1,0 +1,117 @@
+
+.pdp_ordopdf {
+    width: 13%;
+    height: 10%;
+    padding: 2%;
+    background-color: #2ACEF2;
+    border-radius: 25%;
+    margin-right: 4vw;
+    margin-left: 5vw;
+    margin-bottom: 4vw;
+    position: relative;
+    top: -6vw;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titlepdf h1{
+    color: #2ACEF2;
+    font-size: 3vw;
+    margin-left: 10%;
+    margin-right: 35%;
+    margin-top: 5%;
+}
+
+.container_ordo {
+    display: flex;
+    align-items: center; 
+    height: max-content;
+    margin-top: 8%;
+  }
+
+  .Name_ordo h3{
+    
+    font-size: 1.5vw;
+
+  }
+.id_ordo{
+display: flex;
+}
+
+.container.info_ordo.Name_ordo {width: 80%;}
+.container.info_ordo.Name_ordo  h2{font-size: 2vw; color : rgb(0, 0, 0);}
+.my-paragraph1 {font-size: 1vw;}
+.my-paragraph2 {font-size: 1vw; margin-bottom: 3vw;}
+.my-paragraph3 {font-size: 1vw;;margin-bottom: 1vw;}
+.my-paragraph4 {font-size: 1.4vw; font-weight: bold;margin-bottom: 1vw;}
+.my-paragraph5 {font-size: 1.4vw;font-weight: bold;margin-bottom: 1vw;}
+.my-paragraph6 {font-size: 1vw;margin-top: 2vw;font-weight: bold;}
+.my-paragraph7 {font-size: 1vw;margin-top: 2vw; font-weight: bold;}
+.my-paragraph8 {font-size: 1vw;}
+
+.medoc {
+  display: flex;
+  margin-right: 10vw;
+}
+
+
+
+.pdp_ordopdf img {width:7vw; height: 7vw;}
+
+.pdp_ordopdf .title_ordo{
+    margin-top: 1vw;
+    color : white;
+    font-size: 1vw;
+  }
+
+  .info_ordo {
+    display: flex;
+    margin-left: 5%;
+    padding-bottom: 2vw;
+    border-bottom: solid black 1px  ;
+    width: 60%;
+    margin-bottom: 3vw;
+  } 
+
+  .option_ordo {width: 20%; display :flex;}
+
+  .option_ordo .coeur,.option_ordo .points {
+    width: 4vw; /* Largeur du bouton */
+    height: 3vw; /* Hauteur du bouton */
+    background-color: rgb(255, 255, 255);
+    border-radius: 25%;
+    position: relative;
+    
+  }
+
+  .option_ordo .coeur img,.option_ordo .points img{
+    width:2vw;
+    height: 2vw; 
+  }
+  
+ 
+
+  .bouton_qr {
+    position: relative;
+    left: 5vw;
+    font-weight: bold;
+    margin-bottom: 5vw;
+    background-color:#2ACEF2;
+    border-radius: 20px;
+    color :white;
+  }
+  
+
+  .downloadpdf {
+margin-left: 39vw;
+background-color:#2ACEF2;
+border-radius: 20px;
+color: white;
+  }
+
+  .download-link {
+    color: white;
+  }

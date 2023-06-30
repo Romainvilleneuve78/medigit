@@ -20,7 +20,7 @@
 }
 
 .Name_ordo {width: 80%;}
-.Name_ordo  h2{font-size: 2vw; color : black;}
+.Name_ordo  h2{font-size: 2vw; color : rgb(0, 0, 0);}
 .ordonnances .my-paragraph1 {font-size: 1vw;}
 .ordonnances .my-paragraph2 {font-size: 1vw; margin-top: 6%;}
 .ordonnances .pdp_ordo img {width:7vw; height: 7vw;}
@@ -59,14 +59,16 @@
 
 
 .ordonnances .option_ordo {width: 20%; display :flex;}
-.ordonnances .container_ordo .option_ordo .coeur, .ordonnances .container_ordo .option_ordo .points {
+.ordonnances .container_ordo .option_ordo .coeur, .ordonnances .container_ordo .option_ordo .poubelle {
   width: 4vw; /* Largeur du bouton */
   height: 3vw; /* Hauteur du bouton */
   background-color: rgb(255, 255, 255);
   border-radius: 25%;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
-.ordonnances .container_ordo .option_ordo .coeur img , .ordonnances .container_ordo .option_ordo .points img{
+.ordonnances .container_ordo .option_ordo .coeur img , .ordonnances .container_ordo .option_ordo .poubelle img{
   width:2vw;
   height: 2vw; 
 }

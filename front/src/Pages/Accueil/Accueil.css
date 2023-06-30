@@ -8,7 +8,13 @@
 .header_extend img{width: 25%;}
 
 /* ---------------------------------------------------------- help section ----------------------------------------------------*/
-.help{margin: 5%; margin-bottom: 7%;}
+.help{
+    /* margin: 5%;  */
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    margin-bottom: 7%;
+}
 .help h1{margin-bottom: 2%; color: #4a7ee7}
 .help .division{ display: flex; background-color: #F5F5F5;}
 
@@ -63,7 +69,7 @@
     text-align: center;
 }
 
-.btn a{
+.btn .a{
     width: 20vw;
     background-color: rgb(255, 255, 255);
     text-decoration: none;
@@ -77,6 +83,41 @@
     transition: color 0.3s;
 
 }
+
+
+.btn .b{
+    width: 20vw;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding:12px 0;
+    color:#4a4949;
+    border-radius: 5px;
+    position: relative;
+    z-index:1;
+    transition: color 0.3s;
+    font-weight: bold;
+    margin-bottom: 1vw;
+
+}*
+
+.option {
+    width: 6vw;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding:12px 0;
+    color:#4a4949;
+    border-radius: 5px;
+    position: relative;
+    z-index:1;
+    transition: color 0.3s;
+    font-weight: bold;
+
+}
+
 
 .btn a:hover{color:#8bcff1;}
 

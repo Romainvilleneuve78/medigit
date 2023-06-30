@@ -1,12 +1,15 @@
 // src/pages/Page2.jsx
 import React from 'react';
 import SignUp from '../components/SignUp';
+import '../components/Sign.css';
+import Client from '../components/Client';
+import Medecin from '../components/Medecin';
+
 function SignUp_Page() {
   return (
     <div>
-      <h1>Sign Up</h1>
-      <p>Enregistrez-vous</p>
-      <SignUp />
+      <div class="title">Sign Up</div>
+      <Medecin />
     </div>
   );
 }

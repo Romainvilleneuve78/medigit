@@ -72,28 +72,44 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
 /* ---------------------------------------------------------- menu Home ----------------------------------------------------*/
 .menu_home{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 4vw;
-  margin-left: 2%;
-  border-bottom: 1px solid #152D4B;
+  justify-content: left;
+  align-items: left;
+  width: 67%;
+  height: 3.8vw;
+  /* border-bottom: 2.5px solid #535bf2; */
+  border-bottom: 0.17vw solid #535bf2;
+  border-bottom: 0.17vw solid #181d79;
+  /* border-bottom: 0.17vw solid #153D4B; */
+  /* border-bottom: 0.17vw solid #ffffff; */
 }
 
-.menu_home .links ul{display: flex; align-items: center;}
+.menu_home .links ul{display: flex; 
+  align-items: left; 
+  align-items: left; 
+  justify-content: space-between;
+}
+
+.menu_home .linkHome{color: #181d79; align-self: left; 
+  margin-right: 5.2vw;
+}
+
+.menu_home .linkHomefin{color: #181d79; align-self: left; 
+  /* margin-right: 5.2vw; */
+}
 
 .menu_home .links ul li{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
- 
-  width: 15vw;
+  width : 10vw;
+  width: auto;
   height: 4vw;
-  color: #152D4B;
-
+  /* color: #ffffff; */
   font-weight: 700;
   transition: font-weight 1s;
   font-size: 1vw;
+  /* margin: 0 2.6vw;  */
+  /* margin-right: 5.2vw;  */
 }
 
 .menu_home a:hover {
@@ -105,7 +121,7 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
 footer{
   display: flex;
   align-items: center;
-  padding: 5%;
+  padding: 3%;
   background-color: #27448E;
 }
 
