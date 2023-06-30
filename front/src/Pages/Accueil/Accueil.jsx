@@ -64,7 +64,9 @@ function Home() {
               </Link>
             </div>
             <div class='btn'>
-              <div class='a' onClick={handleCreateAccountClick}>Créer un compte</div>
+             
+            <button class="b" onClick={handleCreateAccountClick}>Créer un compte</button>
+            
               {showOptions && (
                 <div class='options'>
                   <Link to="/SignUp_Page"><div class='option'>Client</div></Link>
