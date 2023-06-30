@@ -7,7 +7,7 @@ var client_model = require('./ClientModel');
 var professional_model = require('./ProfessionalModel');
 
 
-module.exports = router;
+
 
 router.get("/", (req, res) => {
     res.json("API MAX V 0.1");
@@ -74,7 +74,7 @@ router.post("/login", (req, res) => {
       professionalData.Description
     );
   
-    professional_model.updateProfessional(professional)
+    professional.updateProfessional()
       .then(affectedRows => {
         if (affectedRows > 0) {
           res.status(200).json({ message: 'Professional mis à jour avec succès' });
@@ -97,7 +97,7 @@ router.post("/login", (req, res) => {
       clientData.City
     );
   
-    client_model.updateClient(client)
+    client.updateClient() // Utilisez client.updateClient() au lieu de client_model.updateClient(client)
       .then(affectedRows => {
         if (affectedRows > 0) {
           res.status(200).json({ message: 'Client mis à jour avec succès' });
@@ -108,7 +108,7 @@ router.post("/login", (req, res) => {
       .catch(error => {
         res.status(500).json({ error: 'Erreur lors de la mise à jour du client', details: error.message });
       });
-  });
+});
 
 router.get("/prescription/list", (req, res) => {
     prescription_model.list_prescription().then(result => {
@@ -145,3 +145,4 @@ router.use((req, res) => {
     });
 });
 
+module.exports = router;
