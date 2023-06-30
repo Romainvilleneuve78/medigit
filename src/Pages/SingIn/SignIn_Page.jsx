@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 // import SignIn from '../../components/SignIn';
 import './SignIn.css'
 import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 
 
 /*function SignIn_Page() {
@@ -41,6 +43,8 @@ function SignIn_Page() {
 
   return (
     <div className="log">
+      <h1 className='titleSign'>Sign In</h1>
+      
       <form onSubmit={handleLogin} className='form'>
         {/* <label> */}
           {/* Email: */}
@@ -65,7 +69,14 @@ function SignIn_Page() {
         {/* </label> */}
         <br />
         <button type="submit" className='center-button'>Login</button>
+
+        <div className="pass">
+          <Link to="/SignUp_Page"><div className='pass'>Créer un compte</div></Link>
+
+        </div>
       </form>
+
+
     </div>
   );
 }

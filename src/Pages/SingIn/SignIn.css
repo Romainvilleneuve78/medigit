@@ -1,6 +1,6 @@
-.title {
+.titleSign {
     color: #2ACEF2;
-    text-align: center;
+    /* text-align: center; */
     font-size: 2.5vw;
     margin-top: 3%;
 }
@@ -11,33 +11,37 @@
     margin-right: 35%;
     margin-bottom: 5%;
     top: 50%;
-    left: 50%;
+    /* left: 50%; */
     width: 30%;
     background-color: rgb(255, 255, 255); 
     border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    background-color: tomato;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-color: tomato; */
 }
 
 .form {
     padding: 0 2vw;
     margin: 0 2vw;
-    justify-content: center;
+    width: 100%;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .log h1 {
     text-align: center;
-    padding: 0 0 2vw 0;
-    border-bottom: 0.1vw solid silver;
+    /* padding: 0 0 2vw 0; */
+    /* border-bottom: 0.1vw solid silver; */
 }
 
 .txt_field {
     position: relative;
-    border-bottom: 0.13vw solid #adadab;
     border : none;
+
+    border-bottom: 0.13vw solid #adadab;
     margin: 2vw 0;
     margin-bottom: 3%;
+    font-size: 1.2vw;
 }
 
 .txt_field input {
@@ -65,19 +69,19 @@
 .center-button {
     margin-top: 15%;
     margin-bottom: 7%;
-    margin-right: 0%;
-    display: flex;
-    /* justify-content: center; */
-    align-self: center;
-    /* background-color: bisque; */
+    /* margin-right: 0%; */
+    /* display: flex; */
     font-size: 1.4vw;
 }
 
 .pass {
     margin: 1%;
     text-align: center;
+    font-weight: 400;
     font-size: 1.2vw;
     color: #2ACEF2;
+    font-style: italic;
+
 }
 
 .buttonsign {

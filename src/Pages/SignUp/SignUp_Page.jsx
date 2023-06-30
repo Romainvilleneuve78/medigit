@@ -5,7 +5,7 @@ import SignUp from '../../components/SignUp';
 import './SignUp.css';
 
 
-/*
+
 //vraie fonction
 function SignUp_Page() {
   const [userData, setUserData] = useState({
@@ -127,7 +127,7 @@ function SignUp_Page() {
   );
 }
 
-export default SignUp_Page;*/
+export default SignUp_Page;
 
 
 /*
@@ -286,7 +286,7 @@ function SignUp_Page() {
 export default SignUp_Page;*/
 
 
-
+/*
 function SignUp_Page() {
 
   const userKind = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')).Kind : null;
@@ -440,4 +440,4 @@ function SignUp_Page() {
   
 }
 
-export default SignUp_Page;
+export default SignUp_Page;*/
