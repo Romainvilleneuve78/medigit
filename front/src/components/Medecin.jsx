@@ -24,7 +24,7 @@ const Medecin = () => {
                 {/*lieuTravail */}
                 <div class="txt_field"><input type="text" placeholder='Entrez votre adresse de travail :' id="lieutaff" /></div>
                 {/*horaire */}
-                <div class="txt_field"><input type="text" placeholder='Entrez vos horaires de travail :' id="hortaff" /></div>
+                <div class="txt_field"><label>Entrez votre horaires de travail:</label><input type="text" placeholder='Entrez vos horaires de travail :' id="hortaff" /></div>
 
                 <div class="center-button"><button class='buttonsign' type="submit">Sign Up</button></div>
             </form>

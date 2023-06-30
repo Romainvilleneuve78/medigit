@@ -37,7 +37,7 @@ const SignIn = () => {
 
         <div class="pass">
         
-        <Link to="/">
+        <Link to="/home">
           <label>Je suis un professionel</label>
         </Link>
         </div>
