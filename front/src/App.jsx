@@ -37,6 +37,7 @@ function App() {
         
       
         <Routes> {/* Remplacez le composant Route par Routes */}
+          <Route path="/" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}
           <Route path="/Home" element={<Home />} /> {/* Utilisez l'attribut element pour définir le composant */}
           <Route path="/page2" element={<Page2 />} />
           <Route path="/page3" element={<Page3 />} />
