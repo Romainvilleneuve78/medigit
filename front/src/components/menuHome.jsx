@@ -13,7 +13,7 @@ const MenuPageHome = () => {
                     <li><ScrollLink to="expl" smooth={true} duration={500} className="linkHome">Aide</ScrollLink></li>
                     <li><ScrollLink to="sign" smooth={true} duration={500} className="linkHome">Se connecter</ScrollLink></li>
                     <li><Link to="/Profil" className="linkHome">Mon Profil</Link></li>
-                    <li><Link to="/page2" className="linkHomefin">Mes Ordonnances</Link></li>
+                    <li><Link to="/Ordonnance" className="linkHomefin">Mes Ordonnances</Link></li>
                 </ul>
             </div>  
         </nav>

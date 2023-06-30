@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import MenuPageHome from '../../components/menuHome';
 import { Element } from 'react-scroll';
 
-function Home() {
+function Accueil() {
   const [showOptions, setShowOptions] = useState(false);
 
   const handleCreateAccountClick = () => {
@@ -81,4 +81,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Accueil;

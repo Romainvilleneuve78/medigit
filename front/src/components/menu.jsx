@@ -7,8 +7,8 @@ const MenuPage = () => {
         <nav class="menu">
             <div class="links ">
                 <ul>
-                    <li><Link to="/Home">Accueil</Link></li>
-                    <li><Link to="/page2">Mes Ordonnances</Link></li>
+                    <li><Link to="/Accueil">Accueil</Link></li>
+                    <li><Link to="/Ordonnance">Mes Ordonnances</Link></li>
                     <li><Link to="/Profil">Mon Profil</Link></li>
                 </ul>
             </div>  

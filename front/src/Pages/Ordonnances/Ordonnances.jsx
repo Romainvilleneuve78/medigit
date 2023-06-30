@@ -1,9 +1,9 @@
 import './Ordonnances.css';
 import React from 'react';
-import Component1 from '../../components/test';
+import Ordo from '../../components/ordo';
 import MenuPage from '../../components/menu';
 
-function Page2() {
+function Ordonnance() {
   return (
     <>
       <div class='header_ordo_extend'>
@@ -23,11 +23,11 @@ function Page2() {
 
       <div class='ordonnances'>
 
-        <Component1/>
-        <Component1/>
-        <Component1/>
-        <Component1/>
-        <Component1/>
+        <Ordo/>
+        <Ordo/>
+        <Ordo/>
+        <Ordo/>
+        <Ordo/>
 
 
 
@@ -38,4 +38,4 @@ function Page2() {
   );
 }
 
-export default Page2;
+export default Ordonnance;
