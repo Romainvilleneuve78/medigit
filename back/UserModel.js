@@ -157,6 +157,26 @@ function login(email, password) {
 }
 
 
+function updateUser(idUser, updatedUser) {
+  const { FirstName, LastName, Sex, Birthdate, Phone, Fix, Email, Kind, Password } = updatedUser;
+  const query = "UPDATE User SET FirstName = ?, LastName = ?, Sex = ?, Birthdate = ?, Phone = ?, Fix = ?, Email = ?, Kind = ?, Password = ? WHERE idUser = ?";
+  const values = [FirstName, LastName, Sex, Birthdate, Phone, Fix, Email, Kind, Password, idUser];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.affectedRows > 0) {
+          resolve("Utilisateur mis à jour avec succès");
+        } else {
+          reject(new Error("L'id de l'utilisateur n'a pas été trouvé"));
+        }
+      }
+    });
+  });
+}
+
 // Exemple d'utilisation
 //const user = new User("John", "Doe", "M", "1990-01-01", "123456789", "987654321", "john.doe@example.com", "1", "password");
 
@@ -211,5 +231,6 @@ module.exports = {
   User,
   list_utilisateurs,
   login,
-  addUser
+  addUser,
+  updateUser
 };

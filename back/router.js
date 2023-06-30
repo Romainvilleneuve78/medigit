@@ -63,6 +63,20 @@ router.post("/login", (req, res) => {
   });
 
 
+  router.post('/update/user/:idUser', (req, res) => {
+    const idUser = req.params.idUser;
+    const updatedUser = req.body;
+  
+    user_model.updateUser(idUser, updatedUser)
+      .then(message => {
+        res.status(200).json({ message: message });
+      })
+      .catch(error => {
+        res.status(500).json({ error: 'Erreur lors de la mise à jour de l\'utilisateur', details: error.message });
+      });
+  });
+
+
   router.post('/professional/update', (req, res) => {
     const professionalData = req.body;
   
