@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Profil.css';
 import MenuPage from '../../components/menu';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
+import axios from 'axios';
 
 
 function Profil() {
+    const sessionData = JSON.parse(sessionStorage.getItem('user'));
+    const idUser = sessionData.idUser;
+
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Faites la requête HTTP pour récupérer les données de l'utilisateur
+        axios.get(`http://localhost:3000/user/${idUser}`)
+        .then(response => {
+            setUser(response.data);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données de l\'utilisateur:', error);
+            setLoading(false);
+        });
+    }, [idUser]);
+
+    if (loading) {
+        return <div>Chargement en cours...</div>;
+    }
+
+    if (!user) {
+        return <div>Utilisateur non trouvé</div>;
+    }
+
+    
+    
     return (
         <>
             <div class='header_profil_extend'>
@@ -29,7 +59,7 @@ function Profil() {
                     </div>
 
                     <div class="info">
-                        <h2>Nom Utilisatuer</h2>
+                        <h2>{user.FirstName} {user.LastName}</h2>
                         <h3>Adress patient</h3>
 
                         <div class='infos'>

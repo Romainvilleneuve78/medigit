@@ -40,16 +40,36 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 
 function Ordonnance() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   // axios.get('http://localhost:3000/prescription/list')
+  //   axios.get('http://localhost:3000/prescription/list')
+  //     .then(response => {
+  //       setData(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);
+
+
+  const [prescriptions, setPrescriptions] = useState([]);
 
   useEffect(() => {
-    // axios.get('http://localhost:3000/prescription/list')
-    axios.get('http://localhost:3000/prescription/list')
-      .then(response => {
-        setData(response.data);
+    // Récupérer l'ID de l'utilisateur à partir du sessionStorage
+    const sessionData = JSON.parse(sessionStorage.getItem('user'));
+    const idUser = sessionData.idUser;
+
+    // Effectuer une requête GET à votre API
+    fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+      .then(response => response.json())
+      .then(data => {
+        // Mettre à jour l'état avec les résultats des prescriptions
+        setPrescriptions(data);
       })
       .catch(error => {
-        console.error(error);
+        console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
       });
   }, []);
 
@@ -71,20 +91,9 @@ function Ordonnance() {
         </div>
 
       <div class='ordonnances'>
-
-      {/* <table>
-        {data.map(prescription => (
-          <tr key={prescription.idPrescription}>
-            <td>
-              <h2>{prescription.Name}</h2>
-              <p>Jusqu'au: {prescription.Date_validity}</p>
-            </td>
-          </tr>
-        ))}
-      </table>       */}
       
       <table style={{width:'100%'}}>
-        {data.map(prescription => (
+        {prescriptions.map(prescription => (
           <tr key={prescription.idPrescription}>
             <td>
               {/* <h2>{prescription.Name}</h2>

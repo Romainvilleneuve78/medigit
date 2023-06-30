@@ -183,7 +183,23 @@ connection.connect((err) => {
   });
 });
 
+function findUserById(idUser) {
+  const query = "SELECT * FROM User WHERE idUser = ?";
 
+  return new Promise((resolve, reject) => {
+    connection.query(query, [idUser], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]); // Renvoyer le premier utilisateur correspondant trouvé
+        } else {
+          reject(new Error("Utilisateur non trouvé"));
+        }
+      }
+    });
+  });
+}
 
 
   
@@ -211,5 +227,6 @@ module.exports = {
   User,
   list_utilisateurs,
   login,
-  addUser
+  addUser,
+  findUserById
 };
