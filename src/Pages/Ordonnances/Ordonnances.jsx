@@ -44,6 +44,7 @@ const Page2 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    // axios.get('http://localhost:3000/prescription/list')
     axios.get('http://localhost:3000/prescription/list')
       .then(response => {
         setData(response.data);
