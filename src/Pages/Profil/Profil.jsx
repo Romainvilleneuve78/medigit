@@ -33,7 +33,8 @@ function Profil() {
         return <div>Utilisateur non trouvé</div>;
     }
 
-    
+    const userTypeText = user.Kind === 0 ? 'patient' : 'professionnel';
+
     
     return (
         <>
@@ -43,7 +44,8 @@ function Profil() {
                         <MenuPage/>
                         <div class='title'>
                             <h1>Mon espace</h1>
-                            <h2>(particulier)</h2>
+                            {/* <h2>(particulier)</h2> */}
+                            <h2>({userTypeText})</h2>
                         </div>
                         {/* <button>Modifier mon profil</button> */}
                         <Link to="/ModifProf"><div className='butmodif'>Modifier mon profil</div></Link>
@@ -79,9 +81,9 @@ function Profil() {
 
                             <div class="info-3">
                                 <h4 class="contact">Contact</h4>
-                                <p class="infoProf">Phone : +33 1 45 65 78 29</p>
-                                <p class="infoProf">Standard : +33 6 24 12 36 87</p>
-                                <p class="infoProf">Email : Nozmam.doc@docdoc.com</p>
+                                <p class="infoProf">Phone : {user.Phone}</p>
+                                <p class="infoProf">Standard : {user.Fix}</p>
+                                <p class="infoProf">Email : {user.Email}</p>
                             </div>
                         </div>
 

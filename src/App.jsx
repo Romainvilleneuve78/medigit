@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
+import axios from 'axios';
 
 
 import Accueil from './Pages/Accueil/Accueil';
@@ -26,6 +27,39 @@ import updateProfessional from './Pages/updateProfessional'
 function App() {
   const [count, setCount] = useState(0)
 
+  const isUserLoggedIn = true; // Mettez la valeur réelle de l'état de connexion de l'utilisateur ici
+
+  const sessionData = JSON.parse(sessionStorage.getItem('user'));
+  const idUser = sessionData ? sessionData.idUser : null; // Vérifiez si les informations de l'utilisateur sont disponibles dans la session
+
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      // Faites la requête HTTP pour récupérer les données de l'utilisateur s'il est connecté
+      if (idUser) {
+          axios.get(`http://localhost:3000/user/${idUser}`)
+              .then(response => {
+                  setUser(response.data);
+                  setLoading(false);
+              })
+              .catch(error => {
+                  console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+                  setLoading(false);
+              });
+      } else {
+          setLoading(false); // L'utilisateur n'est pas connecté, arrêtez de charger
+      }
+  }, [idUser]);
+
+  if (loading) {
+      return <div>Chargement en cours...</div>;
+  }
+
+  if (!idUser || !user) {
+      return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
+  }
+
   return (
     <>
       <Router>
@@ -33,14 +67,49 @@ function App() {
           <nav className="navbar">
               <a href="/Accueil"><h1>MeDigit.</h1></a>
               <h2>Récupérez vos ordonnances n'importe où et n'importe quand</h2>
-              <a href="/SignIn_Page">
-                <div className="nav-links ">
-                    <ul>
-                        <li>Se connecter</li>
-                        <li><img className="user" src="images/user.png" alt="Logo"></img></li>
-                    </ul>
-                </div>
-              </a>
+              {/* {!isUserLoggedIn && (
+                
+                <a href="/SignIn_Page">
+                  <div className="nav-links ">
+                      <ul>
+                          <li>Se connecter</li>
+                          <li><img className="user" src="images/user.png" alt="Logo"></img></li>
+                      </ul>
+                  </div>
+                </a>
+              )}
+              {isUserLoggedIn && (
+                <a href="/Profil">
+                  <div className="nav-links ">
+                      <ul>
+                          <li>Mon Profil</li>
+                          <li><img className="user" src="images/user.png" alt="Logo"></img></li>
+                      </ul>
+                  </div>
+                </a>
+              )} */}
+              {!idUser || !user ? ( // Si l'utilisateur n'est pas connecté, affichez le bouton "Se connecter"
+                  <a href="/SignIn_Page">
+                      <div className="nav-links">
+                          <ul>
+                              <li>Se connecter</li>
+                              <li><img className="user" src="images/user.png" alt="Logo"></img></li>
+                          </ul>
+                      </div>
+                  </a>
+              ) : ( // Si l'utilisateur est connecté, affichez le bouton "Mon Profil"
+                  <a href="/Profil">
+                      <div className="nav-links">
+                          <ul>
+                              <li>Mon Profil</li>
+                              <li><img className="user" src="images/user.png" alt="Logo"></img></li>
+                          </ul>
+                      </div>
+                  </a>
+              )}
+
+
+
           </nav>
         </header>
 
@@ -61,7 +130,7 @@ function App() {
 
       <footer>
           <h1>MeDigit.</h1>
-          <div class='txt'>Master Camp 2023</div>
+          <div className='txt'>Master Camp 2023</div>
       </footer>
     </>
   )

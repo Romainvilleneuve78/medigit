@@ -4,7 +4,7 @@
   margin : 0;
   font-style: normal;
   text-decoration: none;
-  list-style: none; 
+  list-style: none;
 }
 
 /* ---------------------------------------------------------- Titres ----------------------------------------------------*/
@@ -76,7 +76,7 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
   display: flex;
   justify-content: left;
   align-items: left;
-  width: 67%;
+  width: 50%;
   height: 3.8vw;
   border-bottom: 0.17vw solid #181d79;
 }
@@ -87,11 +87,12 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
   justify-content: space-between;
 }
 
-.menu_home .linkHome{color: #181d79; align-self: left; 
-  margin-right: 5.2vw;
+.menu_home .linkHome{color: #000000; align-self: left; 
+/* .menu_home .linkHome{color: #181d79; align-self: left;  */
+    margin-right: 5.2vw;
 }
 
-.menu_home .linkHomefin{color: #181d79; align-self: left; 
+.menu_home .linkHomefin{color: #000000; align-self: left; 
   /* margin-right: 5.2vw; */
 }
 
