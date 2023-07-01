@@ -134,19 +134,23 @@ router.get("/prescription/user", (req, res) => {
 });
 
 
-// Route pour trouver un utilisateur par son id
-router.get("/user/:id", (req, res) => {
-  const idUser = req.params.id;
+router.get("/prescription/:idPrescription", (req, res) => {
+  const idPrescription = req.params.idPrescription;
 
-  user_model.findUserById(idUser)
-    .then(user => {
-      console.log("Utilisateur trouvé :", user);
-      res.json(user);
-    })
-    .catch(error => {
-      console.error(error);
-      res.status(404).json({ error: "Utilisateur non trouvé" });
-    });
+  // Utilisez la fonction getPrescriptionById pour obtenir les informations de l'ordonnance par son ID
+  prescription_model.getPrescriptionById(idPrescription)
+      .then(result => {
+          if (result) {
+              console.log("Prescription found:", result);
+              res.send(result);
+          } else {
+              res.status(404).json({ error: 'Prescription not found' });
+          }
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).send("An error occurred while fetching the prescription.");
+      });
 });
 
 

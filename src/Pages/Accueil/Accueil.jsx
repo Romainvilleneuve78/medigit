@@ -13,10 +13,10 @@ function Accueil() {
 
   return (
     <>
-      <div class='header_extend'>
-        <div class='fond'>
-          <div class='txt'>
-            <div class='title'>
+      <div className='header_extend'>
+        <div className='fond'>
+          <div className='txt'>
+            <div className='title'>
               <h1>MeDigit</h1>
               <h2>votre nouvelle plateforme de santé</h2>
             </div>
@@ -26,51 +26,51 @@ function Accueil() {
         </div>
       </div>
     
-      <div id='expl' class='help'>
+      <div id='expl' className='help'>
         <h1>Comment ça marche ?</h1>
-        <div class='division'>
-          <div class='picture'>
+        <div className='division'>
+          <div className='picture'>
             <img src="../../images/Ordonnance-electronique.png"></img>
           </div>
 
-          <div class='explication'>
-            <div class='steps'>
-              <div class='step'>1</div>
-              <div class='description'>Créez votre compte MeDigit.</div>
+          <div className='explication'>
+            <div className='steps'>
+              <div className='step'>1</div>
+              <div className='description'>Créez votre compte MeDigit.</div>
             </div>
-            <div class='steps'>
-              <div class='step'>2</div>
-              <div class='description'>Enregistrez vos informations personnelles.</div>
+            <div className='steps'>
+              <div className='step'>2</div>
+              <div className='description'>Enregistrez vos informations personnelles.</div>
             </div>
-            <div class='steps'>
-              <div class='step'>3</div>
-              <div class='description'>Accédez directement à vos ordonnances personnelles.</div>
+            <div className='steps'>
+              <div className='step'>3</div>
+              <div className='description'>Accédez directement à vos ordonnances personnelles.</div>
             </div>
-            <div class='steps'>
-              <div class='step'>4</div>
-              <div class='description'>Personnalisez vos rappels pour une vie plus tranquille.</div>
+            <div className='steps'>
+              <div className='step'>4</div>
+              <div className='description'>Personnalisez vos rappels pour une vie plus tranquille.</div>
             </div>
           </div>
         </div>
       </div>
       
-      <div id='sign' class='myspace'>
-        <div class='links'>
+      <div id='sign' className='myspace'>
+        <div className='links'>
           <h1>Votre espace Personnel</h1>
           <nav>
-            <div class='btn'>
+            <div className='btn'>
               <Link to="/SignIn_Page">
-                <div class='a'>Vous connecter</div>
+                <div className='a'>Vous connecter</div>
               </Link>
             </div>
-            <div class='btn'>
+            <div className='btn'>
              
-            <button class="b" onClick={handleCreateAccountClick}>Créer un compte</button>
+            <button className="b" onClick={handleCreateAccountClick}>Créer un compte</button>
             
               {showOptions && (
-                <div class='options'>
-                  <Link to="/SignUp_Page"><div class='option'>Client</div></Link>
-                  <Link to="/SignUp_Page"><div class='option'>Médecin</div></Link>
+                <div className='options'>
+                  <Link to="/SignUp_Page"><div className='option'>Client</div></Link>
+                  <Link to="/SignUp_Page"><div className='option'>Médecin</div></Link>
                 </div>
               )}
             </div>

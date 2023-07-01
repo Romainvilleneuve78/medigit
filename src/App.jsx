@@ -56,9 +56,9 @@ function App() {
       return <div>Chargement en cours...</div>;
   }
 
-  if (!idUser || !user) {
-      return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
-  }
+//   if (!idUser || !user) {
+//       return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
+//   }
 
   return (
     <>
@@ -88,7 +88,7 @@ function App() {
                   </div>
                 </a>
               )} */}
-              {!idUser || !user ? ( // Si l'utilisateur n'est pas connecté, affichez le bouton "Se connecter"
+              {!idUser || !sessionData ? ( // Si l'utilisateur n'est pas connecté, affichez le bouton "Se connecter"
                   <a href="/SignIn_Page">
                       <div className="nav-links">
                           <ul>
@@ -122,7 +122,7 @@ function App() {
           <Route path="/SignUp_Page" element={<SignUp_Page />} />
           <Route path="/SignIn_Page" element={<SignIn_Page />} />
           <Route path="/Profil_pro" element={<Profil_pro />} />
-          <Route path="/Ordopdf" element={<Ordopdf />} />
+          <Route path="/Ordopdf/:idPrescription" element={<Ordopdf />} />
           <Route path="/ModifProf" element={<ModifProf />} />
         </Routes>
 

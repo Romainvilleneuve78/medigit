@@ -4,24 +4,16 @@ import React, { useState } from 'react';
 import './SignIn.css'
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 
 
-/*function SignIn_Page() {
-  return (
-    <div>
-      <h1>Sign In</h1>
-      <p>Connection</p>
-      <SignIn />
-    </div>
-  );
-}
-
-export default SignIn_Page;*/
 
 function SignIn_Page() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // const history = useHistory(); // Instanciez useHistory
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,6 +27,9 @@ function SignIn_Page() {
       // La connexion a réussi, faire quelque chose avec les données utilisateur
       console.log(response.data);
       sessionStorage.setItem('user',JSON.stringify(response.data));
+
+      // Rediriger vers la page d'accueil après la connexion réussie
+      // history.push('/Accueil');
     } catch (error) {
       // Une erreur s'est produite lors de la connexion
       console.error(error.response.data.error);

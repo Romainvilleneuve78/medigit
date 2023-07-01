@@ -29,11 +29,11 @@ function Profil() {
         return <div>Chargement en cours...</div>;
     }
 
-    if (!user) {
+    if (!sessionData) {
         return <div>Utilisateur non trouvé</div>;
     }
 
-    const userTypeText = user.Kind === 0 ? 'patient' : 'professionnel';
+    const userTypeText = sessionData.Kind === 0 ? 'patient' : 'professionnel';
 
     
     return (
@@ -61,7 +61,7 @@ function Profil() {
                     </div>
 
                     <div class="info">
-                        <h2>{user.FirstName} {user.LastName}</h2>
+                        <h2>{sessionData.FirstName} {sessionData.LastName}</h2>
                         <h3>Adress patient</h3>
 
                         <div class='infos'>
@@ -81,9 +81,9 @@ function Profil() {
 
                             <div class="info-3">
                                 <h4 class="contact">Contact</h4>
-                                <p class="infoProf">Phone : {user.Phone}</p>
-                                <p class="infoProf">Standard : {user.Fix}</p>
-                                <p class="infoProf">Email : {user.Email}</p>
+                                <p class="infoProf">Phone : {sessionData.Phone}</p>
+                                <p class="infoProf">Standard : {sessionData.Fix}</p>
+                                <p class="infoProf">Email : {sessionData.Email}</p>
                             </div>
                         </div>
 

@@ -66,4 +66,40 @@ function getPrescriptionsByUser(idUser) {
   });
 }
 
-module.exports = { list_prescription, getPrescriptionsByUser };
+function getPrescriptionById(idPrescription) {
+  // const query = `SELECT * FROM prescription WHERE idPrescription = ?`;
+  const query = `
+        SELECT
+          p.*,
+          uc.FirstName AS ClientFirstName,
+          uc.LastName AS ClientLastName,
+          uc.idUser AS Clientid,
+          upr.FirstName AS ProfessionalFirstName,
+          upr.LastName AS ProfessionalLastName,
+          upr.idUser AS Professionalid
+        FROM
+            prescription p
+        INNER JOIN client c ON p.Client = c.idClient
+        INNER JOIN professional pr ON p.Professional = pr.idProfessional
+        INNER JOIN user uc ON c.user_id = uc.idUser
+        INNER JOIN user upr ON pr.user_id = upr.idUser
+        WHERE idPrescription=1;`;
+  const values = [idPrescription];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]);
+        } else {
+          resolve(null); // Renvoie null si l'ordonnance n'est pas trouvée
+        }
+      }
+    });
+  });
+}
+
+
+module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById };
