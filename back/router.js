@@ -148,7 +148,34 @@ router.get("/prescription/user", (req, res) => {
 });
 
 
+// Route pour trouver un utilisateur par son id
+router.get("/user/:id", (req, res) => {
+  const idUser = req.params.id;
 
+  user_model.findUserById(idUser)
+    .then(user => {
+      console.log("Utilisateur trouvé :", user);
+      res.json(user);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Utilisateur non trouvé" });
+    });
+});
+
+router.get("/professional/:id", (req, res) => {
+  const user_id = req.params.id;
+
+  professional_model.findProfessionalById(user_id)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
 
 
 

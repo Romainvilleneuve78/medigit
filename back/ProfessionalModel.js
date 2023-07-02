@@ -35,6 +35,25 @@ class Professional {
     }
 }
 
+function findProfessionalById(user_id) {
+    const query = "SELECT * FROM Professional WHERE user_id = ?";
+  
+    return new Promise((resolve, reject) => {
+      connection.query(query, [user_id], (error, results) => {
+        if (error) {
+          reject(error);
+        } else {
+          if (results.length > 0) {
+            resolve(results[0]); // Renvoyer le premier professional correspondant trouvé
+          } else {
+            reject(new Error("Professional non trouvé"));
+          }
+        }
+      });
+    });
+  }
+
 module.exports = {
-    Professional
+    Professional,
+    findProfessionalById
 };

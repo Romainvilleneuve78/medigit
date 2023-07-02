@@ -158,9 +158,9 @@ function login(email, password) {
 
 
 function updateUser(idUser, updatedUser) {
-  const { FirstName, LastName, Sex, Birthdate, Phone, Fix, Email, Kind, Password } = updatedUser;
-  const query = "UPDATE User SET FirstName = ?, LastName = ?, Sex = ?, Birthdate = ?, Phone = ?, Fix = ?, Email = ?, Kind = ?, Password = ? WHERE idUser = ?";
-  const values = [FirstName, LastName, Sex, Birthdate, Phone, Fix, Email, Kind, Password, idUser];
+  const { FirstName, LastName, Sex, Birthdate, Phone, Fix, Email} = updatedUser;
+  const query = "UPDATE User SET FirstName = ?, LastName = ?, Sex = ?, Birthdate = ?, Phone = ?, Fix = ?, Email = ? WHERE idUser = ?";
+  const values = [FirstName, LastName, Sex, Birthdate, Phone, Fix, Email,idUser];
 
   return new Promise((resolve, reject) => {
     connection.query(query, values, (error, results) => {
@@ -171,6 +171,24 @@ function updateUser(idUser, updatedUser) {
           resolve("Utilisateur mis à jour avec succès");
         } else {
           reject(new Error("L'id de l'utilisateur n'a pas été trouvé"));
+        }
+      }
+    });
+  });
+}
+
+function findUserById(idUser) {
+  const query = "SELECT * FROM User WHERE idUser = ?";
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, [idUser], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]); // Renvoyer le premier utilisateur correspondant trouvé
+        } else {
+          reject(new Error("Utilisateur non trouvé"));
         }
       }
     });
@@ -232,5 +250,6 @@ module.exports = {
   list_utilisateurs,
   login,
   addUser,
-  updateUser
+  updateUser,
+  findUserById
 };

@@ -376,12 +376,36 @@ export default SignUp_Page;
 function SignUp_Page() {
 
   const userKind = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')).Kind : null;
-  console.log(userKind);
+  
 
   if(userKind==0){
-    const [nSecu, setNSecu] = useState('');
+  const sessionData = JSON.parse(sessionStorage.getItem('user'));
+  const idUser = sessionData.idUser;
+  const [nSecu, setNSecu] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    // Récupérer l'ID de l'utilisateur à partir du sessionStorage
+    
+
+    fetch(`http://localhost:3000/user/${idUser}`)
+      .then(response => response.json())
+      .then(data => {
+        setUser(data);
+        setFirstName(data.FirstName);
+        setLastName(data.LastName);
+        setPhone(data.Phone);
+        setFix(data.Fix);
+        setEmail(data.Email);
+        setSex(data.Sex);
+      })
+      .catch(error => {
+        console.error('Une erreur s\'est produite lors de la récupération du user :', error);
+      });
+  }, []);
 
   const handleClientSubmit = (event) => {
     event.preventDefault();
@@ -427,9 +451,6 @@ function SignUp_Page() {
       handleSubmit(event);
   };
 
-  const sessionData = JSON.parse(sessionStorage.getItem('user'));
-  const idUser = sessionData.idUser;
-
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [sex, setSex] = useState('');
@@ -437,8 +458,7 @@ function SignUp_Page() {
   const [phone, setPhone] = useState('');
   const [fix, setFix] = useState('');
   const [email, setEmail] = useState('');
-  const [kind, setKind] = useState('');
-  const [password, setPassword] = useState('');
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -450,9 +470,7 @@ function SignUp_Page() {
       Birthdate: birthdate,
       Phone: phone,
       Fix: fix,
-      Email: email,
-      Kind: kind,
-      Password: password
+      Email: email
     };
 
     axios.post(`http://localhost:3000/update/user/${idUser}`, updatedUser)
@@ -477,12 +495,31 @@ function SignUp_Page() {
         <input type="text" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
       </div>
       <div>
-        <label htmlFor="sex">Sexe:</label>
-        <input type="text" id="sex" value={sex} onChange={e => setSex(e.target.value)} />
-      </div>
+      <label htmlFor="sex">Sexe:</label>
+      <label>
+        <input
+          type="radio"
+          name="sex"
+          value="M"
+          checked={sex === 'M'}
+          onChange={e => setSex(e.target.value)}
+        />
+        Homme
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="sex"
+          value="F"
+          checked={sex === 'F'}
+          onChange={e => setSex(e.target.value)}
+        />
+        Femme
+        </label>
+        </div>
       <div>
         <label htmlFor="birthdate">Date de naissance:</label>
-        <input type="text" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
+        <input type="date" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
       </div>
       <div>
         <label htmlFor="phone">Téléphone:</label>
@@ -495,14 +532,6 @@ function SignUp_Page() {
       <div>
         <label htmlFor="email">Email:</label>
         <input type="text" id="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="kind">Type:</label>
-        <input type="text" id="kind" value={kind} onChange={e => setKind(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="password">Mot de passe:</label>
-        <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
       </div>
       <label>
         Numéro de sécurité sociale:
@@ -527,6 +556,29 @@ function SignUp_Page() {
   const [activityAdress, setActivityAdress] = useState('');
   const [city, setCity] = useState('');
   const [description, setDescription] = useState('');
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    // Récupérer l'ID de l'utilisateur à partir du sessionStorage
+    
+
+    fetch(`http://localhost:3000/user/${idUser}`)
+      .then(response => response.json())
+      .then(data => {
+        setUser(data);
+        setFirstName(data.FirstName);
+        setLastName(data.LastName);
+        setPhone(data.Phone);
+        setFix(data.Fix);
+        setEmail(data.Email);
+        setSex(data.Sex);
+        setBirthdate(data.Birthdate);
+      })
+      .catch(error => {
+        console.error('Une erreur s\'est produite lors de la récupération du user :', error);
+      });
+  }, []);
 
   const handleProfessionalSubmit = (event) => {
     event.preventDefault();
@@ -583,8 +635,6 @@ function SignUp_Page() {
   const [phone, setPhone] = useState('');
   const [fix, setFix] = useState('');
   const [email, setEmail] = useState('');
-  const [kind, setKind] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -596,9 +646,7 @@ function SignUp_Page() {
       Birthdate: birthdate,
       Phone: phone,
       Fix: fix,
-      Email: email,
-      Kind: kind,
-      Password: password
+      Email: email
     };
 
     axios.post(`http://localhost:3000/update/user/${idUser}`, updatedUser)
@@ -623,12 +671,31 @@ function SignUp_Page() {
         <input type="text" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
       </div>
       <div>
-        <label htmlFor="sex">Sexe:</label>
-        <input type="text" id="sex" value={sex} onChange={e => setSex(e.target.value)} />
-      </div>
+      <label htmlFor="sex">Sexe:</label>
+      <label>
+        <input
+          type="radio"
+          name="sex"
+          value="M"
+          checked={sex === 'M'}
+          onChange={e => setSex(e.target.value)}
+        />
+        Homme
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="sex"
+          value="F"
+          checked={sex === 'F'}
+          onChange={e => setSex(e.target.value)}
+        />
+        Femme
+        </label>
+        </div>
       <div>
         <label htmlFor="birthdate">Date de naissance:</label>
-        <input type="text" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
+        <input type="date" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
       </div>
       <div>
         <label htmlFor="phone">Téléphone:</label>
@@ -641,14 +708,6 @@ function SignUp_Page() {
       <div>
         <label htmlFor="email">Email:</label>
         <input type="text" id="email" value={email} onChange={e => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="kind">Type:</label>
-        <input type="text" id="kind" value={kind} onChange={e => setKind(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="password">Mot de passe:</label>
-        <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
       </div>
       <label>
         Spécialisation:
