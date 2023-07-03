@@ -41,9 +41,9 @@ const MenuPageHome = () => {
     }
   
 
-    if (!idUser || !sessionData) {
-        return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
-    }
+    // if (!idUser || !sessionData) {
+    //     return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
+    // }
 
     return (
         <>
