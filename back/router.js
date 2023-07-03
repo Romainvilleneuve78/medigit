@@ -271,6 +271,22 @@ router.get("/user/:id", (req, res) => {
 });
 
 
+router.delete("/prescription/:idPrescription", (req, res) => {
+  const idPrescription = req.params.idPrescription;
+
+  prescription_model.deletePrescription(idPrescription)
+    .then(affectedRows => {
+      if (affectedRows > 0) {
+        res.status(200).json({ message: 'Prescription supprimée avec succès' });
+      } else {
+        res.status(404).json({ error: 'Prescription non trouvée' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'Erreur lors de la suppression de la prescription', details: error.message });
+    });
+});
+
 router.use((req, res) => {
     res.status(404);
     res.json({

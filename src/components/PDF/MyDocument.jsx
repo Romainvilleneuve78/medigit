@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   
   pro:{
     position: 'absolute',
-    width: '35%',
+    width: '50%',
     alignItems: 'center',
     //marginLeft: '0cm',
     //backgroundColor: 'red',
@@ -102,11 +102,13 @@ const styles = StyleSheet.create({
   med:{
     fontSize: 14,
     fontWeight: 'bold',
+    marginLeft: '0.5cm',
     // marginBottom: '0.2cm',
   },
   des:{
     fontSize: 12,
     marginBottom: '0.5cm',
+    marginLeft: '0.5cm',
   },
 
   sign:{
@@ -247,10 +249,14 @@ function Ordonnance (props) {
               ))}
             </div> */}
 
-          </View>
+            {result.map((item, index) => (
+              <View key={index} style={styles.medContainer}>
+                <Text style={index % 2 === 0 ? styles.med : styles.des}>
+                  {item}
+                </Text>
+              </View>
+            ))}
 
-          <View style={styles.sign}>
-            <Text>Signature</Text>
           </View>
 
         </View>
@@ -285,7 +291,6 @@ function DownloadPDF() {
     //   <PDFViewer width='800px' height='600px'>
     //     <Ordonnance />
     //   </PDFViewer>
-
     // </div>
 
     //Télécharger
