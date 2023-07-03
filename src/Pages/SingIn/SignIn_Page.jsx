@@ -50,44 +50,52 @@ function SignIn_Page() {
   }
 
   return (
-    <div className="log">
-      <h1 className='titleSign'>Sign In</h1>
-      
-      <form onSubmit={handleLogin} className='form'>
-        {/* <label> */}
-          {/* Email: */}
-          <input
-            type="email"
-            value={email}
-            placeholder='Entrez votre email'
-            onChange={(e) => setEmail(e.target.value)}
-            className='txt_field'
-          />
-        {/* </label> */}
-        <br />
-        {/* <label>
-          Password: */}
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className='txt_field'
-            placeholder='Entrez votre mot de passe'
-          />
-        {/* </label> */}
-        <br />
-        <button type="submit" className='center-button'>Login</button>
-
-        {error && <div className="error">{error}</div>} {/* Conditionally render the error message */}
-
-        <div className="pass">
-          <Link to="/SignUp_Page"><div className='pass'>Créer un compte</div></Link>
-
+    <>
+      <div class='header_sign'>
+        <div class='fond'>
+          <h1>Me conntecter à mon espace</h1>
+          <img src='../../images/mon-espace.png'></img>
         </div>
-      </form>
+      </div>
+
+      <div className="sign">
+        
+        <form onSubmit={handleLogin}>
+          {error && <div className="error">{error}</div>} {/* Conditionally render the error message */}
+          {/* <label> */}
+            {/* Email: */}
+            <input
+              type="email"
+              value={email}
+              placeholder='Entrez votre email'
+              onChange={(e) => setEmail(e.target.value)}
+              className='txt_field'
+            />
+          {/* </label> */}
+
+          {/* <label>
+            Password: */}
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className='txt_field'
+              placeholder='Entrez votre mot de passe'
+            />
+          {/* </label> */}
+
+          <button type="submit" className='center-button'>Login</button>
+
+          
+
+          <div className="pass">
+            <Link to="/SignUp_Page"><div className='pass'>Créer un compte</div></Link>
+          </div>
+        </form>
 
 
-    </div>
+      </div>
+    </>
   );
 }
 

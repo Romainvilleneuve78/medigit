@@ -42,88 +42,93 @@ function SignUp_Page() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="FirstName"
-        value={userData.FirstName}
-        onChange={handleChange}
-        placeholder="First Name"
-      />
-      <input
-        type="text"
-        name="LastName"
-        value={userData.LastName}
-        onChange={handleChange}
-        placeholder="Last Name"
-      />
-      <input
-        type="text"
-        name="Sex"
-        value={userData.Sex}
-        onChange={handleChange}
-        placeholder="Sex"
-      />
-      <input
-        type="text"
-        name="Birthdate"
-        value={userData.Birthdate}
-        onChange={handleChange}
-        placeholder="Birthdate"
-      />
-      <input
-        type="text"
-        name="Phone"
-        value={userData.Phone}
-        onChange={handleChange}
-        placeholder="Phone"
-      />
-      <input
-        type="text"
-        name="Fix"
-        value={userData.Fix}
-        onChange={handleChange}
-        placeholder="Fix"
-      />
-      <input
-        type="email"
-        name="Email"
-        value={userData.Email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
-      <label>
-        <input
-          type="radio"
-          name="Kind"
-          value="0"
-          checked={userData.Kind === '0'}
-          onChange={handleChange}
-        />
-        Client
-      </label>
-      <label>
-        <input
-          type="radio"
-          name="Kind"
-          value="1"
-          checked={userData.Kind === '1'}
-          onChange={handleChange}
-        />
-        Professional
-      </label>
-      <input
-        type="password"
-        name="Password"
-        value={userData.Password}
-        onChange={handleChange}
-        placeholder="Password"
-      />
-      <button type="submit">Submit</button>
+    <>
+      <div class='header_sub'>
+        <div class='fond'>
+          <h1>Créez votre compte</h1>
+          <img src='../../images/mon-espace.png'></img>
+        </div>
+      </div>
 
-      {userData.Kind === '0' && <p>Client</p>}
-      {userData.Kind === '1' && <p>Professional</p>}
-    </form>
+      <div className='subribtion'>
+        <form onSubmit={handleSubmit}>
+          <div className='info_1'>
+            <h2>Qui est vous ?</h2>
+            <label>
+              <input type="radio" name="Kind" value="0" checked={userData.Kind === '0'} onChange={handleChange}/>
+              Client
+            </label>
+            <label>
+              <input type="radio" name="Kind" value="1" checked={userData.Kind === '1'} onChange={handleChange}/>
+              Professional
+            </label>
+          </div>
+
+          <div className='info_2'>
+            <input type="text" name="FirstName" value={userData.FirstName} onChange={handleChange} placeholder="First Name"/>
+            <input type="text" name="LastName" value={userData.LastName} onChange={handleChange} placeholder="Last Name"/>
+          </div>
+
+          <div className='info_3'>
+            <label>
+              <input type="radio" name="Sex" value="F" checked={userData.Sex === 'F'} onChange={handleChange}/>
+              Femme
+            </label>
+            <label>
+              <input type="radio" name="Sex" value="M" checked={userData.Sex === 'M'} onChange={handleChange}/>
+              Homme
+            </label>
+          </div>
+
+          <div className='info_3'>
+            <input
+              type="date"
+              name="Birthdate"
+              value={userData.Birthdate}
+              onChange={handleChange}
+              placeholder="Birthdate"
+            />
+            <input
+              type="text"
+              name="Phone"
+              value={userData.Phone}
+              onChange={handleChange}
+              placeholder="Phone"
+            />
+            <input
+              type="text"
+              name="Fix"
+              value={userData.Fix}
+              onChange={handleChange}
+              placeholder="Fix"
+            />
+            <input
+              type="email"
+              name="Email"
+              value={userData.Email}
+              onChange={handleChange}
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              name="Password"
+              value={userData.Password}
+              onChange={handleChange}
+              placeholder="Mot de passe"
+            />
+            <input
+              type="password"
+              name="Password"
+              value={userData.Password}
+              onChange={handleChange}
+              placeholder="Confirmer mot de passe"
+            />
+          </div>
+          
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </>
   );
 }
 

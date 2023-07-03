@@ -1,73 +1,32 @@
-.title {
-    color: #2ACEF2;
-    text-align: center;
-    font-size: 2.5vw;
-    margin-top: 3%;
-}
+.header_sub{background-color: #2ACEF2; padding-left: 8%;}
+.header_sub .fond{display: flex; align-items: center;}
+.header_sub h1{margin-top: 6%; margin-bottom: 6%; font-weight: 750; color: #4a7ee7; font-size: 3vw; width: 65%;}
+.header_sub img{width: 20%; margin-top: 2%;}
 
-.log {
-    margin-top: 5%;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-bottom: 5%;
-    top: 50%;
-    left: 50%;
+.subribtion form{margin: 8%; margin-top: 5%;}
+.subribtion form .info_1, .subribtion form .info_2{width: 100%;}
+.subribtion form .info_2{margin-top: 3%;}
+.subribtion form .info_3{margin-top: 1%;}
+.subribtion form .info_1 h2{color: #2ACEF2; font-size: 2vw; margin-bottom: 2%;}
+.subribtion input{
     width: 30%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-}
-
-.log h1 {
-    text-align: center;
-    padding: 0 0 2vw 0;
-    border-bottom: 0.1vw solid silver;
-}
-
-.txt_field {
-    position: relative;
-    border-bottom: 0.13vw solid #adadab;
-    margin: 2vw 0;
-    margin-bottom: 3%;
-}
-
-.txt_field input {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
-    justify-content: right;
-}
-
-.txt_field label {
-    padding-bottom: 10%;
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    color: #a4a2a2;
-    transform: translateY(-50%);
-    font-size: 1.1vw;
-    pointer-events: none;
-}
-
-.center-button {
-    margin-top: 15%;
-    margin-bottom: 7%;
-    display: flex;
-    justify-content: center;
-    font-size: 1.4vw;
-}
-
-.pass {
-    margin: 1%;
-    text-align: center;
+    margin-right: 20%;
+    margin-bottom: 2.5%;
     font-size: 1.2vw;
-    color: #2ACEF2;
+    border: none;
+    border-bottom: solid 1px #adadab;
+}
+.subribtion input[type="radio"]{
+    width: max-content;
+    margin-right: 1.5%;
 }
 
-.buttonsign {
+.subribtion label{
+    width: 10%;
+    margin-right: 10%;
+}
+
+.subribtion button {
     background-color: #2ACEF2;
     color: white;
 }

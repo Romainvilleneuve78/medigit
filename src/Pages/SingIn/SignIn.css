@@ -1,99 +1,25 @@
-.titleSign {
-    color: #2ACEF2;
-    /* text-align: center; */
-    font-size: 2.5vw;
-    margin-top: 3%;
-}
+.header_sign{background-color: #2ACEF2; padding-left: 8%;}
+.header_sign .fond{display: flex; align-items: center;}
+.header_sign h1{margin-top: 6%; margin-bottom: 6%; font-weight: 750; color: #4a7ee7; font-size: 3vw; width: 65%;}
+.header_sign img{width: 20%; margin-top: 2%;}
 
-.log {
-    margin-top: 5%;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-bottom: 5%;
-    top: 50%;
-    /* left: 50%; */
-    width: 30%;
-    background-color: rgb(255, 255, 255); 
-    border-radius: 10px;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* background-color: tomato; */
-}
+.sign form {margin-left: 8%; margin-right: 8%; margin-top: 5%;}
+.sign input{width: 30%; margin-left: 35%; margin-right: 35%; margin-bottom: 4%; font-size: 1.2vw;border: none; border-bottom: solid 1px #adadab;}
+.sign button{margin-left: 45%; margin-right: 45%; margin-bottom: 4%; width: 10%; background-color: #2ACEF2; color: white; font-size: 1vw;}
+.sign .pass{margin-left: 34%; margin-right: 33%; margin-bottom: 4%; color:#4a7ee7; font-size: 1vw; margin-bottom: 15%;}
 
-.form {
-    padding: 0 2vw;
-    margin: 0 2vw;
-    width: 100%;
-    /* justify-content: center; */
-    /* align-items: center; */
-}
 
-.log h1 {
-    text-align: center;
-    /* padding: 0 0 2vw 0; */
-    /* border-bottom: 0.1vw solid silver; */
-}
 
-.txt_field {
-    position: relative;
-    border : none;
 
-    border-bottom: 0.13vw solid #adadab;
-    margin: 2vw 0;
-    margin-bottom: 3%;
-    font-size: 1.2vw;
-}
-
-.txt_field input {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
-    justify-content: right;
-}
-
-.txt_field label {
-    padding-bottom: 10%;
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    color: #a4a2a2;
-    transform: translateY(-50%);
-    font-size: 1.1vw;
-    pointer-events: none;
-}
-
-.center-button {
-    margin-top: 15%;
-    margin-bottom: 7%;
-    /* margin-right: 0%; */
-    /* display: flex; */
-    font-size: 1.4vw;
-}
-
-.pass {
-    margin: 1%;
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.2vw;
-    color: #2ACEF2;
-    font-style: italic;
-
-}
-
-.buttonsign {
-    background-color: #2ACEF2;
-    color: white;
-}
 
 .error {
     color: red;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+
     font-size: 1vw;
     margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 1%;
+    margin-bottom: 4%;
     font-style: italic;
 }
