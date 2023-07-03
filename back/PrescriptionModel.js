@@ -69,21 +69,27 @@ function getPrescriptionsByUser(idUser) {
 function getPrescriptionById(idPrescription) {
   // const query = `SELECT * FROM prescription WHERE idPrescription = ?`;
   const query = `
-        SELECT
-          p.*,
-          uc.FirstName AS ClientFirstName,
-          uc.LastName AS ClientLastName,
-          uc.idUser AS Clientid,
-          upr.FirstName AS ProfessionalFirstName,
-          upr.LastName AS ProfessionalLastName,
-          upr.idUser AS Professionalid
-        FROM
-            prescription p
-        INNER JOIN client c ON p.Client = c.idClient
-        INNER JOIN professional pr ON p.Professional = pr.idProfessional
-        INNER JOIN user uc ON c.user_id = uc.idUser
-        INNER JOIN user upr ON pr.user_id = upr.idUser
-        WHERE idPrescription=1;`;
+  SELECT
+    p.*,
+    uc.FirstName AS ClientFirstName,
+    uc.LastName AS ClientLastName,
+    uc.idUser AS Clientid,
+    uc.Email AS ClientMail,
+    uc.Phone AS ClientPhone,
+    upr.FirstName AS ProfessionalFirstName,
+    upr.LastName AS ProfessionalLastName,
+    upr.idUser AS Professionalid,
+    upr.Email AS ProfessionalMail,
+    upr.Phone AS ProfessionalPhone
+  FROM
+    prescription p
+  INNER JOIN client c ON p.Client = c.idClient
+  INNER JOIN professional pr ON p.Professional = pr.idProfessional
+  INNER JOIN user uc ON c.user_id = uc.idUser
+  INNER JOIN user upr ON pr.user_id = upr.idUser
+
+  WHERE idPrescription=1;
+    `;
   const values = [idPrescription];
 
   return new Promise((resolve, reject) => {

@@ -90,11 +90,15 @@ function Ordopdf() {
                     
                     
                 <button className="downloadpdf">
-                    <  DownloadPDF />
+                    {/* <  DownloadPDF idPrescription={prescriptionData.idPrescription}/> */}
+                    {/* <  DownloadPDF idPrescription={idPrescription}/> */}
+                    {/* <  DownloadPDF idPrescription={2}/> */}
+                    <  DownloadPDF/>
+
                 </button>
                     
                     
-                    <button className = "bouton_qr">Afficher le QR Code</button>s
+                    {/* <button className = "bouton_qr">Afficher le QR Code</button>s */}
                 </div>
             </div>
         </>

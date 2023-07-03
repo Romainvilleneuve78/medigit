@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import SignIn from '../../components/SignIn';
 import './SignIn.css'
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
 
 
@@ -12,6 +12,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function SignIn_Page() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false); // Ajoutez un état pour gérer la connexion réussie
+  const navigate = useNavigate(); // Use the useNavigate hook for redirection
+  const [error, setError] = useState(''); // State variable to store the error message
+
 
   // const history = useHistory(); // Instanciez useHistory
 
@@ -27,14 +31,23 @@ function SignIn_Page() {
       // La connexion a réussi, faire quelque chose avec les données utilisateur
       console.log(response.data);
       sessionStorage.setItem('user',JSON.stringify(response.data));
+      setLoggedIn(true); // Mettez à jour l'état pour indiquer que l'utilisateur est connecté
+      navigate('/Accueil'); // Redirect the user to the home page
+
 
       // Rediriger vers la page d'accueil après la connexion réussie
       // history.push('/Accueil');
     } catch (error) {
       // Une erreur s'est produite lors de la connexion
       console.error(error.response.data.error);
+      setError("L'adresse mail ou le mot de passe sont incorrecte"); // Set the error message state
     }
   };
+
+  if (loggedIn) {
+    // Si l'utilisateur est connecté, redirigez-le vers la page d'accueil
+    // return <Redirect to="/Accueil" />;
+  }
 
   return (
     <div className="log">
@@ -64,6 +77,8 @@ function SignIn_Page() {
         {/* </label> */}
         <br />
         <button type="submit" className='center-button'>Login</button>
+
+        {error && <div className="error">{error}</div>} {/* Conditionally render the error message */}
 
         <div className="pass">
           <Link to="/SignUp_Page"><div className='pass'>Créer un compte</div></Link>

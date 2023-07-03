@@ -7,37 +7,6 @@ import MenuPage from '../../components/menu';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 
 
-// const Ordonnance = () => {
-//   const [data, setData] = useState([]);
-
-//   useEffect(() => {
-//     // axios.get('http://localhost:3000/prescription/list')
-//     axios.get('http://localhost:3000/prescription/list')
-//       .then(response => {
-//         setData(response.data);
-//       })
-//       .catch(error => {
-//         console.error(error);
-//       });
-//   }, []);
-
-//   return (
-//     <table>
-//       {data.map(prescription => (
-//         <tr key={prescription.idPrescription}>
-//           <td><h2>{prescription.Name}</h2>
-//           <p>Jusqu'au: {prescription.Date_validity}</p>
-//           {/* Afficher d'autres informations utilisateur*/}</td>
-//         </tr>
-//       ))}
-//     </table>
-//   );
-// };
-
-// export default Ordonnance;
-
-
-
 
 function Ordonnance() {
   // const [data, setData] = useState([]);

@@ -66,7 +66,7 @@ function App() {
         <header>
           <nav className="navbar">
               <a href="/Accueil"><h1>MeDigit.</h1></a>
-              <h2>Récupérez vos ordonnances n'importe où et n'importe quand</h2>
+              <h2>Votre santé à portée de main, vos ordonnances partout, tout le temps.</h2>
               {/* {!isUserLoggedIn && (
                 
                 <a href="/SignIn_Page">
@@ -115,7 +115,7 @@ function App() {
 
         <Routes> {/* Remplacez le composant Route par Routes */}
           <Route path="/" element={<Accueil />} /> {/* Utilisez l'attribut element pour définir le composant */}
-          <Route path="/Accueil" element={<Accueil />} /> {/* Utilisez l'attribut element pour définir le composant */}
+          <Route path="/Accueil" element={<Accueil />} />
           <Route path="/Ordonnance" element={<Ordonnance />} />
           <Route path="/Profil" element={<Profil />} />
           <Route path="/AddOrdo" element={<AddOrdo />} />

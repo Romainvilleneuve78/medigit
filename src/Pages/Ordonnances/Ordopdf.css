@@ -70,7 +70,7 @@ display: flex;
     display: flex;
     margin-left: 5%;
     padding-bottom: 2vw;
-    border-bottom: solid black 1px  ;
+    /* border-bottom: solid black 1px  ; */
     width: 60%;
     margin-bottom: 3vw;
   } 
