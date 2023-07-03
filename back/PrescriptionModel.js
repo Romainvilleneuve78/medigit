@@ -140,5 +140,25 @@ function addPrescription(Name, n_secu, Professional, Medicine, Description) {
   });
 }
 
+// Fonction pour supprimer une ordonnance par son ID
+function deletePrescription(idPrescription) {
+  const query = "DELETE FROM prescription WHERE idPrescription = ?";
+  const values = [idPrescription];
 
-module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription };
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        // Vérifier si l'ordonnance a été supprimée avec succès
+        if (results.affectedRows > 0) {
+          resolve(true); // Renvoie true si l'ordonnance a été supprimée avec succès
+        } else {
+          resolve(false); // Renvoie false si l'ordonnance n'a pas été trouvée ou n'a pas été supprimée
+        }
+      }
+    });
+  });
+}
+
+module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription, deletePrescription };
