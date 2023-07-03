@@ -35,6 +35,7 @@ function Profil() {
 
     const userTypeText = sessionData.Kind === 0 ? 'patient' : 'professionnel';
 
+    // console.log(sessionData);
     
     return (
         <>
@@ -49,7 +50,7 @@ function Profil() {
                         </div>
                         {/* <button>Modifier mon profil</button> */}
                         <Link to="/ModifProf"><div className='butmodif'>Modifier mon profil</div></Link>
-                    </div>
+                    </div> 
                     <img src='../../images/mon-espace.png'></img>
                 </div>
             </div>
@@ -62,21 +63,20 @@ function Profil() {
 
                     <div class="info">
                         <h2>{sessionData.FirstName} {sessionData.LastName}</h2>
-                        <h3>Adress patient</h3>
+                        <h3>{sessionData.Adress}</h3>
 
                         <div class='infos'>
                             <div class="info-1">
                                 <h4>Information de santé</h4>
-                                <p>Numero de sécurité sociale : 012527537278292</p>
-                                <p>Medecin traitant: Emilie BOURBIER</p>
-
-                                <div class="info_supp">
+                                <p>Numero de sécurité sociale : {sessionData.n_secu}</p>
+                                <p>Date de naissance : {sessionData.Birthdate}</p>
+                                {/* <div class="info_supp">
                                     <h4>Antécedant médicaux</h4>
                                     <p>Hypertention / Alergie gluten</p>
                                     <h4>Intervention chirurgicales</h4>
                                     <p>10/11/23 : Ablation des ligaments posterieur du genoux droit</p>
                                     <p>11/02/99 : Ablation des dents de sagesses</p>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div class="info-3">
