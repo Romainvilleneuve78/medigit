@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'root',
+    password: 'password',
     database: 'solution_factory'
 });
 
@@ -68,6 +68,7 @@ function getPrescriptionsByUser(idUser) {
 
 function getPrescriptionById(idPrescription) {
   // const query = `SELECT * FROM prescription WHERE idPrescription = ?`;
+  console.log("idPrescription", idPrescription);
   const query = `
   SELECT
     p.*,
@@ -80,7 +81,8 @@ function getPrescriptionById(idPrescription) {
     upr.LastName AS ProfessionalLastName,
     upr.idUser AS Professionalid,
     upr.Email AS ProfessionalMail,
-    upr.Phone AS ProfessionalPhone
+    upr.Phone AS ProfessionalPhone,
+    pr.Specialisation AS Specialisation
   FROM
     prescription p
   INNER JOIN client c ON p.Client = c.idClient
@@ -88,7 +90,7 @@ function getPrescriptionById(idPrescription) {
   INNER JOIN user uc ON c.user_id = uc.idUser
   INNER JOIN user upr ON pr.user_id = upr.idUser
 
-  WHERE idPrescription=1;
+  WHERE idPrescription=?;
     `;
   const values = [idPrescription];
 

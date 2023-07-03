@@ -54,6 +54,17 @@ display: flex;
 .medoc {
   display: flex;
   margin-right: 10vw;
+  margin-top: 2vw;
+  font-weight: 700;
+  font-size: 2vw;
+}
+
+.frequence_prise{
+  display: flex;
+  margin-right: 10vw;
+  font-weight: 400;
+  font-size: 1.8vw;
+  font-style: italic;
 }
 
 

@@ -131,7 +131,8 @@ function Ordonnance (props) {
 
   useEffect(() => {
       // Effectuez la requête GET vers le backend pour récupérer les informations de l'ordonnance
-      axios.get(`http://localhost:3000/prescription/2`)
+      // axios.get(`http://localhost:3000/prescription/${idPrescription}`)
+      axios.get(`http://localhost:3000/prescription/10`)
       // axios.get(`/prescription/${idPrescription}`)
           .then(response => {
               setPrescriptionData(response.data);
@@ -144,6 +145,23 @@ function Ordonnance (props) {
   if (!prescriptionData) {
       return <div>Loading... </div>; // Afficher un message de chargement tant que les données ne sont pas disponibles
   }
+
+  const med = prescriptionData.Medicine.split(',');
+  const descr = prescriptionData.Description.split(',');
+
+  const result = [];
+  const maxLength = Math.max(med.length, descr.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    if (i < med.length) {
+      result.push(med[i].trim());
+    }
+    if (i < descr.length) {
+      result.push(descr[i].trim());
+    }
+  }
+
+  console.log(result);
 
   const idpresc = 123983819
   const Name = prescriptionData.name
@@ -174,10 +192,10 @@ function Ordonnance (props) {
               <Text style={styles.Proname}>{prescriptionData.ProfessionalFirstName} {prescriptionData.ProfessionalLastName}</Text>
             </View>
             <View>
-              <Text style={styles.Prorest}>{Pro_profession}</Text>
+              <Text style={styles.Prorest}>Specialisation</Text>
             </View>
             <View>
-              <Text style={styles.Prorest}>{Pro_adress}</Text>
+              <Text style={styles.Prorest}>adresse pro</Text>
             </View>
             <View>
               <Text style={styles.Prorest}>{prescriptionData.ProfessionalMail}</Text>
@@ -189,7 +207,7 @@ function Ordonnance (props) {
 
           <View style={styles.secDate}>
             <View>
-              <Text style={styles.datecrea}>{Place_creation}, le {prescriptionData.Date_creation}</Text>
+              <Text style={styles.datecrea}>Le {prescriptionData.Date_creation}</Text>
             </View>
             <View>
               <Text style={styles.datecrea}>Valide jursqu'au {prescriptionData.Date_validity}</Text>
@@ -211,7 +229,7 @@ function Ordonnance (props) {
               <Text style={styles.name}>{prescriptionData.Name} - {prescriptionData.idPrescription}</Text>
             </View>          
             
-            <View >
+            {/* <View >
               <Text style={styles.med}>{prescriptionData.Medicine} - {Quantity}</Text>
               <Text style={styles.des}>{prescriptionData.Description}</Text>
             </View>
@@ -219,7 +237,16 @@ function Ordonnance (props) {
             <View >
               <Text style={styles.med}>{prescriptionData.Medicine} - {Quantity}</Text>
               <Text style={styles.des}>{prescriptionData.Description}</Text>
-            </View>
+            </View> */}
+
+            {/* <div className="Med">
+              {result.map((item, index) => (
+                  <li key={index} className={index % 2 === 0 ? 'medoc' : 'frequence_prise'}>
+                      {item}
+                  </li>
+              ))}
+            </div> */}
+
           </View>
 
           <View style={styles.sign}>
@@ -265,7 +292,7 @@ function DownloadPDF() {
     <div className="App">
       <PDFDownloadLink
         document={<Ordonnance prescriptionData={prescriptionData} />}
-        fileName="somename.pdf"
+        fileName="Ordonnance.pdf"
         className="download-link"
         >
         {({loading}) => (loading ? 'Loading document...' : 'Télecharger en PDF')}
