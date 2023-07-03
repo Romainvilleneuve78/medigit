@@ -57,15 +57,28 @@ function SignUp_Page() {
         onChange={handleChange}
         placeholder="Last Name"
       />
+      <label>
+        <input
+          type="radio"
+          name="Sex"
+          value="F"
+          checked={userData.Sex === 'F'}
+          onChange={handleChange}
+        />
+        Femme
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="Sex"
+          value="M"
+          checked={userData.Sex === 'M'}
+          onChange={handleChange}
+        />
+        Homme
+      </label>
       <input
-        type="text"
-        name="Sex"
-        value={userData.Sex}
-        onChange={handleChange}
-        placeholder="Sex"
-      />
-      <input
-        type="text"
+        type="date"
         name="Birthdate"
         value={userData.Birthdate}
         onChange={handleChange}
