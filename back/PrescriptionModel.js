@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'password',
-    database: 'medigit'
+    password: 'root',
+    database: 'solution_factory'
 });
 
 // Modèle Prescription
@@ -107,5 +107,36 @@ function getPrescriptionById(idPrescription) {
   });
 }
 
+function addPrescription(Name, n_secu, Professional, Medicine, Description) {
+  const getCurrentDate = () => {
+    const now = new Date();
+    return now.toISOString().slice(0, 19).replace('T', ' ');
+  };
 
-module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById };
+  const getDateInThreeMonths = () => {
+    const now = new Date();
+    const threeMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 3, now.getDate());
+    return threeMonthsFromNow.toISOString().slice(0, 19).replace('T', ' ');
+  };
+
+  return new Promise((resolve, reject) => {
+    // Recherche de l'idClient à partir du n_secu
+    const getClientIdQuery = "SELECT idClient FROM client WHERE n_secu = ?";
+    connection.query(getClientIdQuery, [n_secu], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        const clientId = results[0].idClient;
+        const currentDate = getCurrentDate();
+        const validityDate = getDateInThreeMonths();
+        const prescription = new Prescription(Name, clientId, Professional, currentDate, validityDate, Medicine, Description);
+        prescription.createUser()
+          .then((insertId) => resolve(insertId))
+          .catch((error) => reject(error));
+      }
+    });
+  });
+}
+
+
+module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription };

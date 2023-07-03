@@ -119,6 +119,18 @@ router.get("/prescription/list", (req, res) => {
     });
 });
 
+router.post("/prescription/add", (req, res) => {
+  const { Name, n_secu, Professional, Medicine, Description } = req.body;
+
+  prescription_model.addPrescription(Name, n_secu, Professional, Medicine, Description)
+    .then(insertId => {
+      res.status(201).json({ message: 'Prescription ajoutée avec succès', insertId });
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'Erreur lors de l\'ajout de la prescription', details: error.message });
+    });
+});
+
 router.get("/prescription/user", (req, res) => {
   const { idUser } = req.query; // Obtenez l'idUser de la session actuelle
 
@@ -151,6 +163,20 @@ router.get("/prescription/:idPrescription", (req, res) => {
           console.log(err);
           res.status(500).send("An error occurred while fetching the prescription.");
       });
+});
+
+router.get("/professional/:id", (req, res) => {
+  const user_id = req.params.id;
+
+  professional_model.findProfessionalById(user_id)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
 });
 
 
