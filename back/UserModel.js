@@ -201,6 +201,27 @@ function findUserById(idUser) {
   });
 }
 
+function updateUser(idUser, updatedUser) {
+  const { FirstName, LastName, Sex, Birthdate, Phone, Fix, Email} = updatedUser;
+  const query = "UPDATE User SET FirstName = ?, LastName = ?, Sex = ?, Birthdate = ?, Phone = ?, Fix = ?, Email = ? WHERE idUser = ?";
+  const values = [FirstName, LastName, Sex, Birthdate, Phone, Fix, Email,idUser];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.affectedRows > 0) {
+          resolve("Utilisateur mis à jour avec succès");
+        } else {
+          reject(new Error("L'id de l'utilisateur n'a pas été trouvé"));
+        }
+      }
+    });
+  });
+}
+
+
 
   
 
@@ -228,5 +249,6 @@ module.exports = {
   list_utilisateurs,
   login,
   addUser,
-  findUserById
+  findUserById,
+  updateUser
 };

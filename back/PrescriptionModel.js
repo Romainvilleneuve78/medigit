@@ -68,6 +68,7 @@ function getPrescriptionsByUser(idUser) {
 
 function getPrescriptionById(idPrescription) {
   // const query = `SELECT * FROM prescription WHERE idPrescription = ?`;
+  console.log("idPrescription", idPrescription);
   const query = `
   SELECT
     p.*,
@@ -80,7 +81,8 @@ function getPrescriptionById(idPrescription) {
     upr.LastName AS ProfessionalLastName,
     upr.idUser AS Professionalid,
     upr.Email AS ProfessionalMail,
-    upr.Phone AS ProfessionalPhone
+    upr.Phone AS ProfessionalPhone,
+    pr.Specialisation AS Specialisation
   FROM
     prescription p
   INNER JOIN client c ON p.Client = c.idClient
@@ -88,7 +90,7 @@ function getPrescriptionById(idPrescription) {
   INNER JOIN user uc ON c.user_id = uc.idUser
   INNER JOIN user upr ON pr.user_id = upr.idUser
 
-  WHERE idPrescription=1;
+  WHERE idPrescription=?;
     `;
   const values = [idPrescription];
 
@@ -107,5 +109,56 @@ function getPrescriptionById(idPrescription) {
   });
 }
 
+function addPrescription(Name, n_secu, Professional, Medicine, Description) {
+  const getCurrentDate = () => {
+    const now = new Date();
+    return now.toISOString().slice(0, 19).replace('T', ' ');
+  };
 
-module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById };
+  const getDateInThreeMonths = () => {
+    const now = new Date();
+    const threeMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 3, now.getDate());
+    return threeMonthsFromNow.toISOString().slice(0, 19).replace('T', ' ');
+  };
+
+  return new Promise((resolve, reject) => {
+    // Recherche de l'idClient à partir du n_secu
+    const getClientIdQuery = "SELECT idClient FROM client WHERE n_secu = ?";
+    connection.query(getClientIdQuery, [n_secu], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        const clientId = results[0].idClient;
+        const currentDate = getCurrentDate();
+        const validityDate = getDateInThreeMonths();
+        const prescription = new Prescription(Name, clientId, Professional, currentDate, validityDate, Medicine, Description);
+        prescription.createUser()
+          .then((insertId) => resolve(insertId))
+          .catch((error) => reject(error));
+      }
+    });
+  });
+}
+
+// Fonction pour supprimer une ordonnance par son ID
+function deletePrescription(idPrescription) {
+  const query = "DELETE FROM prescription WHERE idPrescription = ?";
+  const values = [idPrescription];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        // Vérifier si l'ordonnance a été supprimée avec succès
+        if (results.affectedRows > 0) {
+          resolve(true); // Renvoie true si l'ordonnance a été supprimée avec succès
+        } else {
+          resolve(false); // Renvoie false si l'ordonnance n'a pas été trouvée ou n'a pas été supprimée
+        }
+      }
+    });
+  });
+}
+
+module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription, deletePrescription };
