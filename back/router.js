@@ -124,6 +124,18 @@ router.post("/login", (req, res) => {
       });
 });
 
+router.post("/prescription/add", (req, res) => {
+  const { Name, n_secu, Professional, Medicine, Description } = req.body;
+
+  prescription_model.addPrescription(Name, n_secu, Professional, Medicine, Description)
+    .then(insertId => {
+      res.status(201).json({ message: 'Prescription ajoutée avec succès', insertId });
+    })
+    .catch(error => {
+      res.status(500).json({ error: 'Erreur lors de l\'ajout de la prescription', details: error.message });
+    });
+});
+
 router.get("/prescription/list", (req, res) => {
     prescription_model.list_prescription().then(result => {
         console.log("Result received:", result);
@@ -137,6 +149,20 @@ router.get("/prescription/user", (req, res) => {
   const { idUser } = req.query; // Obtenez l'idUser de la session actuelle
 
   prescription_model.getPrescriptionsByUser(idUser)
+    .then(result => {
+      console.log("Result received:", result);
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send("Une erreur s'est produite lors de la récupération des prescriptions de l'utilisateur.");
+    });
+});
+
+router.get("/prescription/user/professional", (req, res) => {
+  const { idUser } = req.query; // Obtenez l'idUser de la session actuelle
+
+  prescription_model.getPrescriptionsByUserProfessional(idUser)
     .then(result => {
       console.log("Result received:", result);
       res.send(result);

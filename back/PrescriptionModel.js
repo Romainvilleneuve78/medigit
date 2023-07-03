@@ -66,4 +66,54 @@ function getPrescriptionsByUser(idUser) {
   });
 }
 
-module.exports = { list_prescription, getPrescriptionsByUser };
+function getPrescriptionsByUserProfessional(idUser) {
+  const query = `
+    SELECT * FROM user
+    JOIN professional ON user.idUser = professional.user_id
+    JOIN prescription ON professional.idProfessional = prescription.Professional
+    WHERE user_id = ?`;
+  const values = [idUser];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
+function addPrescription(Name, n_secu, Professional, Medicine, Description) {
+  const getCurrentDate = () => {
+    const now = new Date();
+    return now.toISOString().slice(0, 19).replace('T', ' ');
+  };
+
+  const getDateInThreeMonths = () => {
+    const now = new Date();
+    const threeMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 3, now.getDate());
+    return threeMonthsFromNow.toISOString().slice(0, 19).replace('T', ' ');
+  };
+
+  return new Promise((resolve, reject) => {
+    // Recherche de l'idClient à partir du n_secu
+    const getClientIdQuery = "SELECT idClient FROM client WHERE n_secu = ?";
+    connection.query(getClientIdQuery, [n_secu], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        const clientId = results[0].idClient;
+        const currentDate = getCurrentDate();
+        const validityDate = getDateInThreeMonths();
+        const prescription = new Prescription(Name, clientId, Professional, currentDate, validityDate, Medicine, Description);
+        prescription.createUser()
+          .then((insertId) => resolve(insertId))
+          .catch((error) => reject(error));
+      }
+    });
+  });
+}
+
+module.exports = { list_prescription, getPrescriptionsByUser, addPrescription, getPrescriptionsByUserProfessional };
