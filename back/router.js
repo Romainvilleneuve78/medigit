@@ -255,11 +255,11 @@ router.get("/professional/:id", (req, res) => {
     });
 });
 
-// Route pour trouver un utilisateur par son id
+// Route pour trouver un patient par son id
 router.get("/user/:id", (req, res) => {
   const idUser = req.params.id;
 
-  user_model.findUserById(idUser)
+  user_model.findClientById(idUser)
     .then(user => {
       console.log("Utilisateur trouvé :", user);
       res.json(user);
@@ -271,7 +271,7 @@ router.get("/user/:id", (req, res) => {
 });
 
 
-router.delete("/prescription/:idPrescription", (req, res) => {
+router.delete("/prescription/delete/:idPrescription", (req, res) => {
   const idPrescription = req.params.idPrescription;
 
   prescription_model.deletePrescription(idPrescription)

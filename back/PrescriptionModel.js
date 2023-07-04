@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'password',
-    database: 'bdd-MEDIGIT'
+    password: 'root',
+    database: 'solution_factory' 
 });
 
 // Modèle Prescription

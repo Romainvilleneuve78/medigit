@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'password',
-    database: 'bdd-MEDIGIT'
+    password: 'root',
+    database: 'solution_factory'
 });
 
 // Modèle User
@@ -183,8 +183,16 @@ connection.connect((err) => {
   });
 });
 
-function findUserById(idUser) {
-  const query = "SELECT * FROM User WHERE idUser = ?";
+function findClientById(idUser) {
+  // const query = "SELECT * FROM User WHERE idUser = ?";
+  const query = `
+  SELECT u.*, 
+    c.*,
+    p.*
+  FROM user u
+  LEFT JOIN client c ON u.idUser = c.user_id AND u.kind = 0
+  LEFT JOIN professional p ON u.idUser = p.user_id AND u.kind = 1
+  WHERE u.idUser = ?;`;
 
   return new Promise((resolve, reject) => {
     connection.query(query, [idUser], (error, results) => {
@@ -198,6 +206,7 @@ function findUserById(idUser) {
         }
       }
     });
+    console.log(query);
   });
 }
 
@@ -249,6 +258,6 @@ module.exports = {
   list_utilisateurs,
   login,
   addUser,
-  findUserById,
+  findClientById,
   updateUser
 };
