@@ -35,21 +35,30 @@ const MenuPage = () => {
         return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
     }
     
+    let menuHomeClass = 'menu_home_non_co';
+    if (user && sessionData) {
+      if (sessionData.Kind === 0) {
+        menuHomeClass = 'menu_home_co_0';
+      } else if (sessionData.Kind === 1) {
+        menuHomeClass = 'menu_home_co_1';
+      }
+    }
+
     return (
         <>
-        <nav className="menu">
+        <nav className={menuHomeClass} style={menuHomeClass === 'menu_home_co_1' ? { width: '78%' } : {width:'55%'}}>
             <div className="links ">
                 <ul>
-                    <li><Link to="/Accueil">Accueil</Link></li>
-                    <li><Link to="/Profil">Mon Profil</Link></li>                    
+                    <li><Link to="/Accueil" className='linkHome'>Accueil</Link></li>
+                    <li><Link to="/Profil" className='linkHome'>Mon Profil</Link></li>                    
 
                     {sessionData.Kind === 0 && (
-                        <li><Link to="/Ordonnance" className="LinkHomefin">Mes Ordonnances</Link></li>
+                        <li><Link to="/Ordonnance" className="linkHome">Mes Ordonnances</Link></li>
                     )}
                     {sessionData.Kind === 1 && (
                         <ul>
-                            <li><Link to="/AddOrdo" className="LinkHomefin">Faire une Ordonnance</Link></li>
-                            <li><Link to="/Ordonnance" className="LinkHomefin">Mes Ordonnances</Link></li>
+                            <li><Link to="/AddOrdo" className="linkHome">Faire une Ordonnance</Link></li>
+                            <li><Link to="/Ordonnance" className="linkHome">Mes Ordonnances</Link></li>
                         </ul>
                     )}
 

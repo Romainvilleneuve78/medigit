@@ -76,6 +76,28 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
   color: #535bf2;
 }
 
+
+.menu_co_0{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 50%;
+  height: 3.8vw;
+  border-bottom: 0.17vw solid #000000;
+}
+
+
+.menu_co_1{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 50%;
+  height: 3.8vw;
+  border-bottom: 0.17vw solid #000000;
+}
+
+
+
 /* ---------------------------------------------------------- menu Home ----------------------------------------------------*/
 .menu_home{
   display: flex;
