@@ -3,6 +3,7 @@ import './Profil.css';
 import MenuPage from '../../components/menu';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importez également Routes
 import axios from 'axios';
+// import { use } from '../../../back/router';
 
 
 function Profil() {
@@ -16,6 +17,7 @@ function Profil() {
         // Faites la requête HTTP pour récupérer les données de l'utilisateur
         axios.get(`http://localhost:3000/user/${idUser}`)
         .then(response => {
+
             setUser(response.data);
             setLoading(false);
         })
@@ -29,21 +31,21 @@ function Profil() {
         return <div>Chargement en cours...</div>;
     }
 
-    if (!sessionData) {
+    if (!user) {
         return <div>Utilisateur non trouvé</div>;
     }
 
-    const userTypeText = sessionData.Kind === 0 ? 'patient' : 'professionnel';
+    const userTypeText = user.Kind === 0 ? 'patient' : 'professionnel';
 
-    // console.log(sessionData);
+    console.log(user);
     
     return (
         <>
-            <div class='header_profil_extend'>
-                <div class='fond'>
-                    <div class='txt'>
+            <div className='header_profil_extend'>
+                <div className='fond'>
+                    <div className='txt'>
                         <MenuPage/>
-                        <div class='title'>
+                        <div className='title'>
                             <h1>Mon espace</h1>
                             {/* <h2>(particulier)</h2> */}
                             <h2>({userTypeText})</h2>
@@ -55,35 +57,42 @@ function Profil() {
                 </div>
             </div>
 
-            <div class='profil'>
-                <div class="Profil-pro">
-                    <div class="picture">
+            <div className='profil'>
+                <div className="Profil-pro">
+                    <div className="picture">
                         < img src="../../images/pdp.png" ></img>
                     </div>
 
-                    <div class="info">
-                        <h2>{sessionData.FirstName} {sessionData.LastName}</h2>
-                        <h3>{sessionData.Adress}</h3>
+                    <div className="info">
+                        <h2>{user.FirstName} {user.LastName}</h2>
+                        {user.Kind===0 && (
+                            <h3>{user.Adress}, {user.cityclient}</h3>
+                        )}
+                        {user.Kind===1 && (
+                            <h3>{user.Activity_adress}, {user.citypro}</h3>
+                        )}
 
-                        <div class='infos'>
-                            <div class="info-1">
-                                <h4>Information de santé</h4>
-                                <p>Numero de sécurité sociale : {sessionData.n_secu}</p>
-                                <p>Date de naissance : {sessionData.Birthdate}</p>
-                                {/* <div class="info_supp">
-                                    <h4>Antécedant médicaux</h4>
-                                    <p>Hypertention / Alergie gluten</p>
-                                    <h4>Intervention chirurgicales</h4>
-                                    <p>10/11/23 : Ablation des ligaments posterieur du genoux droit</p>
-                                    <p>11/02/99 : Ablation des dents de sagesses</p>
-                                </div> */}
+                        <div className='infos'>
+                            {user.Kind===0 && (
+                                <div className="info-1">
+                                    <h4>Informations de santé :</h4>
+                                    <p>Numero de sécurité sociale : {user.n_secu}</p>
+                                    <p>Date de naissance : {user.Birthdate}</p>
+                                </div>
+                            )}
+                            {user.Kind===1 && (
+                                <div className="info-1">
+                                <h4>Informations :</h4>
+                                <p>{user.Specialisation}</p>
+                                <p>{user.Description}</p>
                             </div>
+                            )}
 
-                            <div class="info-3">
-                                <h4 class="contact">Contact</h4>
-                                <p class="infoProf">Phone : {sessionData.Phone}</p>
-                                <p class="infoProf">Standard : {sessionData.Fix}</p>
-                                <p class="infoProf">Email : {sessionData.Email}</p>
+                            <div className="info-3">
+                                <h4 className="contact">Contact</h4>
+                                <p className="infoProf">Phone : {user.Phone}</p>
+                                <p className="infoProf">Standard : {user.Fix}</p>
+                                <p className="infoProf">Email : {user.Email}</p>
                             </div>
                         </div>
 

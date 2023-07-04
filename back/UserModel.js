@@ -188,7 +188,9 @@ function findClientById(idUser) {
   const query = `
   SELECT u.*, 
     c.*,
-    p.*
+    c.City AS cityclient,
+    p.*,
+    p.City AS citypro
   FROM user u
   LEFT JOIN client c ON u.idUser = c.user_id AND u.kind = 0
   LEFT JOIN professional p ON u.idUser = p.user_id AND u.kind = 1
