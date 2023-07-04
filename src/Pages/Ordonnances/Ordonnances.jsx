@@ -8,20 +8,64 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function Ordonnance() {
   const [prescriptions, setPrescriptions] = useState([]);
   const [filter, setFilter] = useState('');
+  const [user, setUser] = useState({});
+
+  const sessionData = JSON.parse(sessionStorage.getItem('user'));
+  const idUser = sessionData.idUser;
+  const userKind = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')).Kind : null;
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setPrescriptions(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+  //     });
+  // }, []);
+
+  if (userKind === 0) {
+    useEffect(() => {
+      fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+        .then(response => response.json())
+        .then(data => {
+          setPrescriptions(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+        });
+    }, []);
+  } else if (userKind === 1) {
+    useEffect(() => {
+      const sessionData = JSON.parse(sessionStorage.getItem('user'));
+      const idUser = sessionData.idUser;
+      fetch(`http://localhost:3000/prescription/user/professional?idUser=${idUser}`)
+        .then(response => response.json())
+        .then(data => {
+          setPrescriptions(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+        });
+    }, []);
+  };
+
 
   useEffect(() => {
-    const sessionData = JSON.parse(sessionStorage.getItem('user'));
-    const idUser = sessionData.idUser;
-
-    fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
-      .then(response => response.json())
-      .then(data => {
-        setPrescriptions(data);
-      })
-      .catch(error => {
-        console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
-      });
-  }, []);
+    if (prescriptions.length > 0) {
+      const idProfessional = prescriptions[0].Professional; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
+  
+      axios.get(`http://localhost:3000/professional/idprof/${idProfessional}`) // Utilisez l'URL avec idprof pour récupérer les informations de l'utilisateur
+        .then(response => {
+          setUser(response.data);
+          console.log(user);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des informations du professionnel :', error);
+        });
+    }
+  }, [prescriptions]);
 
   const handleFilterChange = event => {
     setFilter(event.target.value);
@@ -60,10 +104,10 @@ function Ordonnance() {
                 <td>
                   <div className='container_ordo'>
                     <button className="pdp_ordo">
-                      <Link to="/Profil_pro">
+                      <Link to={`/Profil_pro/${user.idProfessional}`}>
                         <img src="../../images/pdp.png" alt="icone des points" />
                       </Link>
-                    <span className="title_ordo">{prescription.Professional}</span></button>
+                    <span className="title_ordo">{user.FirstName} {user.LastName}</span></button>
 
                     <div className='info_ordo'>
                       <div className="Name_ordo">

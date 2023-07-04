@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
-    password: 'password',
-    database: 'bdd-MEDIGIT'
+    password: 'root',
+    database: 'solution_factory',
 });
 
 // Modèle Professional
@@ -36,7 +36,7 @@ class Professional {
 }
 
 function findProfessionalById(user_id) {
-  const query = "SELECT * FROM Professional WHERE user_id = ?";
+  const query = "SELECT * FROM Professional JOIN user on professional.user_id = user.idUserWHERE user_id = ?";
 
   return new Promise((resolve, reject) => {
     connection.query(query, [user_id], (error, results) => {
@@ -53,8 +53,27 @@ function findProfessionalById(user_id) {
   });
 }
 
+function findProfessionalByIdProf(idProfessional) {
+  const query = "SELECT * FROM Professional JOIN user on professional.user_id = user.idUser WHERE idProfessional = ?";
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, [idProfessional], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]); // Renvoyer le premier professional correspondant trouvé
+        } else {
+          reject(new Error("Professional non trouvé"));
+        }
+      }
+    });
+  });
+}
+
 
 module.exports = {
     Professional,
-    findProfessionalById
+    findProfessionalById,
+    findProfessionalByIdProf
 };

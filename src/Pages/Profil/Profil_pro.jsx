@@ -1,10 +1,26 @@
 // src/pages/Page1.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Profil_pro.css';
 import MenuPage from '../../components/menu';
-
+import { useParams } from 'react-router-dom';
 
 function Profil_pro() {
+    const { idProfessional } = useParams();
+    const [user, setUser] = useState({});
+    useEffect(() => {
+        axios
+          .get(`http://localhost:3000/professional/idprof/${idProfessional}`)
+          .then(response => {
+            setUser(response.data);
+          })
+          .catch(error => {
+            console.error(
+              'Une erreur s\'est produite lors de la récupération des informations du professionnel :',
+              error
+            );
+          });
+      }, [idProfessional]);
     return (
         <>
             <div class='header_profilpro_extend'>
@@ -27,24 +43,22 @@ function Profil_pro() {
                     </div>
 
                     <div class="info">
-                        <h2>John NOZMAN</h2>
-                        <h3>Docteur en chirurgie dentaire</h3>
+                        <h2>{user.FirstName} {user.LastName}</h2>
+                        <h3>{user.Specialisation}</h3>
                         <p style={{ width: '80%' }}>Docteur spécialisé dans la chirurgie maxillo-faciale et la reconstruction de mâchoire chez les adultes.</p>
 
 
                         <div class='infos'>
                             <div class="info-1">
                                 <h4>Lieu d'activitée</h4>
-                                <p>Clinique de la Garonne</p>
-                                <p>7 boulevard des caniveaux, 75014 Paris</p>
-                                <p>Mardi au samedi, 9h/18h</p>
+                                <p>{user.Activity_adress}</p>
+                                <p>{user.City}</p>
                             </div>
 
                             <div class="info-2">
                                 <h4 class="contact">Contact</h4>
-                                <p class="infoProf">Phone : +33 1 45 65 78 29</p>
-                                <p class="infoProf">Standard : +33 6 24 12 36 87</p>
-                                <p class="infoProf">Email : Nozmam.doc@docdoc.com</p>
+                                <p class="infoProf">{user.Phone}</p>
+                                <p class="infoProf">{user.Email}</p>
                             </div>
                         </div>
 

@@ -138,6 +138,24 @@ function findUser(idUser) {
   });
 }
 
+function findUserByProf(idProfessional) {
+  const query = "SELECT * FROM user JOIN professional ON user.idUser = professional.user_id WHERE idProfessional = ?";
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, [idProfessional], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results);
+        } else {
+          reject(new Error("L'id n'a pas été trouvé"));
+        }
+      }
+    });
+  });
+}
+
 function login(email, password) {
   const query = "SELECT * FROM User WHERE Email = ? AND Password = ?";
 
@@ -188,7 +206,9 @@ function findClientById(idUser) {
   const query = `
   SELECT u.*, 
     c.*,
-    p.*
+    c.City AS cityclient,
+    p.*,
+    p.City AS citypro
   FROM user u
   LEFT JOIN client c ON u.idUser = c.user_id AND u.kind = 0
   LEFT JOIN professional p ON u.idUser = p.user_id AND u.kind = 1
@@ -259,5 +279,6 @@ module.exports = {
   login,
   addUser,
   findClientById,
-  updateUser
+  updateUser,
+  findUserByProf
 };

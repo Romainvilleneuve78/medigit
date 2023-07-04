@@ -47,7 +47,10 @@ const MenuPage = () => {
                         <li><Link to="/Ordonnance" className="LinkHomefin">Mes Ordonnances</Link></li>
                     )}
                     {sessionData.Kind === 1 && (
-                        <li><Link to="/AddOrdo" className="linkHomefin">Faire une Ordonnance</Link></li>
+                        <ul>
+                            <li><Link to="/AddOrdo" className="LinkHomefin">Faire une Ordonnance</Link></li>
+                            <li><Link to="/Ordonnance" className="LinkHomefin">Mes Ordonnances</Link></li>
+                        </ul>
                     )}
 
                 </ul>

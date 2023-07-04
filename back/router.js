@@ -205,6 +205,21 @@ router.get("/prescription/user", (req, res) => {
     });
 });
 
+router.get("/prescription/user/professional", (req, res) => {
+  const { idUser } = req.query; // Obtenez l'idUser de la session actuelle
+
+  prescription_model.getPrescriptionsByUserProfessional(idUser)
+    .then(result => {
+      console.log("Result received:", result);
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send("Une erreur s'est produite lors de la récupération des prescriptions de l'utilisateur.");
+    });
+});
+
+
 
 router.get("/prescription/:idPrescription", (req, res) => {
   const idPrescription = req.params.idPrescription;
@@ -231,6 +246,34 @@ router.get("/professional/:id", (req, res) => {
   const user_id = req.params.id;
 
   professional_model.findProfessionalById(user_id)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
+
+router.get("/professional/idprof/:id", (req, res) => {
+  const idProfessional = req.params.id;
+
+  professional_model.findProfessionalByIdProf(idProfessional)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
+
+router.get("/user/idprof/:id", (req, res) => {
+  const idProfessional = req.params.id;
+
+  user_model.findUserByProf(idProfessional)
     .then(professional => {
       console.log("Professional trouvé :", professional);
       res.json(professional);
