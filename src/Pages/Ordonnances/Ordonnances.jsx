@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function Ordonnance() {
   const [prescriptions, setPrescriptions] = useState([]);
   const [filter, setFilter] = useState('');
+  const [user, setUser] = useState({});
+
 
   useEffect(() => {
     const sessionData = JSON.parse(sessionStorage.getItem('user'));
@@ -22,6 +24,21 @@ function Ordonnance() {
         console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
       });
   }, []);
+
+  useEffect(() => {
+    if (prescriptions.length > 0) {
+      const idProfessional = prescriptions[0].Professional; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
+  
+      axios.get(`http://localhost:3000/professional/idprof/${idProfessional}`) // Utilisez l'URL avec idprof pour récupérer les informations de l'utilisateur
+        .then(response => {
+          setUser(response.data);
+          console.log(user);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des informations du professionnel :', error);
+        });
+    }
+  }, [prescriptions]);
 
   const handleFilterChange = event => {
     setFilter(event.target.value);
@@ -63,7 +80,7 @@ function Ordonnance() {
                       <Link to="/Profil_pro">
                         <img src="../../images/pdp.png" alt="icone des points" />
                       </Link>
-                    <span className="title_ordo">{prescription.Professional}</span></button>
+                    <span className="title_ordo">{user.FirstName} {user.LastName}</span></button>
 
                     <div className='info_ordo'>
                       <div className="Name_ordo">

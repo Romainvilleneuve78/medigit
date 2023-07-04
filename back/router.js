@@ -241,6 +241,34 @@ router.get("/professional/:id", (req, res) => {
     });
 });
 
+router.get("/professional/idprof/:id", (req, res) => {
+  const idProfessional = req.params.id;
+
+  professional_model.findProfessionalByIdProf(idProfessional)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
+
+router.get("/user/idprof/:id", (req, res) => {
+  const idProfessional = req.params.id;
+
+  user_model.findUserByProf(idProfessional)
+    .then(professional => {
+      console.log("Professional trouvé :", professional);
+      res.json(professional);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
+
 router.get("/professional/:id", (req, res) => {
   const user_id = req.params.id;
 
