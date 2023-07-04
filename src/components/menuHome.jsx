@@ -28,13 +28,6 @@ const MenuPageHome = () => {
     }
   }, [idUser]);
 
-  const handleLogout = () => {
-    sessionStorage.clear();
-    setUser(null);
-    navigate('/Accueil', { replace: true });
-    window.location.reload();
-  };
-
   if (loading) {
     return <div>Chargement en cours...</div>;
   }
@@ -61,11 +54,6 @@ const MenuPageHome = () => {
                   <Link to="/Profil" className="linkHome">
                     Mon Profil
                   </Link>
-                </li>
-                <li>
-                  <button onClick={handleLogout} className="linkHome">
-                    Déconnexion
-                  </button>
                 </li>
                 {sessionData.Kind === 0 && (
                   <li>

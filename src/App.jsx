@@ -56,6 +56,13 @@ function App() {
       return <div>Chargement en cours...</div>;
   }
 
+  const handleLogout = () => {
+    sessionStorage.clear();
+    setUser(null);
+    navigate('/Accueil', { replace: true });
+    window.location.reload();
+  };
+
 //   if (!idUser || !user) {
 //       return <div>Vous n'êtes pas connecté. Connectez-vous pour accéder à cette page.</div>;
 //   }
@@ -101,6 +108,9 @@ function App() {
                   <a href="/Profil">
                       <div className="nav-links">
                           <ul>
+                              <li><button onClick={handleLogout} className="linkHome">
+                                Déconnexion
+                              </button></li>
                               <li>Mon Profil</li>
                               <li><img className="user" src="images/user.png" alt="Logo"></img></li>
                           </ul>
