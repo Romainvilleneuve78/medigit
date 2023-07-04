@@ -7,10 +7,8 @@
 .header_ordo_extend img{width: 28%; margin-top: 4.8%;}
 
 .header_ordo_extend .btn_class{display: flex; align-items: center;}
-.header_ordo_extend button{display: flex; align-items: center; justify-content:center ;width: 7vw; height: 2vw; background-color:#4a7ee7; border-radius: 20px; color :white ; font-size: 1vw}
-.trier {margin-right: 1%;}
-.filtrer, .trier{display : flex; align-items: center;} 
-.trier img, .filtrer img {width:1vw; height:1vw; margin-left:0.7vw;}
+.header_ordo_extend input{border:none;width: 20vw; height: 2vw; background-color:#4a7ee7; border-radius: 20px; color :white ; font-size: 1vw; padding: 0.3%; padding-left: 1%;}
+.header_ordo_extend input::placeholder {color: rgb(243, 240, 240);}
 
 .ordonnances{margin: 5%;}
 .ordonnances .container_ordo {
