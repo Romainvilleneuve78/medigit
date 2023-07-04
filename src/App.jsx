@@ -60,7 +60,7 @@ function App() {
     sessionStorage.clear();
     setUser(null);
     navigate('/Accueil', { replace: true });
-    window.location.reload();
+    window.location.reload(); 
   };
 
 //   if (!idUser || !user) {

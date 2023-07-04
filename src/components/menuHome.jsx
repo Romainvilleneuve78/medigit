@@ -32,9 +32,19 @@ const MenuPageHome = () => {
     return <div>Chargement en cours...</div>;
   }
 
+  let menuHomeClass = 'menu_home_non_co';
+  if (user && sessionData) {
+    if (sessionData.Kind === 0) {
+      menuHomeClass = 'menu_home_co_0';
+    } else if (sessionData.Kind === 1) {
+      menuHomeClass = 'menu_home_co_1';
+    }
+  }
+
   return (
     <>
-      <nav className="menu_home">
+      
+      <nav className={menuHomeClass}>
         <div className="links">
           <ul>
             <li>
@@ -63,10 +73,10 @@ const MenuPageHome = () => {
                   </li>
                 )}
                 {sessionData.Kind === 1 && (
-                    <ul>
-                      <li><Link to="/AddOrdo" className="LinkHome">Faire une Ordonnance</Link></li>
-                      <li><Link to="/Ordonnance" className="LinkHomefin">Mes Ordonnances</Link></li>
-                    </ul>
+                    <ul className='divlinks'>
+                      <li><Link to="/AddOrdo" className="LinkHomefin" style={{marginRight:'4.2vw'}}>Faire une ordonnance</Link></li>
+                      <li><Link to="/Ordonnance" className="LinkHomefin">Mes ordonnances</Link></li>
+                    </ul> 
                 )}
               </>
             )}
