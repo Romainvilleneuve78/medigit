@@ -172,34 +172,46 @@ const AddOrdo = () => {
         <div className='add_ordo'>
 
             <form onSubmit={handleSubmit}>
-              <div className='info_1'>
-                <label>Numero securité sociale du patient:</label>
-                <input type="text" name="n_secu" value={prescriptionData.n_secu} onChange={handleInputChange} />
-              </div>
+
+              <div className='division'>
+
+                <div className='ajouter_ordo'>
+                  <h2>Ajouter une prescription</h2>
+                  <input type="text" placeholder='Prescription' value={medicine} onChange={(e) => setMedicine(e.target.value)} />
+                  <input type="text" placeholder='Informations complémentaires' value={description} onChange={(e) => setDescription(e.target.value)} style={{paddingBottom:'4vw',}} />
+                  <button type="button" onClick={handleAddMedicine}>Ajouter</button>
+                </div>
 
               <div className='ordo'>
-                <h1>Titre ordonnance :</h1>
-                <input type="text" name="Name" value={prescriptionData.Name} onChange={handleInputChange} />
-                <h2>Médicaments :</h2>
-                <input type="text" placeholder='Medicament' value={medicine} onChange={(e) => setMedicine(e.target.value)} />
-                <input type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+                <h1>Ordonnance</h1>
+                <div className='info_1'>
+                  <label>Numero securité sociale du patient:</label>
+                  <input type="text" name="n_secu" placeholder='112242522822' value={prescriptionData.n_secu} onChange={handleInputChange} />
+                </div>
+                <div className='title'>
+                  <h2>Symptomes :</h2>
+                  <input type="text" name="Name" value={prescriptionData.Name} onChange={handleInputChange} />
+                </div>
 
                 <ul>
                   {prescriptionData.Medicine.split(',').map((medicine, index) => (
                     <li key={index}>
-                      <strong>Médicament :</strong> {medicine} - <strong>Description :</strong> {prescriptionData.Description.split(',')[index]}
+                      <strong>Prescription :</strong> {medicine}
+                      <br /><strong>Informations complémentaires :</strong> {prescriptionData.Description.split(',')[index]}
                     </li>
+                    
                   ))}
                 </ul>
-
-                <button type="button" onClick={handleAddMedicine}>Ajouter</button>
+                  
+                <button type="submit">Créer</button>
+                
               </div>
             
-        
+              </div>
               
               
         
-              <button type="submit">Valider</button>
+              
             </form>
         </div>
       </>

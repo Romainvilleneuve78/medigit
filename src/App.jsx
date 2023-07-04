@@ -108,9 +108,7 @@ function App() {
                   <a href="/Profil">
                       <div className="nav-links">
                           <ul>
-                              <li><button onClick={handleLogout} className="linkHome">
-                                Déconnexion
-                              </button></li>
+                              <li><button onClick={handleLogout} className="linkHome">Déconnexion</button></li>
                               <li>Mon Profil</li>
                               <li><img className="user" src="images/user.png" alt="Logo"></img></li>
                           </ul>
