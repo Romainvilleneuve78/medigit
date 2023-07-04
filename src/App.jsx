@@ -131,7 +131,7 @@ function App() {
           <Route path="/AddOrdo" element={<AddOrdo />} />
           <Route path="/SignUp_Page" element={<SignUp_Page />} />
           <Route path="/SignIn_Page" element={<SignIn_Page />} />
-          <Route path="/Profil_pro" element={<Profil_pro />} />
+          <Route path="/Profil_pro/:idProfessional" element={<Profil_pro />} />
           <Route path="/Ordopdf/:idPrescription" element={<Ordopdf />} />
           <Route path="/ModifProf" element={<ModifProf />} />
         </Routes>
