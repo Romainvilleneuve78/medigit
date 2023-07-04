@@ -1,17 +1,17 @@
-.titlepdf{
+.ordopdf .titlepdf{
   display: flex;
   align-items:start;
   margin-top: 5%;
   margin-left: 9%;
   margin-right: 9%;
 }
-.titlepdf h1{
+.ordopdf .titlepdf h1{
   color: #2ACEF2;
   font-size: 3vw;
   margin-right: 45%;
 }
 
-.pdp_ordopdf {
+.ordopdf .pdp_ordopdf {
   width: 15%;
   height: 10%;
   padding: 2%;
@@ -24,14 +24,14 @@
   justify-content: center;
   text-align: center;
 }
-.pdp_ordopdf img {width:7vw; height: 7vw;}
-.pdp_ordopdf .title_ordo{
+.ordopdf .pdp_ordopdf img {width:7vw; height: 7vw;}
+.ordopdf .pdp_ordopdf .title_ordo{
   margin-top: 1vw;
   color : white;
   font-size: 1vw;
 }
 
-.container_ordo {
+.ordopdf .container_ordo {
   display: flex;
   align-items: center; 
   margin-left: 9%;
@@ -39,28 +39,28 @@
   margin-top: -6%;
 }
 
-.info_ordo {
+.ordopdf .info_ordo {
   display: flex;
   margin-top: -2%;
   margin-bottom: 3%;
   width: 60%;
 } 
 
-.Name_ordo h3{font-size: 1.5vw;}
-.id_ordo{display: flex;}
+.ordopdf .Name_ordo h3{font-size: 1.5vw;}
+.ordopdf .id_ordo{display: flex;}
 
-.container.info_ordo.Name_ordo {width: 80%;}
-.container.info_ordo.Name_ordo  h2{font-size: 2vw; color : rgb(0, 0, 0);}
-.my-paragraph1 {font-size: 1vw;}
-.my-paragraph2 {font-size: 1vw; margin-bottom: 3vw;}
-.my-paragraph3 {font-size: 1vw;;margin-bottom: 1vw;}
-.my-paragraph4 {font-size: 1.4vw; font-weight: bold;margin-bottom: 1vw;}
-.my-paragraph5 {font-size: 1.4vw;font-weight: bold;margin-bottom: 1vw;}
-.my-paragraph6 {font-size: 1vw;margin-top: 2vw;font-weight: bold;}
-.my-paragraph7 {font-size: 1vw;margin-top: 2vw; font-weight: bold;}
-.my-paragraph8 {font-size: 1vw;}
+.ordopdf .container.info_ordo.Name_ordo {width: 80%;}
+.ordopdf .container.info_ordo.Name_ordo  h2{font-size: 2vw; color : rgb(0, 0, 0);}
+.ordopdf .my-paragraph1 {font-size: 1vw;}
+.ordopdf .my-paragraph2 {font-size: 1vw; margin-bottom: 3vw;}
+.ordopdf .my-paragraph3 {font-size: 1vw;;margin-bottom: 1vw;}
+.ordopdf .my-paragraph4 {font-size: 1.4vw; font-weight: bold;margin-bottom: 1vw;}
+.ordopdf .my-paragraph5 {font-size: 1.4vw;font-weight: bold;margin-bottom: 1vw;}
+.ordopdf .my-paragraph6 {font-size: 1vw;margin-top: 2vw;font-weight: bold;}
+.ordopdf .my-paragraph7 {font-size: 1vw;margin-top: 2vw; font-weight: bold;}
+.ordopdf .my-paragraph8 {font-size: 1vw;}
 
-.medoc {
+.ordopdf .medoc {
   display: flex;
   margin-right: 10vw;
   margin-top: 2vw;
@@ -68,7 +68,7 @@
   font-size: 2vw;
 }
 
-.frequence_prise{
+.ordopdf .frequence_prise{
   display: flex;
   margin-right: 10vw;
   font-weight: 400;
@@ -76,15 +76,9 @@
   font-style: italic;
 }
 
+.ordopdf .option_ordo {width: 20%; display :flex;}
 
-
-
-
- 
-
-.option_ordo {width: 20%; display :flex;}
-
-.option_ordo .coeur,.option_ordo .points {
+.ordopdf .option_ordo .coeur, .ordopdf .option_ordo .points {
   width: 4vw; /* Largeur du bouton */
   height: 3vw; /* Hauteur du bouton */
   background-color: rgb(255, 255, 255);
@@ -93,14 +87,9 @@
   
 }
 
-.option_ordo .coeur img,.option_ordo .points img{
-  width:2vw;
-  height: 2vw; 
-}
+.ordopdf .option_ordo .coeur img,.option_ordo .points img{width:2vw; height: 2vw; }
   
- 
-
-.bouton_qr {
+.ordopdf .bouton_qr {
   position: relative;
   left: 5vw;
   font-weight: bold;
@@ -111,15 +100,12 @@
 }
   
 
-.downloadpdf {
+.ordopdf .downloadpdf {
   margin-left: 39vw;
   background-color:#2ACEF2;
   border-radius: 20px;
   color: white;
 }
 
-.download-link {
-  color: white;
-}
-
+.ordopdf .download-link {color: white;}
 .ordopdf button{margin-bottom:5% ; margin-right: 1%; background-color: #2ACEF2; color: white; font-size: 1vw; border-radius: 20px;}
