@@ -5,6 +5,7 @@ import MenuPageHome from '../../components/menuHome';
 import { Element } from 'react-scroll';
 
 function Accueil() {
+   
   const [showOptions, setShowOptions] = useState(false);
 
   const handleCreateAccountClick = () => {
