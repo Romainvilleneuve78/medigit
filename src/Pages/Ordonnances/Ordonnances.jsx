@@ -160,11 +160,6 @@ function Ordonnance() {
                           <p className="my-paragraph1">Valide jusqu'au {prescription.Date_validity}</p>
                           <p className="my-paragraph2">Médicament prescrit: {prescription.Medicine}</p>
                         </div>
-  
-                        <div className='option_ordo'>
-                          <button className="coeur"> <img src="../../images/coeur.png" alt="icone du bouton" /></button>
-                          <button className="poubelle"> <img src="../../images/poubelle-de-recyclage.png" alt="icone de poubelle" /></button>
-                        </div>
                       </div>
                     </div>
                   </td>
