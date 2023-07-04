@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './ModifProf.css'
 import SignUp from '../../components/SignUp';
 
 //fonction updateProfessional
@@ -195,71 +196,78 @@ function SignUp_Page() {
     };
   
     return (
-      <form onSubmit={handleClientSubmit}>
-        <div>
-          <label htmlFor="firstName">Prénom:</label>
-          <input type="text" id="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="lastName">Nom:</label>
-          <input type="text" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
-        </div>
-        <div>
-        <label htmlFor="sex">Sexe:</label>
-        <label>
-          <input
-            type="radio"
-            name="sex"
-            value="M"
-            checked={sex === 'M'}
-            onChange={e => setSex(e.target.value)}
-          />
-          Homme
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="sex"
-            value="F"
-            checked={sex === 'F'}
-            onChange={e => setSex(e.target.value)}
-          />
-          Femme
-          </label>
+      <>
+        <div class='header_sign'>
+          <div class='fond'>
+            <h1>Modifier mon profil</h1>
+            <img src='../../images/mon-espace.png'></img>
           </div>
-        <div>
-          <label htmlFor="birthdate">Date de naissance:</label>
-          <input type="date" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
         </div>
-        <div>
-          <label htmlFor="phone">Téléphone:</label>
-          <input type="text" id="phone" value={phone} onChange={e => setPhone(e.target.value)} />
+
+        <div className='modif'>
+
+          <form onSubmit={handleClientSubmit}>
+
+            <label>Numéro de sécurité sociale:</label>
+            <input type="text" value={nSecu} onChange={(e) => setNSecu(e.target.value)} style={{marginRight:'5.5%'}}/>
+
+            <div>
+              <label htmlFor="sex">Sexe:</label>
+                <label>
+                  <input
+                    type="radio"
+                    name="sex"
+                    value="M"
+                    checked={sex === 'M'}
+                    onChange={e => setSex(e.target.value)}
+                  />
+                  Homme
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="sex"
+                    value="F"
+                    checked={sex === 'F'}
+                    onChange={e => setSex(e.target.value)}
+                  />
+                  Femme
+                </label>
+            </div>
+
+            <div className='info_1'>
+              <label htmlFor="firstName">Prénom:</label>
+              <input type="text" id="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} style={{marginRight:'25%', width:'19%'}} />
+              <label htmlFor="lastName">Nom:</label>
+              <input type="text" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
+            </div>
+
+            <div className='info_2'>
+              <label htmlFor="birthdate">Date de naissance:</label>
+              <input type="date" id="birthdate" value={birthdate} onChange={e => setBirthdate(e.target.value)} style={{width:'10%'}}/>
+            </div>
+
+            <label htmlFor="email">Email:</label>
+            <input type="text" id="email" value={email} onChange={e => setEmail(e.target.value)} style={{width:'21%'}}/>
+
+            <div className='info_3'>
+              <label htmlFor="phone">Téléphone:</label>
+              <input type="text" id="phone" value={phone} onChange={e => setPhone(e.target.value)} style={{width:'18%', marginRight:'24.5%'}}/>
+              <label htmlFor="fix">Fixe:</label>
+              <input type="text" id="fix" value={fix} onChange={e => setFix(e.target.value)}/>
+            </div>
+            
+            <div>
+              <label>Adresse:</label>
+              <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} style={{marginRight:'24.5%', width:'19.5%'}}/>
+              <label>Ville:</label>
+              <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+            </div>
+
+            <button type="submit">Mettre à jour</button>
+          </form>
         </div>
-        <div>
-          <label htmlFor="fix">Fixe:</label>
-          <input type="text" id="fix" value={fix} onChange={e => setFix(e.target.value)} />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="text" id="email" value={email} onChange={e => setEmail(e.target.value)} />
-        </div>
-        <label>
-          Numéro de sécurité sociale:
-          <input type="text" value={nSecu} onChange={(e) => setNSecu(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Adresse:
-          <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Ville:
-          <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Mettre à jour</button>
-      </form>
+      </>
     );
     }else{
       const [specialisation, setSpecialisation] = useState('');
