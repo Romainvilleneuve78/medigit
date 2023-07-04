@@ -87,7 +87,7 @@ function Ordonnance() {
                 type="text"
                 value={filter}
                 onChange={handleFilterChange}
-                placeholder="Filtrer par nom de prescription"
+                placeholder="rechercher par symptome"
               />
             </div>
           </div>

@@ -76,7 +76,7 @@ function Profil() {
                             {user.Kind===0 && (
                                 <div className="info-1">
                                     <h4>Informations de santé :</h4>
-                                    <p>Numero de sécurité sociale : {user.n_secu}</p>
+                                    <p>Numéro de sécurité sociale : {user.n_secu}</p>
                                     <p>Date de naissance : {user.Birthdate}</p>
                                 </div>
                             )}

@@ -17,8 +17,8 @@ function Accueil() {
         <div className='fond'>
           <div className='txt'>
             <div className='title'>
-              <h1>MeDigit</h1>
-              <h2>votre nouvelle plateforme de santé</h2>
+              <h1>MeDigit.</h1>
+              <h2>Votre nouvelle plateforme de santé</h2>
             </div>
             <MenuPageHome/>
           </div>
@@ -36,19 +36,19 @@ function Accueil() {
           <div className='explication'>
             <div className='steps'>
               <div className='step'>1</div>
-              <div className='description'>Créez votre compte MeDigit.</div>
+              <div className='description'>Créez votre compte MeDigit</div>
             </div>
             <div className='steps'>
               <div className='step'>2</div>
-              <div className='description'>Enregistrez vos informations personnelles.</div>
+              <div className='description'>Enregistrez vos informations personnelles</div>
             </div>
             <div className='steps'>
               <div className='step'>3</div>
-              <div className='description'>Accédez directement à vos ordonnances personnelles.</div>
+              <div className='description'>Accédez directement à vos ordonnances personnelles</div>
             </div>
             <div className='steps'>
               <div className='step'>4</div>
-              <div className='description'>Personnalisez vos rappels pour une vie plus tranquille.</div>
+              <div className='description'>Partagez une plateforme commune avec votre médecin </div>
             </div>
           </div>
         </div>
@@ -65,15 +65,11 @@ function Accueil() {
             </div>
             <div className='btn'>
              
-            <button className="b" onClick={handleCreateAccountClick}>Créer un compte</button>
-            
-              {showOptions && (
-                <div className='options'>
-                  <Link to="/SignUp_Page"><div className='option'>Client</div></Link>
-                  <Link to="/SignUp_Page"><div className='option'>Médecin</div></Link>
-                </div>
-              )}
+           
+            <Link to="/SignUp_Page"> <button className="b" onClick={handleCreateAccountClick}>Créer un compte</button></Link>
             </div>
+            
+            
           </nav>
         </div>
       </div>

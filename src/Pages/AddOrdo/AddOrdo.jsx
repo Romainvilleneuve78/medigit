@@ -159,11 +159,11 @@ const AddOrdo = () => {
   
     return (
       <>
-        <div className='header_ordo_extend'>
+        <div className='header_add_ordo_extend'>
           <div className='fond'>
             <div className='txt'>
               <MenuPage />
-              <h1>Nouvelles ordonnance</h1>
+              <h1>Nouvelle ordonnance</h1>
             </div>
             <img src='../../images/ambulance.png' alt="Image du médecin" />
           </div>
@@ -185,7 +185,7 @@ const AddOrdo = () => {
               <div className='ordo'>
                 <h1>Ordonnance</h1>
                 <div className='info_1'>
-                  <label>Numero securité sociale du patient:</label>
+                  <label>Numéro sécurité sociale du patient:</label>
                   <input type="text" name="n_secu" placeholder='112242522822' value={prescriptionData.n_secu} onChange={handleInputChange} />
                 </div>
                 <div className='title'>

@@ -3,6 +3,8 @@ import './Ordopdf.css';
 import DownloadPDF from '../../components/PDF/MyDocument';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import MenuPage from '../../components/menu';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function Ordopdf() {
   const { idPrescription } = useParams();
@@ -52,18 +54,29 @@ function Ordopdf() {
 
   return (
     <>
+      <div className='header_ordo_extend'>
+        <div className='fond'>
+          <div className='txt'>
+            <MenuPage />
+            <h1>Mes ordonnances</h1>
+          </div>
+          <img src='../../images/medecin3.png' alt="Image du médecin" />
+        </div>
+      </div>
+
       <div className='ordopdf'>
+
         <div className='titlepdf'>
           <h1>{prescriptionData.Name}</h1>
-        </div>
-        <div className='container_ordo'>
           <button className='pdp_ordopdf'>
             <img src='../../images/pdp.png' alt='icone des points'></img>
             <span className='title_ordo'>
               {prescriptionData.ProfessionalFirstName} {prescriptionData.ProfessionalLastName}
             </span>
           </button>
+        </div>
 
+        <div className='container_ordo'>
           <div className='info_ordo'>
             <div className='Name_ordo'>
               <h2>Consultation {prescriptionData.Specialisation}</h2>
@@ -80,12 +93,15 @@ function Ordopdf() {
               <p className='my-paragraph1'>
                 Le {prescriptionData.Date_creation}
               </p>
+
               <p className='my-paragraph2'>
                 Valide jusqu'au {prescriptionData.Date_validity}
               </p>
+
               <h3>
                 {prescriptionData.ClientFirstName} {prescriptionData.ClientLastName}
               </h3>
+
               <p className='my-paragraph3'>
                 ID: {prescriptionData.Clientid}
               </p>
@@ -97,30 +113,30 @@ function Ordopdf() {
                   </li>
                 ))}
               </div>
-              </div>
+            </div>
 
-<div className='option_ordo'>
-  <button className='coeur'>
-    <img src='../../images/coeur.png' alt='icone du bouton'></img>
-  </button>
-  <button className='points'>
-    <img src='../../images/petitspoints.png' alt='icone des points'></img>
-  </button>
-</div>
-</div>
-</div>
+            <div className='option_ordo'>
+              <button className='coeur'>
+                <img src='../../images/coeur.png' alt='icone du bouton'></img>
+              </button>
+              <button className='points'>
+                <img src='../../images/petitspoints.png' alt='icone des points'></img>
+              </button>
+            </div>
 
-<div className='bouton_ordo'>
-<button className='downloadpdf'>
-<DownloadPDF />
-</button>
+          </div>
+        </div>
 
-<button className='bouton_ordo' onClick={handleDeletePrescription}>
-Supprimer
-</button>
-</div>
-</div>
-</>
+      <div className='bouton_ordo'>
+        <button className='downloadpdf'>
+          <DownloadPDF />
+        </button>
+
+        <button onClick={handleDeletePrescription}>Supprimer</button>
+      </div>
+
+    </div>
+  </>
 );
 }
 

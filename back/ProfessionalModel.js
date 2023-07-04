@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: 'password',
-    database: 'solution_factory'
+    database: 'bdd-MEDIGIT'
 });
 
 // Modèle Professional
@@ -36,7 +36,7 @@ class Professional {
 }
 
 function findProfessionalById(user_id) {
-  const query = "SELECT * FROM Professional JOIN user on professional.user_id = user.idUserWHERE user_id = ?";
+  const query = "SELECT * FROM Professional JOIN user on professional.user_id = user.idUser WHERE user_id = ?";
 
   return new Promise((resolve, reject) => {
     connection.query(query, [user_id], (error, results) => {
