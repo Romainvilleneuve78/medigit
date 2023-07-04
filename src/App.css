@@ -26,7 +26,7 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
   background: #2ACEF2;
 }
 
-.navbar a{width: 10%;}
+.navbar a{width: 18%;}
 .navbar .user {width: 2.5vw;}
 .navbar a:hover {font-weight: 600;}
 .navbar .nav-links ul{display: flex; align-items: center;}
@@ -38,6 +38,8 @@ header h2{color: #FFFFFF; font-weight: 500; font-size: 1.2vw; text-align: center
   font-size: 0.9vw;
   color: #FFFFFF;
 }
+
+.navbar .nav-links ul li button{background-color: transparent; font-size: 0.9vw; color: white; font-weight: 400;}
 
 /* ---------------------------------------------------------- menu ----------------------------------------------------*/
 .menu{
