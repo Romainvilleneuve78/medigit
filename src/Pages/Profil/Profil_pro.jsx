@@ -13,7 +13,7 @@ function Profil_pro() {
     const [user, setUser] = useState({});
     useEffect(() => {
         axios
-          .get(`http://localhost:3000/professional/${idProfessional}`)
+          .get(`http://localhost:3000/professional/idprof/${idProfessional}`)
           .then(response => {
             setUser(response.data);
             console.log(user);
@@ -76,7 +76,7 @@ function Profil_pro() {
     const [user, setUser] = useState({});
     useEffect(() => {
         axios
-          .get(`http://localhost:3000/client/${idProfessional}`)
+          .get(`http://localhost:3000/client/idclient/${idProfessional}`)
           .then(response => {
             setUser(response.data);
           })
