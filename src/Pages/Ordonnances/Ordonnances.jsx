@@ -52,11 +52,6 @@ function Ordonnance() {
   };
 
 
-
-
-
-
-
   useEffect(() => {
     if (prescriptions.length > 0) {
       const idProfessional = prescriptions[0].Professional; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
