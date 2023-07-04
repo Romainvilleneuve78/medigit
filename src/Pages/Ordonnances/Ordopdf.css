@@ -1,6 +1,6 @@
 .titlepdf{
   display: flex;
-  align-items: center;
+  align-items:start;
   margin-top: 5%;
   margin-left: 9%;
   margin-right: 9%;
@@ -36,7 +36,7 @@
   align-items: center; 
   margin-left: 9%;
   margin-right: 9%;
-  margin-top: 3%;
+  margin-top: -6%;
 }
 
 .info_ordo {
