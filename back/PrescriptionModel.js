@@ -66,6 +66,26 @@ function getPrescriptionsByUser(idUser) {
   });
 }
 
+function getPrescriptionsByUserProfessional(idUser) {
+  const query = `
+    SELECT * FROM user
+    JOIN professional ON user.idUser = professional.user_id
+    JOIN prescription ON professional.idProfessional = prescription.Professional
+    WHERE user_id = ?`;
+  const values = [idUser];
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, values, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
+    });
+  });
+}
+
+
 function getPrescriptionById(idPrescription) {
   // const query = `SELECT * FROM prescription WHERE idPrescription = ?`;
   console.log("idPrescription", idPrescription);
@@ -161,4 +181,4 @@ function deletePrescription(idPrescription) {
   });
 }
 
-module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription, deletePrescription };
+module.exports = { list_prescription, getPrescriptionsByUser, getPrescriptionById, addPrescription, deletePrescription, getPrescriptionsByUserProfessional };

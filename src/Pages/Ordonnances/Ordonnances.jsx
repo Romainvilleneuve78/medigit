@@ -10,20 +10,52 @@ function Ordonnance() {
   const [filter, setFilter] = useState('');
   const [user, setUser] = useState({});
 
+  const sessionData = JSON.parse(sessionStorage.getItem('user'));
+  const idUser = sessionData.idUser;
+  const userKind = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')).Kind : null;
 
-  useEffect(() => {
-    const sessionData = JSON.parse(sessionStorage.getItem('user'));
-    const idUser = sessionData.idUser;
+  // useEffect(() => {
+  //   fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setPrescriptions(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+  //     });
+  // }, []);
 
-    fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
-      .then(response => response.json())
-      .then(data => {
-        setPrescriptions(data);
-      })
-      .catch(error => {
-        console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
-      });
-  }, []);
+  if (userKind === 0) {
+    useEffect(() => {
+      fetch(`http://localhost:3000/prescription/user?idUser=${idUser}`)
+        .then(response => response.json())
+        .then(data => {
+          setPrescriptions(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+        });
+    }, []);
+  } else if (userKind === 1) {
+    useEffect(() => {
+      const sessionData = JSON.parse(sessionStorage.getItem('user'));
+      const idUser = sessionData.idUser;
+      fetch(`http://localhost:3000/prescription/user/professional?idUser=${idUser}`)
+        .then(response => response.json())
+        .then(data => {
+          setPrescriptions(data);
+        })
+        .catch(error => {
+          console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
+        });
+    }, []);
+  };
+
+
+
+
+
+
 
   useEffect(() => {
     if (prescriptions.length > 0) {

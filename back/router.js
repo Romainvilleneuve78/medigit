@@ -205,6 +205,21 @@ router.get("/prescription/user", (req, res) => {
     });
 });
 
+router.get("/prescription/user/professional", (req, res) => {
+  const { idUser } = req.query; // Obtenez l'idUser de la session actuelle
+
+  prescription_model.getPrescriptionsByUserProfessional(idUser)
+    .then(result => {
+      console.log("Result received:", result);
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send("Une erreur s'est produite lors de la récupération des prescriptions de l'utilisateur.");
+    });
+});
+
+
 
 router.get("/prescription/:idPrescription", (req, res) => {
   const idPrescription = req.params.idPrescription;
