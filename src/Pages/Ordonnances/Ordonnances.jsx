@@ -77,7 +77,7 @@ function Ordonnance() {
                 <td>
                   <div className='container_ordo'>
                     <button className="pdp_ordo">
-                      <Link to="/Profil_pro">
+                      <Link to={`/Profil_pro/${user.user_id}`}>
                         <img src="../../images/pdp.png" alt="icone des points" />
                       </Link>
                     <span className="title_ordo">{user.FirstName} {user.LastName}</span></button>
