@@ -1,117 +1,127 @@
 import React, { useState, useEffect } from 'react';
 import './Ordopdf.css';
 import DownloadPDF from '../../components/PDF/MyDocument';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
-
 function Ordopdf() {
-    const { idPrescription } = useParams();
-    const [prescriptionData, setPrescriptionData] = useState(null);
+  const { idPrescription } = useParams();
+  const [prescriptionData, setPrescriptionData] = useState(null);
 
-    // console.log(idPrescription);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/prescription/${idPrescription}`)
+      .then((response) => {
+        setPrescriptionData(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching prescription data:', error);
+      });
+  }, [idPrescription]);
 
-    useEffect(() => {
-        // Effectuez la requête GET vers le backend pour récupérer les informations de l'ordonnance
-        axios.get(`http://localhost:3000/prescription/${idPrescription}`)
-        // axios.get(`/prescription/${idPrescription}`)
-            .then(response => {
-                setPrescriptionData(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching prescription data:', error);
-            });
-    }, [idPrescription]);
+  const handleDeletePrescription = () => {
+    axios
+      .delete(`http://localhost:3000/prescription/delete/${prescriptionData.idPrescription}`)
+      .then((response) => {
+        // Suppression réussie, vous pouvez mettre en œuvre les actions supplémentaires si nécessaire
+        console.log('Prescription supprimée avec succès');
+      })
+      .catch((error) => {
+        console.error('Error deleting prescription:', error);
+      });
+  };
 
-    if (!prescriptionData) {
-        return <div>Loading... </div>; // Afficher un message de chargement tant que les données ne sont pas disponibles
+  if (!prescriptionData) {
+    return <div>Loading... </div>;
+  }
+
+  const med = prescriptionData.Medicine.split(',');
+  const descr = prescriptionData.Description.split(',');
+
+  const result = [];
+  const maxLength = Math.max(med.length, descr.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    if (i < med.length) {
+      result.push(med[i].trim());
     }
-
-    const med = prescriptionData.Medicine.split(',');
-    const descr = prescriptionData.Description.split(',');
-  
-    const result = [];
-    const maxLength = Math.max(med.length, descr.length);
-  
-    for (let i = 0; i < maxLength; i++) {
-      if (i < med.length) {
-        result.push(med[i].trim());
-      }
-      if (i < descr.length) {
-        result.push(descr[i].trim());
-      }
+    if (i < descr.length) {
+      result.push(descr[i].trim());
     }
-  
-    // const [currentIndex, setCurrentIndex] = useState(0);
-  
-    // const handleNext = () => {
-    //   setCurrentIndex((prevIndex) => (prevIndex + 1) % result.length);
-    // };
-  
+  }
 
+  return (
+    <>
+      <div className='ordopdf'>
+        <div className='titlepdf'>
+          <h1>{prescriptionData.Name}</h1>
+        </div>
+        <div className='container_ordo'>
+          <button className='pdp_ordopdf'>
+            <img src='../../images/pdp.png' alt='icone des points'></img>
+            <span className='title_ordo'>
+              {prescriptionData.ProfessionalFirstName} {prescriptionData.ProfessionalLastName}
+            </span>
+          </button>
 
-    // console.log(result);
+          <div className='info_ordo'>
+            <div className='Name_ordo'>
+              <h2>Consultation {prescriptionData.Specialisation}</h2>
 
-    return (
-        <>
-            <div className='ordopdf'>
-                <div className='titlepdf'><h1>{prescriptionData.Name}</h1></div>
-                <div className='container_ordo'> 
+              <div className='id_ordo'>
+                <p className='my-paragraph4'>
+                  {prescriptionData.Name} -
+                </p>
+                <p className='my-paragraph5'>
+                  ID: {prescriptionData.idPrescription}
+                </p>
+              </div>
 
-                    <button className= "pdp_ordopdf"><img src="../../images/pdp.png" alt="icone des points"></img><span className= "title_ordo">{prescriptionData.ProfessionalFirstName} {prescriptionData.ProfessionalLastName}</span></button>
+              <p className='my-paragraph1'>
+                Le {prescriptionData.Date_creation}
+              </p>
+              <p className='my-paragraph2'>
+                Valide jusqu'au {prescriptionData.Date_validity}
+              </p>
+              <h3>
+                {prescriptionData.ClientFirstName} {prescriptionData.ClientLastName}
+              </h3>
+              <p className='my-paragraph3'>
+                ID: {prescriptionData.Clientid}
+              </p>
 
-                    <div className='info_ordo'>
-                        <div className="Name_ordo">
-                            <h2>Consultation {prescriptionData.Specialisation}</h2>
+              <div className='Med'>
+                {result.map((item, index) => (
+                  <li key={index} className={index % 2 === 0 ? 'medoc' : 'frequence_prise'}>
+                    {item}
+                  </li>
+                ))}
+              </div>
+              </div>
 
-                            <div className = "id_ordo">
-                                <p className ="my-paragraph4">{prescriptionData.Name} -</p>
-                                <p className ="my-paragraph5">ID: {prescriptionData.idPrescription}</p>
-                            </div>
+<div className='option_ordo'>
+  <button className='coeur'>
+    <img src='../../images/coeur.png' alt='icone du bouton'></img>
+  </button>
+  <button className='points'>
+    <img src='../../images/petitspoints.png' alt='icone des points'></img>
+  </button>
+</div>
+</div>
+</div>
 
-                            <p className="my-paragraph1">Le {prescriptionData.Date_creation}</p>
-                            <p className="my-paragraph2">Valide jusqu'au {prescriptionData.Date_validity}</p>
-                            <h3>{prescriptionData.ClientFirstName} {prescriptionData.ClientLastName}</h3>
-                            <p className="my-paragraph3">ID: {prescriptionData.Clientid}</p> 
+<div className='bouton_ordo'>
+<button className='downloadpdf'>
+<DownloadPDF />
+</button>
 
-
-                            <div className="Med">
-                                {result.map((item, index) => (
-                                    <li key={index} className={index % 2 === 0 ? 'medoc' : 'frequence_prise'}>
-                                        {item}
-                                    </li>
-                                ))}
-                            </div>
-                        
-                        </div>
-
-                        <div className='option_ordo'>
-                            <button className= "coeur"> <img src="../../images/coeur.png" alt="icone du bouton"></img></button>
-                            <button className= "points"> <img src="../../images/petitspoints.png" alt="icone des points"></img></button>
-                        </div>
-                    </div>
-
-                </div>  
-
-                <div className = "bouton_ordo" >
-                    
-                    
-                    
-                <button className="downloadpdf">
-                    {/* <  DownloadPDF idPrescription={prescriptionData.idPrescription}/> */}
-                    {/* <  DownloadPDF idPrescription={idPrescription}/> */}
-                    {/* <  DownloadPDF idPrescription={2}/> */}
-                    <  DownloadPDF/>
-
-                </button>
-                    
-                    
-                    {/* <button className = "bouton_qr">Afficher le QR Code</button>s */}
-                </div>
-            </div>
-        </>
-    );
+<button className='bouton_ordo' onClick={handleDeletePrescription}>
+Supprimer
+</button>
+</div>
+</div>
+</>
+);
 }
 
 export default Ordopdf;

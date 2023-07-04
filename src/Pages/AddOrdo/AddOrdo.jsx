@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './AddOrdo.css'
 import FormOrdo from '../../components/FormOrdo/FormOrdo';
 import axios from 'axios';
+import MenuPage from '../../components/menu';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // import MyDocument from '../../components/PDF/MyDocument';
 //import { Document, Page, Text, View } from '@react-pdf/renderer';
 
@@ -156,45 +158,53 @@ const AddOrdo = () => {
 
   
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Nom :
-            <input type="text" name="Name" value={prescriptionData.Name} onChange={handleInputChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Numéro de sécurité sociale :
-            <input type="text" name="n_secu" value={prescriptionData.n_secu} onChange={handleInputChange} />
-          </label>
-        </div>
-  
-        <div>
-          <h3>Médicaments :</h3>
-          <div>
-            <label>
-              Nom du médicament :
-              <input type="text" value={medicine} onChange={(e) => setMedicine(e.target.value)} />
-            </label>
-            <label>
-              Description :
-              <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-            </label>
-            <button type="button" onClick={handleAddMedicine}>Ajouter</button>
+      <>
+        <div className='header_ordo_extend'>
+          <div className='fond'>
+            <div className='txt'>
+              <MenuPage />
+              <h1>Nouvelles ordonnance</h1>
+            </div>
+            <img src='../../images/ambulance.png' alt="Image du médecin" />
           </div>
-          <ul>
-            {prescriptionData.Medicine.split(',').map((medicine, index) => (
-              <li key={index}>
-                <strong>Médicament :</strong> {medicine} - <strong>Description :</strong> {prescriptionData.Description.split(',')[index]}
-              </li>
-            ))}
-          </ul>
         </div>
-  
-        <button type="submit">Valider</button>
-      </form>
+
+        <div className='add_ordo'>
+
+            <form onSubmit={handleSubmit}>
+              <div className='info_1'>
+                <label>Numero securité sociale du patient:</label>
+                <input type="text" name="n_secu" value={prescriptionData.n_secu} onChange={handleInputChange} />
+              </div>
+
+              <div className='ordo'>
+                <h1>Titre ordonnance :</h1>
+                <input type="text" name="Name" value={prescriptionData.Name} onChange={handleInputChange} />
+                <h2>Médicaments :</h2>
+                <input type="text" placeholder='Medicament' value={medicine} onChange={(e) => setMedicine(e.target.value)} />
+                <input type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+
+                <ul>
+                  {prescriptionData.Medicine.split(',').map((medicine, index) => (
+                    <li key={index}>
+                      <strong>Médicament :</strong> {medicine} - <strong>Description :</strong> {prescriptionData.Description.split(',')[index]}
+                    </li>
+                  ))}
+                </ul>
+
+                <button type="button" onClick={handleAddMedicine}>Ajouter</button>
+              </div>
+            
+        
+              
+              
+        
+              <button type="submit">Valider</button>
+            </form>
+        </div>
+      </>
     );
   };
   
   export default AddOrdo;
+ 

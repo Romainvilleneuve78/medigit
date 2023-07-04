@@ -271,7 +271,7 @@ router.get("/user/:id", (req, res) => {
 });
 
 
-router.delete("/prescription/:idPrescription", (req, res) => {
+router.delete("/prescription/delete/:idPrescription", (req, res) => {
   const idPrescription = req.params.idPrescription;
 
   prescription_model.deletePrescription(idPrescription)
