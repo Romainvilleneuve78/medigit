@@ -106,7 +106,6 @@ function Ordonnance() {
             <MenuPage />
             <h1>Mes ordonnances</h1>
             <div className='btn_class'>
-              <button className="trier">Trier<img src="../../images/barres.png" alt="icone des points"></img></button>
               <input
                 type="text"
                 value={filter}
