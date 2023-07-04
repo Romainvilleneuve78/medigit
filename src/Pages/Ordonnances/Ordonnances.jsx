@@ -36,6 +36,22 @@ function Ordonnance() {
           console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
         });
     }, []);
+
+    useEffect(() => {
+      if (prescriptions.length > 0) {
+        const idProfessional = prescriptions[0].Professional; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
+    
+        axios.get(`http://localhost:3000/professional/idprof/${idProfessional}`) // Utilisez l'URL avec idprof pour récupérer les informations de l'utilisateur
+          .then(response => {
+            setUser(response.data);
+            console.log(user);
+          })
+          .catch(error => {
+            console.error('Une erreur s\'est produite lors de la récupération des informations du professionnel :', error);
+          });
+      }
+    }, [prescriptions]);
+
   } else if (userKind === 1) {
     useEffect(() => {
       const sessionData = JSON.parse(sessionStorage.getItem('user'));
@@ -49,23 +65,30 @@ function Ordonnance() {
           console.error('Une erreur s\'est produite lors de la récupération des prescriptions :', error);
         });
     }, []);
+
+    useEffect(() => {
+      if (prescriptions.length > 0) {
+        const idClient = prescriptions[0].Client; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
+    
+        axios.get(`http://localhost:3000/client/idclient/${idClient}`) // Utilisez l'URL avec idprof pour récupérer les informations de l'utilisateur
+          .then(response => {
+            setUser(response.data);
+            console.log(user);
+          })
+          .catch(error => {
+            console.error('Une erreur s\'est produite lors de la récupération des informations du professionnel :', error);
+          });
+      }
+    }, [prescriptions]);
   };
 
 
-  useEffect(() => {
-    if (prescriptions.length > 0) {
-      const idProfessional = prescriptions[0].Professional; // Utilisez le bon accès aux données pour obtenir l'ID du professionnel
+
+
+
+
+
   
-      axios.get(`http://localhost:3000/professional/idprof/${idProfessional}`) // Utilisez l'URL avec idprof pour récupérer les informations de l'utilisateur
-        .then(response => {
-          setUser(response.data);
-          console.log(user);
-        })
-        .catch(error => {
-          console.error('Une erreur s\'est produite lors de la récupération des informations du professionnel :', error);
-        });
-    }
-  }, [prescriptions]);
 
   const handleFilterChange = event => {
     setFilter(event.target.value);
@@ -103,7 +126,7 @@ function Ordonnance() {
                 <td>
                   <div className='container_ordo'>
                     <button className="pdp_ordo">
-                      <Link to={`/Profil_pro/${user.idProfessional}`}>
+                      <Link to={`/Profil_pro/${user.user_id}`}>
                         <img src="../../images/pdp.png" alt="icone des points" />
                       </Link>
                     <span className="title_ordo">{user.FirstName} {user.LastName}</span></button>

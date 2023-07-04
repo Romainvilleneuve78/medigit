@@ -34,6 +34,44 @@ class Client {
     }
 }
 
+function findClientByCLient(idClient) {
+  const query = "SELECT * FROM Client JOIN user on client.user_id = user.idUser WHERE idClient = ?";
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, [idClient], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]); // Renvoyer le premier professional correspondant trouvé
+        } else {
+          reject(new Error("Professional non trouvé"));
+        }
+      }
+    });
+  });
+}
+
+function findClientById(user_id) {
+  const query = "SELECT * FROM Client JOIN user on client.user_id = user.idUser WHERE user_id = ?";
+
+  return new Promise((resolve, reject) => {
+    connection.query(query, [user_id], (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        if (results.length > 0) {
+          resolve(results[0]); // Renvoyer le premier professional correspondant trouvé
+        } else {
+          reject(new Error("Professional non trouvé"));
+        }
+      }
+    });
+  });
+}
+
 module.exports = {
-    Client
+    Client,
+    findClientByCLient,
+    findClientById
 };

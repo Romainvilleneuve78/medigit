@@ -270,6 +270,20 @@ router.get("/professional/idprof/:id", (req, res) => {
     });
 });
 
+router.get("/client/idclient/:id", (req, res) => {
+  const idClient = req.params.id;
+
+  client_model.findClientByCLient(idClient)
+    .then(client => {
+      console.log("Client trouvé :", client);
+      res.json(client);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Client non trouvé" });
+    });
+});
+
 router.get("/user/idprof/:id", (req, res) => {
   const idProfessional = req.params.id;
 
@@ -295,6 +309,20 @@ router.get("/professional/:id", (req, res) => {
     .catch(error => {
       console.error(error);
       res.status(404).json({ error: "Professional non trouvé" });
+    });
+});
+
+router.get("/client/:id", (req, res) => {
+  const user_id = req.params.id;
+
+  client_model.findClientById(user_id)
+    .then(client => {
+      console.log("Client trouvé :", client);
+      res.json(client);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(404).json({ error: "Client non trouvé" });
     });
 });
 
